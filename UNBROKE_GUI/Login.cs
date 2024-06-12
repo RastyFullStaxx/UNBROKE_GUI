@@ -14,10 +14,13 @@ namespace UNBROKE_GUI
     {
         private String usernamePlaceholder = "Enter valid username";
         private String passwordPlaceholder = "Enter valid password";
+        private DatabaseHelper db;
 
         public Form2()
         {
             InitializeComponent();
+            db = new DatabaseHelper("Server=localhost,3306;Database=unbroke;Uid=root;Pwd='';");
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -39,6 +42,7 @@ namespace UNBROKE_GUI
             Dashboard dashboard = new Dashboard();
             dashboard.Show();
             this.Dispose();
+            db.TestConnection();
         }
 
     } 
