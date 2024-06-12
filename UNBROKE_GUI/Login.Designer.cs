@@ -89,7 +89,7 @@
             this.btnShowpass.Size = new System.Drawing.Size(24, 24);
             this.btnShowpass.TabIndex = 11;
             this.btnShowpass.UseVisualStyleBackColor = false;
-            this.btnShowpass.Click += BtnShowpass_Click;
+            this.btnShowpass.Click += new System.EventHandler(this.BtnShowpass_Click);
             // 
             // txtUsername
             // 
@@ -101,8 +101,6 @@
             this.txtUsername.Size = new System.Drawing.Size(245, 17);
             this.txtUsername.TabIndex = 12;
             this.txtUsername.Text = "Enter valid username";
-            this.txtUsername.Enter += TxtUsername_Enter;
-            this.txtUsername.Leave += TxtUsername_Leave;
             // 
             // txtPassword
             // 
@@ -114,7 +112,6 @@
             this.txtPassword.Size = new System.Drawing.Size(245, 17);
             this.txtPassword.TabIndex = 13;
             this.txtPassword.UseSystemPasswordChar = true;
-            this.txtPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // lblUsername
             // 
@@ -127,7 +124,6 @@
             this.lblUsername.Size = new System.Drawing.Size(79, 23);
             this.lblUsername.TabIndex = 14;
             this.lblUsername.Text = "Username";
-            this.lblUsername.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblPassword
             // 

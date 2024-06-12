@@ -12,25 +12,20 @@ namespace UNBROKE_GUI
 {
     public partial class Form2 : Form
     {
+        private String usernamePlaceholder = "Enter valid username";
+        private String passwordPlaceholder = "Enter valid password";
+
+        private bool isPasswordVisible = false;
+
         public Form2()
         {
             InitializeComponent();
-            txtPassword.Text = "Enter password";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            SetPlaceholderUsername(txtUsername, usernamePlaceholder);
+            SetPlaceholderPassword(txtPassword, passwordPlaceholder);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -47,38 +42,67 @@ namespace UNBROKE_GUI
             this.Dispose();
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-            txtPassword.Text = "";
-        }
-private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
-        private void TxtUsername_Enter(object sender, EventArgs e)
+        //Placeholder for username
+        private void SetPlaceholderUsername(TextBox textBox, string text)
         {
-            // Clear the placeholder text when the TextBox gains focus
-            if (txtUsername.Text == "Enter valid username")
+            textBox.Text = text;
+            textBox.Font = new Font("Poppins", 8.25F);
+
+            textBox.Enter += (sender, e) =>
             {
-                txtUsername.Text = "";
-            }
+                if (textBox.Text == text)
+                {
+                    textBox.Text = "";
+                }
+            };
+
+            textBox.Leave += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = text;
+                }
+            };
         }
 
-        private void TxtUsername_Leave(object sender, EventArgs e)
+        //Placeholder for password
+
+        private void SetPlaceholderPassword(TextBox textBox, string text)
         {
-            // Restore the placeholder text if the TextBox is empty
-            if (string.IsNullOrWhiteSpace(txtUsername.Text))
+            textBox.Text = text;
+            textBox.Font = new Font("Poppins", 8.25F);
+            textBox.UseSystemPasswordChar = false;
+
+            textBox.Enter += (sender, e) =>
             {
-                txtUsername.Text = "Enter valid username";
-            }
+                if (textBox.Text == text)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = Color.Black;
+                    textBox.UseSystemPasswordChar = !isPasswordVisible;
+                }
+            };
+
+            textBox.Leave += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = text;
+                    textBox.ForeColor = Color.Gray;
+                    textBox.UseSystemPasswordChar = false;
+                }
+            };
         }
         private void BtnShowpass_Click(object sender, EventArgs e)
         {
-            // Toggle the UseSystemPasswordChar property
-            txtPassword.UseSystemPasswordChar = !txtPassword.UseSystemPasswordChar;
-
-            // Change the button icon based on the current state
-            btnShowpass.Image = txtPassword.UseSystemPasswordChar ? Properties.Resources.ShowPassword : Properties.Resources.HidePassword;
+            if (txtPassword.Text != passwordPlaceholder)
+            {
+                isPasswordVisible = !isPasswordVisible;
+                txtPassword.UseSystemPasswordChar = !isPasswordVisible;
+                btnShowpass.Image = isPasswordVisible ? Properties.Resources.HidePassword : Properties.Resources.ShowPassword;
+            }
         }
-    }
+    } 
+
 }

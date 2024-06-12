@@ -121,7 +121,7 @@
   <data name="btnLogin.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVcAAAA3CAYAAAC4sgn2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAA25JREFUeF7t2zFyGkkUgGGOwBE4go/AEXwD+wi+gRRuJsLNINtQm3kzKXOIM29G
+        DgAACw4BQL7hQQAAA25JREFUeF7t2zFyGkkUgGGOwBE4go/AEXwD+wi+gRRuJsLNINtQm3kzKXOIM29G
         uKFCh7gfzNit1oAGt9qe0n6v6itLM60x0V/NMMzKuZ7Nlskq2SV7AE7aJutk0SX06aST8+QmGboAAOdF
         P+ddUo8TB5Io8NAfADBOdPRHYNMvdqwAL+OmD+uiOAFAnWXEdVMcBKDOKuLqXivAy9pFXIdOAFBBXAEa
         EFeABsQVoAFxBWhAXAEaEFeABsQVoAFxBWhAXAEaEFeABsQVoAFx5VVaL5f7v96+3a8Wi8Hz0Jq48urc
@@ -142,7 +142,7 @@
   <data name="btnSignup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVcAAAA3CAYAAAC4sgn2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAABFRJREFUeF7t27FS20wUhmFfApfAPVDDpISaGlqooaanIwM1k3RQU0MNnWdobdCl
+        DgAACw4BQL7hQQAABFRJREFUeF7t27FS20wUhmFfApfAPVDDpISaGlqooaanIwM1k3RQU0MNnWdobdCl
         6NdHfDJHJ0dYlrVO5uf1zBOIVpJN87LeNZP4mM1m3+bz+fe3t7eqUQMAck0rp83XH1VVbS8S+uejGdxq
         XMWLAQC9XE2n061FUn89FNZFgbMLAAA9qKOtwDJjBYDRXFlYt5NBAMBA2ruaNNPYn9kgAGAYfShAcWWt
         FQDGVU2SgwCANRFXACiAuAJAAcQVAAogrgBQAHEFgAKIKwAUQFwBoADiCgAFEFcAKIC4AkABxBUACiCu
@@ -167,7 +167,7 @@
   <data name="imgLogo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAPMAAADzCAYAAABT9iA/AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAGohJREFUeF7tnXmQHFUdx0FuBMNNkFNORUqBQhSwSkFLQRSVEoU/RMqiClQstBQo
+        DAAACwwBP0AiyAAAGohJREFUeF7tnXmQHFUdx0FuBMNNkFNORUqBQhSwSkFLQRSVEoU/RMqiClQstBQo
         sbDI5s7mIskmbJLNRQ5yYELIQRJykwDmvkjI3rtJ9r7v8/m+Tc8yu/vrmZ6Znt3ut99P1fef3X49PT39
         6X79+r3XpylCiBFQZkIMgTITYgiUmRBDoMyEGAJlJsQQKDMhhkCZCTEEykyIIVBmQgyBMhNiCJSZEEOg
         zIQYAmUmxBAoMyGGQJkJMQTKTIghUGZCDIEyE2IIlJkQQ6DMhBgCZSbEECgzIYZAmQkxBMpMiCFQZkIM
