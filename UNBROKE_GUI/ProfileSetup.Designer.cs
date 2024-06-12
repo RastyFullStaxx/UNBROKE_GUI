@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileSetup));
-            this.imgDefaultPhoto = new System.Windows.Forms.PictureBox();
             this.btnUploadPhoto = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
-            this.btnShowPass = new System.Windows.Forms.PictureBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -40,29 +38,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblProfileSetup = new System.Windows.Forms.Label();
+            this.btnShowpass = new System.Windows.Forms.Button();
+            this.imgDefaultPhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnShowPass)).BeginInit();
             this.SuspendLayout();
-            // 
-            // imgDefaultPhoto
-            // 
-            this.imgDefaultPhoto.Image = ((System.Drawing.Image)(resources.GetObject("imgDefaultPhoto.Image")));
-            this.imgDefaultPhoto.Location = new System.Drawing.Point(123, 148);
-            this.imgDefaultPhoto.Name = "imgDefaultPhoto";
-            this.imgDefaultPhoto.Size = new System.Drawing.Size(128, 128);
-            this.imgDefaultPhoto.TabIndex = 2;
-            this.imgDefaultPhoto.TabStop = false;
             // 
             // btnUploadPhoto
             // 
             this.btnUploadPhoto.FlatAppearance.BorderSize = 0;
             this.btnUploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPhoto.Image")));
-            this.btnUploadPhoto.Location = new System.Drawing.Point(212, 252);
+            this.btnUploadPhoto.Location = new System.Drawing.Point(237, 252);
             this.btnUploadPhoto.Name = "btnUploadPhoto";
             this.btnUploadPhoto.Size = new System.Drawing.Size(24, 24);
             this.btnUploadPhoto.TabIndex = 3;
             this.btnUploadPhoto.UseVisualStyleBackColor = true;
+            this.btnUploadPhoto.Click += new System.EventHandler(this.btnUploadPhoto_Click);
             // 
             // btnContinue
             // 
@@ -75,15 +67,7 @@
             this.btnContinue.Size = new System.Drawing.Size(343, 55);
             this.btnContinue.TabIndex = 7;
             this.btnContinue.UseVisualStyleBackColor = true;
-            // 
-            // btnShowPass
-            // 
-            this.btnShowPass.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnShowPass.BackgroundImage")));
-            this.btnShowPass.Location = new System.Drawing.Point(316, 405);
-            this.btnShowPass.Name = "btnShowPass";
-            this.btnShowPass.Size = new System.Drawing.Size(24, 24);
-            this.btnShowPass.TabIndex = 11;
-            this.btnShowPass.TabStop = false;
+            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click_1);
             // 
             // lblPassword
             // 
@@ -142,6 +126,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.btnShowpass);
             this.panel2.Location = new System.Drawing.Point(21, 388);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 56);
@@ -160,20 +145,41 @@
             this.lblProfileSetup.TabIndex = 35;
             this.lblProfileSetup.Text = "Profile Set Up";
             // 
+            // btnShowpass
+            // 
+            this.btnShowpass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShowpass.FlatAppearance.BorderSize = 0;
+            this.btnShowpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnShowpass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowpass.Image")));
+            this.btnShowpass.Location = new System.Drawing.Point(294, 15);
+            this.btnShowpass.Name = "btnShowpass";
+            this.btnShowpass.Size = new System.Drawing.Size(24, 24);
+            this.btnShowpass.TabIndex = 36;
+            this.btnShowpass.UseVisualStyleBackColor = true;
+            // 
+            // imgDefaultPhoto
+            // 
+            this.imgDefaultPhoto.ImageRotate = 0F;
+            this.imgDefaultPhoto.Location = new System.Drawing.Point(105, 122);
+            this.imgDefaultPhoto.Name = "imgDefaultPhoto";
+            this.imgDefaultPhoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.imgDefaultPhoto.Size = new System.Drawing.Size(170, 154);
+            this.imgDefaultPhoto.TabIndex = 36;
+            this.imgDefaultPhoto.TabStop = false;
+            // 
             // ProfileSetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
+            this.Controls.Add(this.btnUploadPhoto);
+            this.Controls.Add(this.imgDefaultPhoto);
             this.Controls.Add(this.lblProfileSetup);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnShowPass);
             this.Controls.Add(this.btnContinue);
-            this.Controls.Add(this.btnUploadPhoto);
-            this.Controls.Add(this.imgDefaultPhoto);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -181,18 +187,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.ProfileSetup_Load);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnShowPass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox imgDefaultPhoto;
         private System.Windows.Forms.Button btnUploadPhoto;
         private System.Windows.Forms.Button btnContinue;
-        private System.Windows.Forms.PictureBox btnShowPass;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.TextBox txtPassword;
@@ -200,5 +204,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblProfileSetup;
+        private System.Windows.Forms.Button btnShowpass;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox imgDefaultPhoto;
     }
 }

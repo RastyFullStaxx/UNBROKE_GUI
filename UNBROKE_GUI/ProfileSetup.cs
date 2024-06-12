@@ -12,6 +12,10 @@ namespace UNBROKE_GUI
 {
     public partial class ProfileSetup : Form
     {
+        private string usernamePlaceholder = "Enter valid password";
+        private string passwordPlaceholder = "Enter valid password";
+
+
         public ProfileSetup()
         {
             InitializeComponent();
@@ -19,8 +23,11 @@ namespace UNBROKE_GUI
 
         private void ProfileSetup_Load(object sender, EventArgs e)
         {
-
+            //Placeholder classes
+            Placeholder.SetPlaceholderUsername(txtUsername, usernamePlaceholder);
+            Placeholder.SetPlaceholderPassword(txtPassword, passwordPlaceholder, btnShowpass);
         }
+
         private void btnUploadPhoto_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -35,7 +42,7 @@ namespace UNBROKE_GUI
             }
         }
 
-        private void btnContinue_Click(object sender, EventArgs e)
+        private void btnContinue_Click_1(object sender, EventArgs e)
         {
             Greetings greetings = new Greetings();
             greetings.Show();

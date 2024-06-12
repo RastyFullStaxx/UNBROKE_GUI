@@ -46,14 +46,16 @@
             // btnSetupProfile
             // 
             this.btnSetupProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSetupProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetupProfile.FlatAppearance.BorderSize = 0;
+            this.btnSetupProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSetupProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnSetupProfile.Image")));
             this.btnSetupProfile.Location = new System.Drawing.Point(16, 709);
             this.btnSetupProfile.Name = "btnSetupProfile";
             this.btnSetupProfile.Size = new System.Drawing.Size(343, 55);
             this.btnSetupProfile.TabIndex = 6;
+            this.btnSetupProfile.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btnSetupProfile.UseVisualStyleBackColor = true;
+            this.btnSetupProfile.Click += new System.EventHandler(this.btnSetupProfile_Click);
             // 
             // Signup2
             // 
@@ -64,7 +66,9 @@
             this.Controls.Add(this.imgAlmostThere);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Signup2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Signup2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgAlmostThere)).EndInit();
             this.ResumeLayout(false);
 

@@ -16,5 +16,17 @@ namespace UNBROKE_GUI
         {
             InitializeComponent();
         }
+
+        private void btnSetupProfile_Click(object sender, EventArgs e)
+        {
+            ProfileSetup profileSetup = new ProfileSetup();
+            profileSetup.Show();
+            this.Dispose();
+        }
+
+        private void Signup2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

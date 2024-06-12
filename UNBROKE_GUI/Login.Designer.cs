@@ -89,7 +89,6 @@
             this.btnShowpass.Size = new System.Drawing.Size(24, 24);
             this.btnShowpass.TabIndex = 11;
             this.btnShowpass.UseVisualStyleBackColor = false;
-            this.btnShowpass.Click += new System.EventHandler(this.BtnShowpass_Click);
             // 
             // txtUsername
             // 

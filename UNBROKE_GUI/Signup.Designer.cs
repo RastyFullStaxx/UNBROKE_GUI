@@ -96,7 +96,6 @@ namespace UNBROKE_GUI
             this.btnShowpass.Size = new System.Drawing.Size(24, 24);
             this.btnShowpass.TabIndex = 12;
             this.btnShowpass.UseVisualStyleBackColor = true;
-            this.btnShowpass.Click += BtnShowpass_Click;
             // 
             // lblPassword
             // 
@@ -132,8 +131,6 @@ namespace UNBROKE_GUI
             this.txtUsername.Size = new System.Drawing.Size(245, 17);
             this.txtUsername.TabIndex = 16;
             this.txtUsername.Text = "Enter valid username";
-            this.txtUsername.Enter += TxtUsername_Enter;
-            this.txtUsername.Leave += TxtUsername_Leave;
             // 
             // panel1
             // 
@@ -163,7 +160,6 @@ namespace UNBROKE_GUI
             this.lblCreateAcc2.Size = new System.Drawing.Size(268, 93);
             this.lblCreateAcc2.TabIndex = 23;
             this.lblCreateAcc2.Text = "account";
-            this.lblCreateAcc2.Click += new System.EventHandler(this.lblCreateAcc2_Click);
             // 
             // lnblLogin
             // 
@@ -222,6 +218,7 @@ namespace UNBROKE_GUI
             this.Load += new System.EventHandler(this.Signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
