@@ -1,0 +1,1 @@
+This repository houses the development of a mobile application designed to combat student financial mismanagement. The app tackles financial literacy by offering budgeting, expense tracking, and goal-setting tools, aiming to reduce student financial stress and empower them to make informed financial decisions.
