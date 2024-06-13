@@ -19,7 +19,7 @@ namespace UNBROKE_GUI
         public Form2()
         {
             InitializeComponent();
-            db = new DatabaseHelper("Server=localhost,3306;Database=unbroke;Uid=root;Pwd='';");
+            db = new DatabaseHelper("Server=localhost;Database=unbroke;Uid=root;Pwd='';");
 
         }
 
