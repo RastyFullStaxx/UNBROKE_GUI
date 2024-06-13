@@ -12,9 +12,11 @@ namespace UNBROKE_GUI
 {
     public partial class Greetings : Form
     {
-        public Greetings()
+        private string nameofUser;
+        public Greetings(string nameofUser)
         {
             InitializeComponent();
+            this.nameofUser = nameofUser;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -24,7 +26,7 @@ namespace UNBROKE_GUI
 
         private void Greetings_Load(object sender, EventArgs e)
         {
-
+            lblUser.Text = nameofUser;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace UNBROKE_GUI
 
         private void btnProfileSetup_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(nameofUser);
             dashboard.Show();
             this.Dispose();
         }
