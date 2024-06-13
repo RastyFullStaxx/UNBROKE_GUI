@@ -1,33 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-
+using MySql.Data.MySqlClient; // Use this namespace for MySQL
 
 namespace UNBROKE_GUI
 {
-
     internal class DatabaseHelper
     {
         private string connectionString;
-
 
         public DatabaseHelper(string connectionString)
         {
             this.connectionString = connectionString;
         }
 
-        public SqlConnection GetConnection()
+        public MySqlConnection GetConnection()
         {
-            SqlConnection connection = new SqlConnection(connectionString);
+            MySqlConnection connection = new MySqlConnection(connectionString);
             return connection;
         }
 
         public bool TestConnection()
         {
-            using (SqlConnection connection = GetConnection())
+            using (MySqlConnection connection = GetConnection())
             {
                 try
                 {
