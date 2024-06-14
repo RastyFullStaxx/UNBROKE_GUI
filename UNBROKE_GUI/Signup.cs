@@ -7,13 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
+
 
 namespace UNBROKE_GUI
 {
     public partial class Signup : Form
     {
-        private string usernamePlaceholder = "Enter valid password";
+
+        //Strings for userinfo
+        private string usernamePlaceholder = "Enter valid username";
         private string passwordPlaceholder = "Enter valid password";
+        private String username, password, passwordHash;
+        private DatabaseHelper db = DatabaseHelper.GetInstance();
+
         public Signup()
         {
             InitializeComponent();
@@ -34,13 +41,33 @@ namespace UNBROKE_GUI
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            Signup2 greetings = new Signup2();
-            greetings.Show();
+            username = txtUsername.Text;
+            password = txtPassword.Text;
+
+            passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+
+            bool success = db.InsertUser(username, passwordHash);
+            if (success)
+            {
+                Console.WriteLine("New user inserted");
+            }
+            else
+            {
+                Console.WriteLine("Failed to insert new user");
+            }
+
+
+            Signup2 signup = new Signup2(username);
+            signup.Show();
             this.Dispose();
+
+
+
         }
 
         private void GotoLogin_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
             Form2 Login = new Form2();
             Login.Show();
             this.Dispose();
