@@ -26,5 +26,10 @@ namespace UNBROKE_GUI
             dashboard.Show();
             this.Dispose();
         }
+
+        private void Budget_Loaded_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

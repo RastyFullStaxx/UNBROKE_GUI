@@ -68,6 +68,7 @@
             this.Name = "Budget_Loaded";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Loaded";
+            this.Load += new System.EventHandler(this.Budget_Loaded_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -85,7 +85,6 @@ namespace UNBROKE_GUI
                 }
                 else
                 {
-                    MessageBox.Show("User not found. Please log in again.");
                 }
             }
             else

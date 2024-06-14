@@ -24,11 +24,16 @@ namespace UNBROKE_GUI
             string formattedDate = currentDate.ToString("MMMM yyyy");
             lblDate.Text = formattedDate;
 
-            // Fetch user information from the database
+            LoadUserData();
+
+
+        }
+
+        private void LoadUserData()
+        {
             DatabaseHelper db = DatabaseHelper.GetInstance();
             try
             {
-                // Get user ID using current username
                 int userId = db.GetUserIdByUsername(currentuser);
 
                 if (userId != -1)
@@ -36,23 +41,28 @@ namespace UNBROKE_GUI
                     // Get total budget
                     decimal totalBudget = db.GetTotalBudgetByID(userId);
 
-                    // Display total budget in the format ₱0.00
-                    lblTotalBalanceAmount.Text = $"₱{totalBudget.ToString("0.00")}"; // Formatting totalBudget to 2 decimal places
+                    // Check if the budget is set
+                    if (totalBudget > 0)
+                    {
+                        // Display total budget in the format ₱0.00
+                        lblTotalBalanceAmount.Text = $"₱{totalBudget.ToString("0.00")}"; // Formatting totalBudget to 2 decimal places
+                    }
+                    else
+                    {
+                        lblTotalBalanceAmount.Text = "User did not set up budget yet";
+                    }
 
-                    // Get profile image
-
+                    // Get profile image logic (if any)
                 }
                 else
                 {
-                    MessageBox.Show("User not found. Please log in again.");
+                    lblTotalBalanceAmount.Text = "User did not set up budget yet";
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error fetching user profile: {ex.Message}");
-                // Handle exception as needed
             }
-
         }
 
         private void btnAddTransaction_Click(object sender, EventArgs e)
@@ -100,7 +110,7 @@ namespace UNBROKE_GUI
                 }
                 else
                 {
-                    MessageBox.Show("User not found. Please log in again.");
+                    Console.WriteLine($"User did not set up budget yet");
                 }
             }
             catch (Exception ex)

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UNBROKE_GUI
@@ -50,7 +43,7 @@ namespace UNBROKE_GUI
             }
             else
             {
-                MessageBox.Show("User not found. Please log in again.");
+                MessageBox.Show("Invalid user. Please log in again.");
             }
         }
 
