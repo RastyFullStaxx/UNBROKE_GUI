@@ -204,8 +204,49 @@ namespace UNBROKE_GUI
 
             return firstname;
         }
+        public decimal GetTotalBudgetByID(int userID)
+        {
+            decimal budget = 0; // Default value or error indicator
 
-  
+            // SQL query to fetch total_budget based on the highest budget_id for user_id
+            string query = "SELECT total_budget FROM `budget` " +
+                           "WHERE user_id = @userID " +
+                           "ORDER BY budget_id DESC LIMIT 1";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameter to the command
+                        command.Parameters.AddWithValue("@userID", userID);
+
+                        // Execute the command and fetch total_budget
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            budget = Convert.ToDecimal(result); // Convert result to decimal
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching total budget: {ex.Message}");
+                    // Optionally handle the exception or log it
+                    throw; // Rethrow the exception to propagate it up for better debugging
+                }
+            }
+
+            return budget;
+        }
+
+
+
         public string GetUsernamebyUserID(int ID)
         {
             string username = null; // Default value or error indicator

@@ -71,7 +71,7 @@ namespace UNBROKE_GUI
             this.lblTotalBalanceAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTotalBalanceAmount.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBalanceAmount.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTotalBalanceAmount.Location = new System.Drawing.Point(112, 128);
+            this.lblTotalBalanceAmount.Location = new System.Drawing.Point(90, 125);
             this.lblTotalBalanceAmount.Name = "lblTotalBalanceAmount";
             this.lblTotalBalanceAmount.Size = new System.Drawing.Size(141, 65);
             this.lblTotalBalanceAmount.TabIndex = 31;
