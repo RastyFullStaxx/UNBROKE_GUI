@@ -12,9 +12,11 @@ namespace UNBROKE_GUI
 {
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        private string currentuser;
+        public Dashboard(string currentuser)
         {
             InitializeComponent();
+            this.currentuser = currentuser;
         }
 
         private void btnAddTransaction_Click(object sender, EventArgs e)

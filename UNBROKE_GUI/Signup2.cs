@@ -12,14 +12,17 @@ namespace UNBROKE_GUI
 {
     public partial class Signup2 : Form
     {
-        public Signup2()
+        private string user;
+        public Signup2(string user)
         {
             InitializeComponent();
+            this.user = user;   
         }
 
         private void btnSetupProfile_Click(object sender, EventArgs e)
         {
-            Signup_Setup_Profile profileSetup = new Signup_Setup_Profile();
+
+            ProfileSetup profileSetup = new ProfileSetup(user);
             profileSetup.Show();
             this.Dispose();
         }
