@@ -22,19 +22,42 @@ namespace UNBROKE_GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser);
-            budget_Wizard_Input.Show();
-            this.Dispose();
+            // Get current date as start date
+            DateTime startDate = DateTime.Today;
+
+            // Get the selected end date from the DateTimePicker
+            DateTime endDate = dateTimePicker.Value;
+
+            // Insert budget data into the database
+            DatabaseHelper db = DatabaseHelper.GetInstance();
+            int userId = db.GetUserIdByUsername(currentuser);
+
+            if (userId != -1)
+            {
+                bool success = db.InsertBudgetDate(userId, startDate, endDate);
+
+                if (success)
+                {
+                    // Show the Budget_Wizard_Input form and pass necessary data
+                    Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser);
+                    budget_Wizard_Input.Show();
+                    this.Dispose();
+                }
+                else
+                {
+                    MessageBox.Show("Failed to save budget data. Please try again.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("User not found. Please log in again.");
+            }
         }
 
         private void Budget_Wizard_Date_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
+            // Initialize DateTimePicker with current date or default value
+            dateTimePicker.Value = DateTime.Today.AddDays(1); // Default to tomorrow's date
         }
     }
 }

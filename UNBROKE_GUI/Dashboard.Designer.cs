@@ -166,9 +166,8 @@ namespace UNBROKE_GUI
             this.lblDate.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.Location = new System.Drawing.Point(276, 14);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(72, 22);
+            this.lblDate.Size = new System.Drawing.Size(0, 22);
             this.lblDate.TabIndex = 39;
-            this.lblDate.Text = "June 2024";
             // 
             // imgNotificationIcon
             // 

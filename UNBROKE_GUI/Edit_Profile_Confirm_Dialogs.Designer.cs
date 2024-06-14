@@ -86,6 +86,7 @@
             this.Name = "Edit_Profile_Confirm_Dialogs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit_Profile_Confirm_Dialogs";
+            this.Load += new System.EventHandler(this.Edit_Profile_Confirm_Dialogs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,6 +17,12 @@ namespace UNBROKE_GUI
         {
             InitializeComponent();
             this.currentuser = currentuser;
+
+            // Update lblDate with current month and year
+            DateTime currentDate = DateTime.Now;
+            string formattedDate = currentDate.ToString("MMMM yyyy");
+            lblDate.Text = formattedDate;
+
         }
 
         private void btnAddTransaction_Click(object sender, EventArgs e)

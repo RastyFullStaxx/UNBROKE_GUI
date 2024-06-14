@@ -168,8 +168,44 @@ namespace UNBROKE_GUI
 
             return firstname;
         }
+        public string GetLastNameByUserID(int userID)
+        {
+            string firstname = null; // Default value or error indicator
 
+            // SQL query to fetch firstname based on user_id
+            string query = "SELECT last_name FROM `user` WHERE user_id = @userID";
 
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameter to the command
+                        command.Parameters.AddWithValue("@userID", userID);
+
+                        // Execute the command and fetch firstname
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            firstname = result.ToString(); // Convert result to string
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching firstname: {ex.Message}");
+                }
+            }
+
+            return firstname;
+        }
+
+  
         public string GetUsernamebyUserID(int ID)
         {
             string username = null; // Default value or error indicator
@@ -312,6 +348,113 @@ namespace UNBROKE_GUI
             return profileSetup;
         }
      
+        public bool InsertBudgetDate(int userId, DateTime startDate, DateTime endDate)
+        {   
+           // SQL query with parameters
+        string query = "INSERT INTO `budget` (`user_id`, `start_date`, `end_date`, `total_budget`, `savings`) " +
+                   "VALUES (@userId, @startDate, @endDate, 0.0, 0.0)";
+
+            // Create MySqlConnection
+             using (MySqlConnection connection = GetConnection())
+            {
+        try
+        {
+            connection.Open();
+
+            // Create MySqlCommand
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                // Add parameters to the command
+                command.Parameters.AddWithValue("@userId", userId);
+                command.Parameters.AddWithValue("@startDate", startDate);
+                command.Parameters.AddWithValue("@endDate", endDate);
+
+                // Execute the command
+                int rowsAffected = command.ExecuteNonQuery();
+                Console.WriteLine($"Rows affected: {rowsAffected}");
+
+                return rowsAffected > 0; // Insertion successful if rows affected > 0
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error inserting budget: {ex.Message}");
+            return false; // Insertion failed
+            }
+          }
+         }
+        public bool InsertBudget(int userId, Decimal budget)
+        {
+            // SQL query with parameters
+            string query = "INSERT INTO `budget` (`user_id`, `total_budget`,`savings` ) " +
+                       "VALUES (@userId, @budget, 0.0 )";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameters to the command
+                        command.Parameters.AddWithValue("@userId", userId);
+                        command.Parameters.AddWithValue("@budget", budget);
+
+
+                        // Execute the command
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine($"Rows affected: {rowsAffected}");
+
+                        return rowsAffected > 0; // Insertion successful if rows affected > 0
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error inserting budget: {ex.Message}");
+                    return false; // Insertion failed
+                }
+            }
+        }
+        public byte[] GetProfileImageByUsername(string username)
+        {
+            byte[] profileImage = null;
+
+            // SQL query to fetch profile image based on username
+            string query = "SELECT profile_image FROM `user` WHERE username = @username";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameters to the command
+                        command.Parameters.AddWithValue("@username", username);
+
+                        // Execute the command and fetch profile image
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            profileImage = (byte[])result; // Convert result to byte array
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching profile image: {ex.Message}");
+                    // Handle exception as needed
+                }
+            }
+
+            return profileImage;
+        }
 
     }
 }

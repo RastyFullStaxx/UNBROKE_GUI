@@ -134,6 +134,7 @@
             this.txtRentExpenseAmount.Size = new System.Drawing.Size(102, 17);
             this.txtRentExpenseAmount.TabIndex = 58;
             this.txtRentExpenseAmount.Text = "5000";
+            this.txtRentExpenseAmount.TextChanged += new System.EventHandler(this.txtRentExpenseAmount_TextChanged);
             // 
             // lblPesoSign3
             // 
@@ -207,6 +208,7 @@
             this.txtFoodExpenseAmount.Size = new System.Drawing.Size(102, 17);
             this.txtFoodExpenseAmount.TabIndex = 52;
             this.txtFoodExpenseAmount.Text = "5000";
+            this.txtFoodExpenseAmount.TextChanged += new System.EventHandler(this.txtFoodExpenseAmount_TextChanged);
             // 
             // lblPesoSign2
             // 

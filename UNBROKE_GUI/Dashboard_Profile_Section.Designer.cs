@@ -262,7 +262,7 @@
             this.lblFullNameDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFullNameDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullNameDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFullNameDisplay.Location = new System.Drawing.Point(100, 227);
+            this.lblFullNameDisplay.Location = new System.Drawing.Point(109, 228);
             this.lblFullNameDisplay.Name = "lblFullNameDisplay";
             this.lblFullNameDisplay.Size = new System.Drawing.Size(182, 28);
             this.lblFullNameDisplay.TabIndex = 55;

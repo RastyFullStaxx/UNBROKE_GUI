@@ -26,5 +26,10 @@ namespace UNBROKE_GUI
         {
             this.Dispose();
         }
+
+        private void Edit_Profile_Confirm_Dialogs_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

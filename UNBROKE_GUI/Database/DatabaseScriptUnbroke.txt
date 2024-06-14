@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 CREATE TABLE IF NOT EXISTS `budget` (
   `budget_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
+  `start_date` DATE NOT NULL DEFAULT CURRENT_DATE,
+  `end_date` DATE NOT NULL DEFAULT '9999-12-31',
   `total_budget` decimal(10,2) NOT NULL,
   `savings` decimal(10,2) NOT NULL,
   PRIMARY KEY (`budget_id`),

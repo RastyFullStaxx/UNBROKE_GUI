@@ -54,14 +54,44 @@ namespace UNBROKE_GUI
             if (string.IsNullOrWhiteSpace(txtTotalBudget.Text))
             {
                 txtTotalBudget.Text = "5000";
+
             }
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Budget_Wizard_Fixed_Inputs budget_Wizard_Fixed_Inputs = new Budget_Wizard_Fixed_Inputs(currentuser);
-            budget_Wizard_Fixed_Inputs.Show();
-            this.Dispose();
+            // Validate and parse the total budget entered by the user
+            if (decimal.TryParse(txtTotalBudget.Text, out decimal totalBudget))
+            {
+                // Insert the budget data into the database
+                DatabaseHelper db = DatabaseHelper.GetInstance();
+                int userId = db.GetUserIdByUsername(currentuser);
+
+                if (userId != -1)
+                {
+                    bool success = db.InsertBudget(userId, totalBudget);
+
+                    if (success)
+                    {
+                        // Show the next form (Budget_Wizard_Fixed_Inputs) and pass necessary data
+                        Budget_Wizard_Fixed_Inputs budget_Wizard_Fixed_Inputs = new Budget_Wizard_Fixed_Inputs(currentuser);
+                        budget_Wizard_Fixed_Inputs.Show();
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to save budget data. Please try again.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("User not found. Please log in again.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid total budget amount.");
+            }
         }
 
         private void Budget_Wizard_Input_Load(object sender, EventArgs e)

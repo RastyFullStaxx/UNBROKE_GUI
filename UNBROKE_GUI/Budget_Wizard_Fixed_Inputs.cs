@@ -48,7 +48,38 @@ namespace UNBROKE_GUI
 
         private void Budget_Wizard_Fixed_Inputs_Load(object sender, EventArgs e)
         {
+            UpdateTotalFixedExpense();
 
+        }
+
+        private void txtFoodExpenseAmount_TextChanged(object sender, EventArgs e)
+        {
+            UpdateTotalFixedExpense();
+        }
+
+        private void txtRentExpenseAmount_TextChanged(object sender, EventArgs e)
+        {
+            UpdateTotalFixedExpense();
+
+        }
+
+        private void UpdateTotalFixedExpense()
+        {
+            // Parse values from textboxes
+            if (decimal.TryParse(txtRentExpenseAmount.Text, out decimal rentExpense) &&
+                decimal.TryParse(txtFoodExpenseAmount.Text, out decimal foodExpense))
+            {
+                // Calculate the total
+                decimal totalFixedExpense = rentExpense + foodExpense;
+
+                // Update the label text
+                lblDisplayTotalFixedExpenseAmount.Text = $"₱{totalFixedExpense.ToString("0.00")}";
+            }
+            else
+            {
+                // Handle invalid input gracefully if needed
+                lblDisplayTotalFixedExpenseAmount.Text = "₱0.00";
+            }
         }
     }
 }
