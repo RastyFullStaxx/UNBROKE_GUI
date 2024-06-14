@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,35 @@ namespace UNBROKE_GUI
             DateTime currentDate = DateTime.Now;
             string formattedDate = currentDate.ToString("MMMM yyyy");
             lblDate.Text = formattedDate;
+
+            // Fetch user information from the database
+            DatabaseHelper db = DatabaseHelper.GetInstance();
+            try
+            {
+                // Get user ID using current username
+                int userId = db.GetUserIdByUsername(currentuser);
+
+                if (userId != -1)
+                {
+                    // Get total budget
+                    decimal totalBudget = db.GetTotalBudgetByID(userId);
+
+                    // Display total budget in the format ₱0.00
+                    lblTotalBalanceAmount.Text = $"₱{totalBudget.ToString("0.00")}"; // Formatting totalBudget to 2 decimal places
+
+                    // Get profile image
+
+                }
+                else
+                {
+                    MessageBox.Show("User not found. Please log in again.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching user profile: {ex.Message}");
+                // Handle exception as needed
+            }
 
         }
 
@@ -49,7 +79,35 @@ namespace UNBROKE_GUI
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // Fetch user information from the database
+            DatabaseHelper db = DatabaseHelper.GetInstance();
+            try
+            {
+                // Get user ID using current username
+                int userId = db.GetUserIdByUsername(currentuser);
 
+                if (userId != -1)
+                {
+                    // Get total budget
+                    decimal totalBudget = db.GetTotalBudgetByID(userId);
+
+                    // Display total budget in the format ₱0.00
+                    lblTotalBalanceAmount.Text = $"₱{totalBudget.ToString("0.00")}"; // Formatting totalBudget to 2 decimal places
+
+                    // Get profile image
+                    Console.WriteLine($"SUCCESS FETCHING" + totalBudget);
+
+                }
+                else
+                {
+                    MessageBox.Show("User not found. Please log in again.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error fetching user profile: {ex.Message}");
+                // Handle exception as needed
+            }
         }
 
         private void DashboardDate_TextChanged(object sender, EventArgs e)
