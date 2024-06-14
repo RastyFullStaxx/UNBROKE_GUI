@@ -24,46 +24,9 @@ namespace UNBROKE_GUI
             string formattedDate = currentDate.ToString("MMMM yyyy");
             lblDate.Text = formattedDate;
 
-            LoadUserData();
-
-
         }
 
-        private void LoadUserData()
-        {
-            DatabaseHelper db = DatabaseHelper.GetInstance();
-            try
-            {
-                int userId = db.GetUserIdByUsername(currentuser);
-
-                if (userId != -1)
-                {
-                    // Get total budget
-                    decimal totalBudget = db.GetTotalBudgetByID(userId);
-
-                    // Check if the budget is set
-                    if (totalBudget > 0)
-                    {
-                        // Display total budget in the format ₱0.00
-                        lblTotalBalanceAmount.Text = $"₱{totalBudget.ToString("0.00")}"; // Formatting totalBudget to 2 decimal places
-                    }
-                    else
-                    {
-                        lblTotalBalanceAmount.Text = "User did not set up budget yet";
-                    }
-
-                    // Get profile image logic (if any)
-                }
-                else
-                {
-                    lblTotalBalanceAmount.Text = "User did not set up budget yet";
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error fetching user profile: {ex.Message}");
-            }
-        }
+     
 
         private void btnAddTransaction_Click(object sender, EventArgs e)
         {
