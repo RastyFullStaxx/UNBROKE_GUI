@@ -388,42 +388,43 @@ namespace UNBROKE_GUI
 
             return profileSetup;
         }
-     
+
         public bool InsertBudgetDate(int userId, DateTime startDate, DateTime endDate)
-        {   
-           // SQL query with parameters
-        string query = "INSERT INTO `budget` (`user_id`, `start_date`, `end_date`, `total_budget`, `savings`) " +
-                   "VALUES (@userId, @startDate, @endDate, 0.0, 0.0)";
+        {
+            // SQL query with parameters
+            string query = "INSERT INTO `budget` (`user_id`, `start_date`, `end_date`, `total_budget`, `savings`) " +
+                           "VALUES (@userId, @startDate, @endDate, 0.0, 0.0)";
 
             // Create MySqlConnection
-             using (MySqlConnection connection = GetConnection())
+            using (MySqlConnection connection = GetConnection())
             {
-        try
-        {
-            connection.Open();
+                try
+                {
+                    connection.Open();
 
-            // Create MySqlCommand
-            using (MySqlCommand command = new MySqlCommand(query, connection))
-            {
-                // Add parameters to the command
-                command.Parameters.AddWithValue("@userId", userId);
-                command.Parameters.AddWithValue("@startDate", startDate);
-                command.Parameters.AddWithValue("@endDate", endDate);
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameters to the command
+                        command.Parameters.AddWithValue("@userId", userId);
+                        command.Parameters.AddWithValue("@startDate", startDate);
+                        command.Parameters.AddWithValue("@endDate", endDate);
 
-                // Execute the command
-                int rowsAffected = command.ExecuteNonQuery();
-                Console.WriteLine($"Rows affected: {rowsAffected}");
+                        // Execute the command
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine($"Rows affected: {rowsAffected}");
 
-                return rowsAffected > 0; // Insertion successful if rows affected > 0
+                        return rowsAffected > 0; // Insertion successful if rows affected > 0
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error inserting budget: {ex.Message}");
+                    return false; // Insertion failed
+                }
             }
         }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"Error inserting budget: {ex.Message}");
-            return false; // Insertion failed
-            }
-          }
-         }
+
         public bool InsertBudget(int userId, Decimal budget)
         {
             // SQL query with parameters
