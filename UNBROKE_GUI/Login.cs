@@ -26,7 +26,6 @@ namespace UNBROKE_GUI
             InitializeComponent();
 
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             //Placeholder classes
