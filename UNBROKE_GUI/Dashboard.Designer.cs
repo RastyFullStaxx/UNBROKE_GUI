@@ -40,14 +40,14 @@ namespace UNBROKE_GUI
             this.label1 = new System.Windows.Forms.Label();
             this.link_lblBudgetWizard = new System.Windows.Forms.LinkLabel();
             this.lblDate = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgNotificationIcon = new System.Windows.Forms.PictureBox();
             this.imgTotalBalanceTitle = new System.Windows.Forms.PictureBox();
             this.txtTransactionTitle = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnBudgetWizard2 = new System.Windows.Forms.Button();
             this.btnBudgetWizard1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBalanceTitle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,7 +156,7 @@ namespace UNBROKE_GUI
             this.link_lblBudgetWizard.TabIndex = 37;
             this.link_lblBudgetWizard.TabStop = true;
             this.link_lblBudgetWizard.Text = "Click here to create a new one.";
-            this.link_lblBudgetWizard.Click += btnBudget_Click;
+            this.link_lblBudgetWizard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_lblBudgetWizard_LinkClicked);
             // 
             // lblDate
             // 
@@ -170,14 +170,14 @@ namespace UNBROKE_GUI
             this.lblDate.TabIndex = 39;
             this.lblDate.Text = "June 2024";
             // 
-            // pictureBox1
+            // imgNotificationIcon
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(99, 384);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(16, 16);
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.imgNotificationIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgNotificationIcon.BackgroundImage")));
+            this.imgNotificationIcon.Location = new System.Drawing.Point(99, 384);
+            this.imgNotificationIcon.Name = "imgNotificationIcon";
+            this.imgNotificationIcon.Size = new System.Drawing.Size(16, 16);
+            this.imgNotificationIcon.TabIndex = 38;
+            this.imgNotificationIcon.TabStop = false;
             // 
             // imgTotalBalanceTitle
             // 
@@ -211,6 +211,7 @@ namespace UNBROKE_GUI
             this.btnProfile.Size = new System.Drawing.Size(43, 44);
             this.btnProfile.TabIndex = 12;
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnDashboard
             // 
@@ -235,6 +236,7 @@ namespace UNBROKE_GUI
             this.btnBudgetWizard2.Size = new System.Drawing.Size(61, 65);
             this.btnBudgetWizard2.TabIndex = 10;
             this.btnBudgetWizard2.UseVisualStyleBackColor = true;
+            this.btnBudgetWizard2.Click += new System.EventHandler(this.btnBudgetWizard2_Click);
             // 
             // btnBudgetWizard1
             // 
@@ -254,7 +256,7 @@ namespace UNBROKE_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imgNotificationIcon);
             this.Controls.Add(this.link_lblBudgetWizard);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNoBudgetActivity);
@@ -275,7 +277,7 @@ namespace UNBROKE_GUI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBalanceTitle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -297,7 +299,7 @@ namespace UNBROKE_GUI
         private System.Windows.Forms.Label lblNoBudgetActivity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel link_lblBudgetWizard;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox imgNotificationIcon;
         private System.Windows.Forms.Label lblDate;
     }
 }

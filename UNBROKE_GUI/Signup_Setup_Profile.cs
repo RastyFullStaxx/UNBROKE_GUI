@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace UNBROKE_GUI
 {
-    public partial class ProfileSetup : Form
+    public partial class Signup_Setup_Profile : Form
     {
         private string usernamePlaceholder = "Enter valid password";
         private string passwordPlaceholder = "Enter valid password";
 
 
-        public ProfileSetup()
+        public Signup_Setup_Profile()
         {
             InitializeComponent();
         }
@@ -25,7 +25,6 @@ namespace UNBROKE_GUI
         {
             //Placeholder classes
             Placeholder.SetPlaceholderUsername(txtUsername, usernamePlaceholder);
-            Placeholder.SetPlaceholderPassword(txtPassword, passwordPlaceholder, btnShowpass);
         }
 
         private void btnUploadPhoto_Click(object sender, EventArgs e)

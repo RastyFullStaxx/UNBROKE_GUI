@@ -164,6 +164,12 @@
     <Compile Include="A_Launch.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Budget_Loaded.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Budget_Loaded.Designer.cs">
+      <DependentUpon>Budget_Loaded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Budget_Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,11 +194,17 @@
     <Compile Include="Budget_Wizard_Input.Designer.cs">
       <DependentUpon>Budget_Wizard_Input.cs</DependentUpon>
     </Compile>
-    <Compile Include="Budget_Wizard_Result.cs">
+    <Compile Include="Budget_Wizard_Result_Expense_Tab.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Budget_Wizard_Result.Designer.cs">
-      <DependentUpon>Budget_Wizard_Result.cs</DependentUpon>
+    <Compile Include="Budget_Wizard_Result_Expense_Tab.Designer.cs">
+      <DependentUpon>Budget_Wizard_Result_Expense_Tab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Budget_Wizard_Result_Savings_Tab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Budget_Wizard_Result_Savings_Tab.Designer.cs">
+      <DependentUpon>Budget_Wizard_Result_Savings_Tab.cs</DependentUpon>
     </Compile>
     <Compile Include="B_Launch.cs">
       <SubType>Form</SubType>
@@ -206,7 +218,37 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dashboard_Profile_Section.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Profile_Section.Designer.cs">
+      <DependentUpon>Dashboard_Profile_Section.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseHelper.cs" />
+    <Compile Include="EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edit_Profile_Confirm_Dialogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edit_Profile_Confirm_Dialogs.Designer.cs">
+      <DependentUpon>Edit_Profile_Confirm_Dialogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Feedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Feedback.Designer.cs">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Financial_Library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Financial_Library.Designer.cs">
+      <DependentUpon>Financial_Library.cs</DependentUpon>
+    </Compile>
     <Compile Include="Greetings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,11 +256,11 @@
       <DependentUpon>Greetings.cs</DependentUpon>
     </Compile>
     <Compile Include="Placeholder.cs" />
-    <Compile Include="ProfileSetup.cs">
+    <Compile Include="Signup_Setup_Profile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfileSetup.Designer.cs">
-      <DependentUpon>ProfileSetup.cs</DependentUpon>
+    <Compile Include="Signup_Setup_Profile.Designer.cs">
+      <DependentUpon>Signup_Setup_Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Signup2.cs">
       <SubType>Form</SubType>
@@ -243,6 +285,9 @@
     <EmbeddedResource Include="A_Launch.resx">
       <DependentUpon>A_Launch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Budget_Loaded.resx">
+      <DependentUpon>Budget_Loaded.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Budget_Loading.resx">
       <DependentUpon>Budget_Loading.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,11 +300,29 @@
     <EmbeddedResource Include="Budget_Wizard_Input.resx">
       <DependentUpon>Budget_Wizard_Input.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Budget_Wizard_Result.resx">
-      <DependentUpon>Budget_Wizard_Result.cs</DependentUpon>
+    <EmbeddedResource Include="Budget_Wizard_Result_Expense_Tab.resx">
+      <DependentUpon>Budget_Wizard_Result_Expense_Tab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Budget_Wizard_Result_Savings_Tab.resx">
+      <DependentUpon>Budget_Wizard_Result_Savings_Tab.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard_Profile_Section.resx">
+      <DependentUpon>Dashboard_Profile_Section.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edit_Profile_Confirm_Dialogs.resx">
+      <DependentUpon>Edit_Profile_Confirm_Dialogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Feedback.resx">
+      <DependentUpon>Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Financial_Library.resx">
+      <DependentUpon>Financial_Library.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Greetings.resx">
       <DependentUpon>Greetings.cs</DependentUpon>
@@ -270,8 +333,8 @@
     <EmbeddedResource Include="B_Launch.resx">
       <DependentUpon>B_Launch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfileSetup.resx">
-      <DependentUpon>ProfileSetup.cs</DependentUpon>
+    <EmbeddedResource Include="Signup_Setup_Profile.resx">
+      <DependentUpon>Signup_Setup_Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>

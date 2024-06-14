@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Budget_Wizard_Date));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.lblTotalBudget = new System.Windows.Forms.Label();
+            this.lblSetDate = new System.Windows.Forms.Label();
             this.lblBudget = new System.Windows.Forms.Label();
             this.lblPrompt2 = new System.Windows.Forms.Label();
             this.lblPrompt1 = new System.Windows.Forms.Label();
@@ -62,18 +62,18 @@
             this.dateTimePicker.Size = new System.Drawing.Size(200, 31);
             this.dateTimePicker.TabIndex = 41;
             // 
-            // lblTotalBudget
+            // lblSetDate
             // 
-            this.lblTotalBudget.AutoSize = true;
-            this.lblTotalBudget.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTotalBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotalBudget.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBudget.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTotalBudget.Location = new System.Drawing.Point(35, 228);
-            this.lblTotalBudget.Name = "lblTotalBudget";
-            this.lblTotalBudget.Size = new System.Drawing.Size(119, 23);
-            this.lblTotalBudget.TabIndex = 42;
-            this.lblTotalBudget.Text = "Set Total Budget";
+            this.lblSetDate.AutoSize = true;
+            this.lblSetDate.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblSetDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSetDate.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetDate.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblSetDate.Location = new System.Drawing.Point(35, 228);
+            this.lblSetDate.Name = "lblSetDate";
+            this.lblSetDate.Size = new System.Drawing.Size(93, 23);
+            this.lblSetDate.TabIndex = 42;
+            this.lblSetDate.Text = "Set End Date";
             // 
             // lblBudget
             // 
@@ -133,7 +133,7 @@
             this.imgGiantLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgGiantLogo.BackgroundImage")));
             this.imgGiantLogo.Location = new System.Drawing.Point(-176, 333);
             this.imgGiantLogo.Name = "imgGiantLogo";
-            this.imgGiantLogo.Size = new System.Drawing.Size(426, 486);
+            this.imgGiantLogo.Size = new System.Drawing.Size(424, 486);
             this.imgGiantLogo.TabIndex = 46;
             this.imgGiantLogo.TabStop = false;
             // 
@@ -143,7 +143,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblTotalBudget);
+            this.Controls.Add(this.lblSetDate);
             this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblPrompt2);
@@ -164,7 +164,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTotalBudget;
+        private System.Windows.Forms.Label lblSetDate;
         private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblPrompt2;

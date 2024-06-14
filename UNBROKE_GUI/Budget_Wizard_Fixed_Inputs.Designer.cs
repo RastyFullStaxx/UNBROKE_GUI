@@ -29,37 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Budget_Wizard_Fixed_Inputs));
-            this.lblBudget = new System.Windows.Forms.Label();
+            this.lblBudgetWizard = new System.Windows.Forms.Label();
             this.lblPrompt2 = new System.Windows.Forms.Label();
             this.lblPrompt1 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.imgGiantLogo = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblDisplayTotalFixedExpenseAmount = new System.Windows.Forms.Label();
+            this.txtRentExpenseAmount = new System.Windows.Forms.TextBox();
+            this.lblPesoSign3 = new System.Windows.Forms.Label();
             this.imgFixedLogo = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalBudget = new System.Windows.Forms.Label();
-            this.txtTotalBudget = new System.Windows.Forms.TextBox();
-            this.lblPHP = new System.Windows.Forms.Label();
+            this.lblRent = new System.Windows.Forms.Label();
+            this.lblFood = new System.Windows.Forms.Label();
+            this.lblSetFixedExpense = new System.Windows.Forms.Label();
+            this.txtFoodExpenseAmount = new System.Windows.Forms.TextBox();
+            this.lblPesoSign2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgGiantLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFixedLogo)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblBudget
+            // lblBudgetWizard
             // 
-            this.lblBudget.AutoSize = true;
-            this.lblBudget.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBudget.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudget.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblBudget.Location = new System.Drawing.Point(93, 24);
-            this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(197, 42);
-            this.lblBudget.TabIndex = 41;
-            this.lblBudget.Text = "Budget Wizard";
+            this.lblBudgetWizard.AutoSize = true;
+            this.lblBudgetWizard.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblBudgetWizard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblBudgetWizard.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBudgetWizard.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblBudgetWizard.Location = new System.Drawing.Point(93, 24);
+            this.lblBudgetWizard.Name = "lblBudgetWizard";
+            this.lblBudgetWizard.Size = new System.Drawing.Size(197, 42);
+            this.lblBudgetWizard.TabIndex = 41;
+            this.lblBudgetWizard.Text = "Budget Wizard";
             // 
             // lblPrompt2
             // 
@@ -100,6 +99,7 @@
             this.btnNext.Size = new System.Drawing.Size(319, 55);
             this.btnNext.TabIndex = 40;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // imgGiantLogo
             // 
@@ -110,56 +110,43 @@
             this.imgGiantLogo.TabIndex = 46;
             this.imgGiantLogo.TabStop = false;
             // 
-            // label5
+            // lblDisplayTotalFixedExpenseAmount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Indigo;
-            this.label5.Location = new System.Drawing.Point(272, 209);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(21, 23);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "₱";
+            this.lblDisplayTotalFixedExpenseAmount.AutoSize = true;
+            this.lblDisplayTotalFixedExpenseAmount.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblDisplayTotalFixedExpenseAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDisplayTotalFixedExpenseAmount.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayTotalFixedExpenseAmount.ForeColor = System.Drawing.Color.Indigo;
+            this.lblDisplayTotalFixedExpenseAmount.Location = new System.Drawing.Point(232, 209);
+            this.lblDisplayTotalFixedExpenseAmount.Name = "lblDisplayTotalFixedExpenseAmount";
+            this.lblDisplayTotalFixedExpenseAmount.Size = new System.Drawing.Size(56, 23);
+            this.lblDisplayTotalFixedExpenseAmount.TabIndex = 60;
+            this.lblDisplayTotalFixedExpenseAmount.Text = "₱00.00";
+            this.lblDisplayTotalFixedExpenseAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // txtRentExpenseAmount
             // 
-            this.label4.AutoSize = true;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Indigo;
-            this.label4.Location = new System.Drawing.Point(232, 209);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 23);
-            this.label4.TabIndex = 60;
-            this.label4.Text = "00.00";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txtRentExpenseAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtRentExpenseAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtRentExpenseAmount.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRentExpenseAmount.Location = new System.Drawing.Point(134, 294);
+            this.txtRentExpenseAmount.Name = "txtRentExpenseAmount";
+            this.txtRentExpenseAmount.Size = new System.Drawing.Size(102, 17);
+            this.txtRentExpenseAmount.TabIndex = 58;
+            this.txtRentExpenseAmount.Text = "5000";
             // 
-            // textBox1
+            // lblPesoSign3
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(134, 294);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(102, 17);
-            this.textBox1.TabIndex = 58;
-            this.textBox1.Text = "5000";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(116, 291);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 23);
-            this.label3.TabIndex = 59;
-            this.label3.Text = "₱";
+            this.lblPesoSign3.AutoSize = true;
+            this.lblPesoSign3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblPesoSign3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPesoSign3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoSign3.ForeColor = System.Drawing.Color.Black;
+            this.lblPesoSign3.Location = new System.Drawing.Point(116, 291);
+            this.lblPesoSign3.Name = "lblPesoSign3";
+            this.lblPesoSign3.Size = new System.Drawing.Size(21, 23);
+            this.lblPesoSign3.TabIndex = 59;
+            this.lblPesoSign3.Text = "₱";
             // 
             // imgFixedLogo
             // 
@@ -170,92 +157,92 @@
             this.imgFixedLogo.TabIndex = 57;
             this.imgFixedLogo.TabStop = false;
             // 
-            // label2
+            // lblRent
             // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Indigo;
-            this.label2.Location = new System.Drawing.Point(46, 291);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 23);
-            this.label2.TabIndex = 56;
-            this.label2.Text = "Rent";
+            this.lblRent.AutoSize = true;
+            this.lblRent.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblRent.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRent.ForeColor = System.Drawing.Color.Indigo;
+            this.lblRent.Location = new System.Drawing.Point(46, 291);
+            this.lblRent.Name = "lblRent";
+            this.lblRent.Size = new System.Drawing.Size(40, 23);
+            this.lblRent.TabIndex = 56;
+            this.lblRent.Text = "Rent";
             // 
-            // label1
+            // lblFood
             // 
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Indigo;
-            this.label1.Location = new System.Drawing.Point(46, 249);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 23);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "Food";
+            this.lblFood.AutoSize = true;
+            this.lblFood.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblFood.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFood.ForeColor = System.Drawing.Color.Indigo;
+            this.lblFood.Location = new System.Drawing.Point(46, 249);
+            this.lblFood.Name = "lblFood";
+            this.lblFood.Size = new System.Drawing.Size(42, 23);
+            this.lblFood.TabIndex = 55;
+            this.lblFood.Text = "Food";
             // 
-            // lblTotalBudget
+            // lblSetFixedExpense
             // 
-            this.lblTotalBudget.AutoSize = true;
-            this.lblTotalBudget.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTotalBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotalBudget.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBudget.ForeColor = System.Drawing.Color.Indigo;
-            this.lblTotalBudget.Location = new System.Drawing.Point(92, 209);
-            this.lblTotalBudget.Name = "lblTotalBudget";
-            this.lblTotalBudget.Size = new System.Drawing.Size(134, 23);
-            this.lblTotalBudget.TabIndex = 54;
-            this.lblTotalBudget.Text = "Set Fixed Expenses";
-            this.lblTotalBudget.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSetFixedExpense.AutoSize = true;
+            this.lblSetFixedExpense.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblSetFixedExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblSetFixedExpense.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetFixedExpense.ForeColor = System.Drawing.Color.Indigo;
+            this.lblSetFixedExpense.Location = new System.Drawing.Point(92, 209);
+            this.lblSetFixedExpense.Name = "lblSetFixedExpense";
+            this.lblSetFixedExpense.Size = new System.Drawing.Size(134, 23);
+            this.lblSetFixedExpense.TabIndex = 54;
+            this.lblSetFixedExpense.Text = "Set Fixed Expenses";
+            this.lblSetFixedExpense.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtTotalBudget
+            // txtFoodExpenseAmount
             // 
-            this.txtTotalBudget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtTotalBudget.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalBudget.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalBudget.Location = new System.Drawing.Point(134, 252);
-            this.txtTotalBudget.Name = "txtTotalBudget";
-            this.txtTotalBudget.Size = new System.Drawing.Size(102, 17);
-            this.txtTotalBudget.TabIndex = 52;
-            this.txtTotalBudget.Text = "5000";
+            this.txtFoodExpenseAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtFoodExpenseAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFoodExpenseAmount.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoodExpenseAmount.Location = new System.Drawing.Point(134, 252);
+            this.txtFoodExpenseAmount.Name = "txtFoodExpenseAmount";
+            this.txtFoodExpenseAmount.Size = new System.Drawing.Size(102, 17);
+            this.txtFoodExpenseAmount.TabIndex = 52;
+            this.txtFoodExpenseAmount.Text = "5000";
             // 
-            // lblPHP
+            // lblPesoSign2
             // 
-            this.lblPHP.AutoSize = true;
-            this.lblPHP.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblPHP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPHP.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPHP.ForeColor = System.Drawing.Color.Black;
-            this.lblPHP.Location = new System.Drawing.Point(116, 249);
-            this.lblPHP.Name = "lblPHP";
-            this.lblPHP.Size = new System.Drawing.Size(21, 23);
-            this.lblPHP.TabIndex = 53;
-            this.lblPHP.Text = "₱";
+            this.lblPesoSign2.AutoSize = true;
+            this.lblPesoSign2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblPesoSign2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPesoSign2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoSign2.ForeColor = System.Drawing.Color.Black;
+            this.lblPesoSign2.Location = new System.Drawing.Point(116, 249);
+            this.lblPesoSign2.Name = "lblPesoSign2";
+            this.lblPesoSign2.Size = new System.Drawing.Size(21, 23);
+            this.lblPesoSign2.TabIndex = 53;
+            this.lblPesoSign2.Text = "₱";
             // 
             // Budget_Wizard_Fixed_Inputs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblDisplayTotalFixedExpenseAmount);
+            this.Controls.Add(this.txtRentExpenseAmount);
+            this.Controls.Add(this.lblPesoSign3);
             this.Controls.Add(this.imgFixedLogo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblTotalBudget);
-            this.Controls.Add(this.txtTotalBudget);
-            this.Controls.Add(this.lblPHP);
-            this.Controls.Add(this.lblBudget);
+            this.Controls.Add(this.lblRent);
+            this.Controls.Add(this.lblFood);
+            this.Controls.Add(this.lblSetFixedExpense);
+            this.Controls.Add(this.txtFoodExpenseAmount);
+            this.Controls.Add(this.lblPesoSign2);
+            this.Controls.Add(this.lblBudgetWizard);
             this.Controls.Add(this.lblPrompt2);
             this.Controls.Add(this.lblPrompt1);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.imgGiantLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Budget_Wizard_Fixed_Inputs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Wizard_Fixed_Inputs";
             this.Load += new System.EventHandler(this.Budget_Wizard_Fixed_Inputs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgGiantLogo)).EndInit();
@@ -271,20 +258,19 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblBudget;
+        private System.Windows.Forms.Label lblBudgetWizard;
         private System.Windows.Forms.Label lblPrompt2;
         private System.Windows.Forms.Label lblPrompt1;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.PictureBox imgGiantLogo;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblDisplayTotalFixedExpenseAmount;
+        private System.Windows.Forms.TextBox txtRentExpenseAmount;
+        private System.Windows.Forms.Label lblPesoSign3;
         private System.Windows.Forms.PictureBox imgFixedLogo;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblTotalBudget;
-        private System.Windows.Forms.TextBox txtTotalBudget;
-        private System.Windows.Forms.Label lblPHP;
+        private System.Windows.Forms.Label lblRent;
+        private System.Windows.Forms.Label lblFood;
+        private System.Windows.Forms.Label lblSetFixedExpense;
+        private System.Windows.Forms.TextBox txtFoodExpenseAmount;
+        private System.Windows.Forms.Label lblPesoSign2;
     }
 }

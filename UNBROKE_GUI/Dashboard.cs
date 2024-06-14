@@ -34,7 +34,9 @@ namespace UNBROKE_GUI
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-
+            Dashboard_Profile_Section dashboard_Profile_Section = new Dashboard_Profile_Section();
+            dashboard_Profile_Section.Show();
+            this.Dispose();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -66,6 +68,20 @@ namespace UNBROKE_GUI
         {
             Budget_Wizard_Date budget_Wizard_Date = new Budget_Wizard_Date();
             budget_Wizard_Date.Show();
+            this.Dispose();
+        }
+
+        private void link_lblBudgetWizard_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Budget_Wizard_Date budget_Wizard_Date = new Budget_Wizard_Date();
+            budget_Wizard_Date.Show();
+            this.Dispose();
+        }
+
+        private void btnBudgetWizard2_Click(object sender, EventArgs e)
+        {
+            Budget_Wizard_Result_Expense_Tab budget_Wizard_Result_Expense_Tab = new Budget_Wizard_Result_Expense_Tab();
+            budget_Wizard_Result_Expense_Tab.Show();
             this.Dispose();
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace UNBROKE_GUI
 {
-    partial class ProfileSetup
+    partial class Signup_Setup_Profile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileSetup));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup_Setup_Profile));
             this.btnUploadPhoto = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.lblFirstName = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnlFirstName = new System.Windows.Forms.Panel();
             this.lblProfileSetup = new System.Windows.Forms.Label();
-            this.btnShowpass = new System.Windows.Forms.Button();
             this.imgDefaultPhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.panel2.SuspendLayout();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.pnlLastName = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +47,7 @@
             this.btnUploadPhoto.FlatAppearance.BorderSize = 0;
             this.btnUploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPhoto.Image")));
-            this.btnUploadPhoto.Location = new System.Drawing.Point(237, 252);
+            this.btnUploadPhoto.Location = new System.Drawing.Point(250, 252);
             this.btnUploadPhoto.Name = "btnUploadPhoto";
             this.btnUploadPhoto.Size = new System.Drawing.Size(24, 24);
             this.btnUploadPhoto.TabIndex = 3;
@@ -69,40 +67,17 @@
             this.btnContinue.UseVisualStyleBackColor = true;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click_1);
             // 
-            // lblPassword
+            // lblFirstName
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblPassword.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblPassword.Location = new System.Drawing.Point(48, 397);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(74, 23);
-            this.lblPassword.TabIndex = 25;
-            this.lblPassword.Text = "Password";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblUsername.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblUsername.Location = new System.Drawing.Point(47, 329);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(79, 23);
-            this.lblUsername.TabIndex = 24;
-            this.lblUsername.Text = "Username";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(47, 421);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(245, 17);
-            this.txtPassword.TabIndex = 23;
-            this.txtPassword.UseSystemPasswordChar = true;
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblFirstName.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstName.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblFirstName.Location = new System.Drawing.Point(47, 329);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(82, 23);
+            this.lblFirstName.TabIndex = 24;
+            this.lblFirstName.Text = "First Name";
             // 
             // txtUsername
             // 
@@ -113,24 +88,15 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(245, 17);
             this.txtUsername.TabIndex = 22;
-            this.txtUsername.Text = "Enter valid username";
+            this.txtUsername.Text = "Enter first name";
             // 
-            // panel1
+            // pnlFirstName
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel1.Location = new System.Drawing.Point(20, 320);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(333, 56);
-            this.panel1.TabIndex = 26;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Controls.Add(this.btnShowpass);
-            this.panel2.Location = new System.Drawing.Point(21, 388);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 56);
-            this.panel2.TabIndex = 27;
+            this.pnlFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlFirstName.Location = new System.Drawing.Point(20, 320);
+            this.pnlFirstName.Name = "pnlFirstName";
+            this.pnlFirstName.Size = new System.Drawing.Size(333, 56);
+            this.pnlFirstName.TabIndex = 26;
             // 
             // lblProfileSetup
             // 
@@ -145,18 +111,6 @@
             this.lblProfileSetup.TabIndex = 35;
             this.lblProfileSetup.Text = "Profile Set Up";
             // 
-            // btnShowpass
-            // 
-            this.btnShowpass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShowpass.FlatAppearance.BorderSize = 0;
-            this.btnShowpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnShowpass.Image = ((System.Drawing.Image)(resources.GetObject("btnShowpass.Image")));
-            this.btnShowpass.Location = new System.Drawing.Point(294, 15);
-            this.btnShowpass.Name = "btnShowpass";
-            this.btnShowpass.Size = new System.Drawing.Size(24, 24);
-            this.btnShowpass.TabIndex = 36;
-            this.btnShowpass.UseVisualStyleBackColor = true;
-            // 
             // imgDefaultPhoto
             // 
             this.imgDefaultPhoto.ImageRotate = 0F;
@@ -167,27 +121,57 @@
             this.imgDefaultPhoto.TabIndex = 36;
             this.imgDefaultPhoto.TabStop = false;
             // 
-            // ProfileSetup
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblLastName.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastName.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblLastName.Location = new System.Drawing.Point(47, 402);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(81, 23);
+            this.lblLastName.TabIndex = 38;
+            this.lblLastName.Text = "Last Name";
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLastName.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(46, 426);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(245, 17);
+            this.txtLastName.TabIndex = 37;
+            this.txtLastName.Text = "Enter last name";
+            // 
+            // pnlLastName
+            // 
+            this.pnlLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlLastName.Location = new System.Drawing.Point(20, 393);
+            this.pnlLastName.Name = "pnlLastName";
+            this.pnlLastName.Size = new System.Drawing.Size(333, 56);
+            this.pnlLastName.TabIndex = 39;
+            // 
+            // Signup_Setup_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
+            this.Controls.Add(this.lblLastName);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.pnlLastName);
             this.Controls.Add(this.btnUploadPhoto);
             this.Controls.Add(this.imgDefaultPhoto);
             this.Controls.Add(this.lblProfileSetup);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUsername);
-            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.btnContinue);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnlFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProfileSetup";
+            this.Name = "Signup_Setup_Profile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.ProfileSetup_Load);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,14 +181,13 @@
         #endregion
         private System.Windows.Forms.Button btnUploadPhoto;
         private System.Windows.Forms.Button btnContinue;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnlFirstName;
         private System.Windows.Forms.Label lblProfileSetup;
-        private System.Windows.Forms.Button btnShowpass;
         private Guna.UI2.WinForms.Guna2CirclePictureBox imgDefaultPhoto;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.Panel pnlLastName;
     }
 }

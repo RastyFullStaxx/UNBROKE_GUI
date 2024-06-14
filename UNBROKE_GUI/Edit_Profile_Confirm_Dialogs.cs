@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace UNBROKE_GUI
 {
-    public partial class Budget_Wizard_Result : Form
+    public partial class Edit_Profile_Confirm_Dialogs : Form
     {
-        public Budget_Wizard_Result()
+        public Edit_Profile_Confirm_Dialogs()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnConfirmChanges_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
         }
 
-        private void Budget_Wizard_Result_Load(object sender, EventArgs e)
+        private void btnDeclineChanges_Click(object sender, EventArgs e)
         {
-
+            this.Dispose();
         }
     }
 }

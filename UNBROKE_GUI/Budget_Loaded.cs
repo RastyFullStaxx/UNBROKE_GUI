@@ -10,23 +10,18 @@ using System.Windows.Forms;
 
 namespace UNBROKE_GUI
 {
-    public partial class Signup2 : Form
+    public partial class Budget_Loaded : Form
     {
-        public Signup2()
+        public Budget_Loaded()
         {
             InitializeComponent();
         }
 
-        private void btnSetupProfile_Click(object sender, EventArgs e)
+        private void btnNext_Click(object sender, EventArgs e)
         {
-            Signup_Setup_Profile profileSetup = new Signup_Setup_Profile();
-            profileSetup.Show();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
             this.Dispose();
-        }
-
-        private void Signup2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
