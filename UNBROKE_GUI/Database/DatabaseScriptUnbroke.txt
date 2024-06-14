@@ -9,13 +9,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password_hash` varchar(255) NOT NULL,
-  `first_name` VARCHAR(50) NOT NULL,
-  `last_name` VARCHAR(50) NOT NULL,
+  `first_name` VARCHAR(50),
+  `last_name` VARCHAR(50),
   `profile_image` LONGBLOB,
   `profile_setup` BOOLEAN NOT NULL DEFAULT FALSE,
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci AUTO_INCREMENT = 1000;
-
 
 -- Create table `budget`
 CREATE TABLE IF NOT EXISTS `budget` (

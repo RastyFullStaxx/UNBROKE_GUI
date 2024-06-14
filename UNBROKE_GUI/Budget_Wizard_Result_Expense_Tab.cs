@@ -12,9 +12,12 @@ namespace UNBROKE_GUI
 {
     public partial class Budget_Wizard_Result_Expense_Tab : Form
     {
-        public Budget_Wizard_Result_Expense_Tab()
+        private string currentuser;
+
+        public Budget_Wizard_Result_Expense_Tab(string currentuser)
         {
             InitializeComponent();
+            this.currentuser = currentuser;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,21 +32,21 @@ namespace UNBROKE_GUI
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(currentuser);
             dashboard.Show();
             this.Dispose();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            Dashboard_Profile_Section profile = new Dashboard_Profile_Section();
+            Dashboard_Profile_Section profile = new Dashboard_Profile_Section(currentuser);
             profile.Show();
             this.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Budget_Wizard_Result_Savings_Tab budget_Wizard_Result_Savings_Tab = new Budget_Wizard_Result_Savings_Tab();
+            Budget_Wizard_Result_Savings_Tab budget_Wizard_Result_Savings_Tab = new Budget_Wizard_Result_Savings_Tab(currentuser);
             budget_Wizard_Result_Savings_Tab.Show();
             this.Dispose();
         }

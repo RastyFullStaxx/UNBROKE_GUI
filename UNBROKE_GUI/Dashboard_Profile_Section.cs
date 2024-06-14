@@ -12,14 +12,17 @@ namespace UNBROKE_GUI
 {
     public partial class Dashboard_Profile_Section : Form
     {
-        public Dashboard_Profile_Section()
+        private string currentuser;
+
+        public Dashboard_Profile_Section(String currentUser)
         {
             InitializeComponent();
+            this.currentuser = currentUser;
         }
 
         private void imgProfileIcon_Click(object sender, EventArgs e)
         {
-            EditProfile editProfile = new EditProfile();
+            EditProfile editProfile = new EditProfile(currentuser);
             editProfile.Show();
             this.Dispose();
         }
@@ -31,77 +34,77 @@ namespace UNBROKE_GUI
 
         private void imgFeedbackIcon_Click(object sender, EventArgs e)
         {
-            Feedback feedback = new Feedback();
+            Feedback feedback = new Feedback(currentuser);
             feedback.Show();
             this.Dispose();
         }
 
         private void lblActivity_Click(object sender, EventArgs e)
         {
-            EditProfile editProfile = new EditProfile();
+            EditProfile editProfile = new EditProfile(currentuser);
             editProfile.Show();
             this.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Feedback feedback = new Feedback();
+            Feedback feedback = new Feedback(currentuser);
             feedback.Show();
             this.Dispose();
         }
 
         private void btnEditProfile_Click(object sender, EventArgs e)
         {
-            EditProfile editProfile = new EditProfile();
+            EditProfile editProfile = new EditProfile(currentuser);
             editProfile.Show();
             this.Dispose();
         }
 
         private void imgFinancialResourceIcon_Click(object sender, EventArgs e)
         {
-            Financial_Library financial_Library = new Financial_Library();
+            Financial_Library financial_Library = new Financial_Library(currentuser);
             financial_Library.Show();
             this.Dispose();
         }
 
         private void lblFinancialResources_Click(object sender, EventArgs e)
         {
-            Financial_Library financial_Library = new Financial_Library();
+            Financial_Library financial_Library = new Financial_Library(currentuser);
             financial_Library.Show();
             this.Dispose();
         }
 
         private void btnFinancialResources_Click(object sender, EventArgs e)
         {
-            Financial_Library financial_Library = new Financial_Library();
+            Financial_Library financial_Library = new Financial_Library(currentuser);
             financial_Library.Show();
             this.Dispose();
         }
 
         private void panel2_Click(object sender, EventArgs e)
         {
-            Financial_Library financial_Library = new Financial_Library();
+            Financial_Library financial_Library = new Financial_Library(currentuser);
             financial_Library.Show();
             this.Dispose();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(currentuser);
             dashboard.Show();
             this.Dispose();
         }
 
         private void pnlEditProfile_Click(object sender, EventArgs e)
         {
-            EditProfile editProfile = new EditProfile();
+            EditProfile editProfile = new EditProfile(currentuser);
             editProfile.Show();
             this.Dispose();
         }
 
         private void lblFeedback_Click(object sender, EventArgs e)
         {
-            Feedback feedback = new Feedback();
+            Feedback feedback = new Feedback(currentuser);
             feedback.Show();
             this.Dispose();
         }

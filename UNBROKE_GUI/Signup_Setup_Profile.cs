@@ -12,9 +12,8 @@ using System.Windows.Forms;
 
 namespace UNBROKE_GUI
 {
-    public partial class Signup_Setup_Profile : Form
+    public partial class ProfileSetup : Form
     {
-
         private string firstnamePlaceholder = "Enter your first name";
         private string lastnamePlaceholder = "Enter your last name";
         private DatabaseHelper db = DatabaseHelper.GetInstance();
@@ -33,7 +32,6 @@ namespace UNBROKE_GUI
         private void ProfileSetup_Load(object sender, EventArgs e)
         {
             //Placeholder classes
-
             Placeholder.SetPlaceholderUsername(txtFName, firstnamePlaceholder);
             Placeholder.SetPlaceholderUsername(txtLName, lastnamePlaceholder);
 
@@ -62,10 +60,11 @@ namespace UNBROKE_GUI
 
             bool profile = db.SetupProfile(userID, firstname, lastname, profileImageBytes, isProfileDone);
 
-            if(profile)
+            if (profile)
             {
                 Console.WriteLine("Set up successfully");
-            }else
+            }
+            else
             {
                 Console.WriteLine("Failed to set up");
             }

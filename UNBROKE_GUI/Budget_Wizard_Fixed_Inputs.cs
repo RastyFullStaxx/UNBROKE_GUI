@@ -12,9 +12,11 @@ namespace UNBROKE_GUI
 {
     public partial class Budget_Wizard_Fixed_Inputs : Form
     {
-        public Budget_Wizard_Fixed_Inputs()
+        private string currentuser;
+        public Budget_Wizard_Fixed_Inputs(string currentuser)
         {
             InitializeComponent();
+            this.currentuser = currentuser;
         }
 
         private void lblPrompt1_Click(object sender, EventArgs e)
@@ -39,7 +41,7 @@ namespace UNBROKE_GUI
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Budget_Loading budget_Loading = new Budget_Loading();
+            Budget_Loading budget_Loading = new Budget_Loading(currentuser);
             budget_Loading.Show();
             this.Dispose();
         }

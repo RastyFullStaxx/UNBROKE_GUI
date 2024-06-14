@@ -12,9 +12,12 @@ namespace UNBROKE_GUI
 {
     public partial class Financial_Library : Form
     {
-        public Financial_Library()
+        private string currentuser;
+
+        public Financial_Library(String currentUser)
         {
             InitializeComponent();
+            this.currentuser = currentUser;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -29,7 +32,7 @@ namespace UNBROKE_GUI
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            Dashboard_Profile_Section dashboard_Profile_Section = new Dashboard_Profile_Section();
+            Dashboard_Profile_Section dashboard_Profile_Section = new Dashboard_Profile_Section(currentuser);
             dashboard_Profile_Section.Show();
             this.Dispose();
         }

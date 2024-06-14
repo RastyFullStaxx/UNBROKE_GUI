@@ -50,20 +50,18 @@ namespace UNBROKE_GUI
             if (success)
             {
                 Console.WriteLine("New user inserted");
+
+                // Proceed to profile setup form
+                ProfileSetup profileSetupForm = new ProfileSetup(username);
+                profileSetupForm.Show();
+                this.Dispose();
             }
             else
             {
                 Console.WriteLine("Failed to insert new user");
             }
-
-
-            Signup2 signup = new Signup2(username);
-            signup.Show();
-            this.Dispose();
-
-
-
         }
+
 
         private void GotoLogin_Click(object sender, LinkLabelLinkClickedEventArgs e)
         {

@@ -75,9 +75,12 @@ namespace UNBROKE_GUI
                     break;
 
                 case Authentication.LoginStatus.InvalidCredentials:
-                    MessageBox.Show("Invalid username or password.");
-                    break;
+                    // Update UI elements for invalid credentials
+                    lblInvalid.Visible = true;
+                    guna2TextBox1.Visible = true;
+                    guna2TextBox2.Visible = true;
 
+                    break;
                 case Authentication.LoginStatus.Error:
                     MessageBox.Show("An error occurred during login.");
                     break;

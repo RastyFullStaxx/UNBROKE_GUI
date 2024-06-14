@@ -14,7 +14,7 @@ namespace UNBROKE_GUI
         private DatabaseHelper()
         {
             // Initialize connection string here
-            connectionString = "server=localhost;database=unbroke;uid=root;pwd='';";
+            connectionString = "server=localhost;database=unbroke;uid=root;pwd='180503';";
         }
 
         // Public static method to get the singleton instance
@@ -57,7 +57,8 @@ namespace UNBROKE_GUI
         public bool InsertUser(string username, string hashedPassword)
         {
             // SQL query with parameters
-            string query = "INSERT INTO `user` (`username`, `password_hash`) VALUES (@username, @password)";
+            string query = "INSERT INTO `user` (`username`, `password_hash`, `first_name`, `last_name`) " +
+                           "VALUES (@username, @password, '', '')"; // Provide default empty values or NULLs
 
             // Create MySqlConnection
             using (MySqlConnection connection = GetConnection())
@@ -88,6 +89,8 @@ namespace UNBROKE_GUI
                 }
             }
         }
+
+
         public bool SetupProfile(int userId, string firstname, string lastname, byte[] profileImage, bool profileSetup)
         {
             // SQL query with parameters

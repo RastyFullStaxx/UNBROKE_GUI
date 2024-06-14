@@ -1,6 +1,6 @@
 ﻿namespace UNBROKE_GUI
 {
-    partial class Signup_Setup_Profile
+    partial class ProfileSetup
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signup_Setup_Profile));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileSetup));
             this.btnUploadPhoto = new System.Windows.Forms.Button();
             this.btnContinue = new System.Windows.Forms.Button();
-
             this.lblLName = new System.Windows.Forms.Label();
             this.lblFName = new System.Windows.Forms.Label();
             this.txtFName = new System.Windows.Forms.TextBox();
@@ -40,7 +39,6 @@
             this.lblProfileSetup = new System.Windows.Forms.Label();
             this.imgDefaultPhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtLName = new System.Windows.Forms.TextBox();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,9 +102,8 @@
             this.txtFName.TabIndex = 22;
             this.txtFName.Text = "Enter first name";
             // 
-            // pnlFirstName
+            // panel1
             // 
-
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel1.Location = new System.Drawing.Point(20, 320);
             this.panel1.Name = "panel1";
@@ -116,7 +113,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Controls.Add(this.txtLName);
             this.panel2.Location = new System.Drawing.Point(21, 388);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 56);
@@ -145,13 +141,12 @@
             this.imgDefaultPhoto.TabIndex = 36;
             this.imgDefaultPhoto.TabStop = false;
             // 
-
             // txtLName
             // 
             this.txtLName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtLName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLName.Location = new System.Drawing.Point(25, 30);
+            this.txtLName.Location = new System.Drawing.Point(46, 425);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(245, 13);
             this.txtLName.TabIndex = 37;
@@ -162,26 +157,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
-            this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtLastName);
-            this.Controls.Add(this.pnlLastName);
+            this.Controls.Add(this.txtLName);
             this.Controls.Add(this.btnUploadPhoto);
             this.Controls.Add(this.imgDefaultPhoto);
             this.Controls.Add(this.lblProfileSetup);
-
             this.Controls.Add(this.lblLName);
             this.Controls.Add(this.lblFName);
             this.Controls.Add(this.txtFName);
             this.Controls.Add(this.btnContinue);
-            this.Controls.Add(this.pnlFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Signup_Setup_Profile";
+            this.Name = "ProfileSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.ProfileSetup_Load);
-
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -12,14 +12,17 @@ namespace UNBROKE_GUI
 {
     public partial class Budget_Loaded : Form
     {
-        public Budget_Loaded()
+        private string currentuser;
+
+        public Budget_Loaded(string currentuser)
         {
             InitializeComponent();
+            this.currentuser = currentuser;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard();
+            Dashboard dashboard = new Dashboard(currentuser);
             dashboard.Show();
             this.Dispose();
         }

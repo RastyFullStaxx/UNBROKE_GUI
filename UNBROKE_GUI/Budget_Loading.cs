@@ -12,9 +12,12 @@ namespace UNBROKE_GUI
 {
     public partial class Budget_Loading : Form
     {
-        public Budget_Loading()
+        private string currentuser;
+
+        public Budget_Loading(String currentUser)
         {
             InitializeComponent();
+            this.currentuser = currentUser;
         }
 
         private void Budget_Loading_Load(object sender, EventArgs e)
@@ -29,7 +32,7 @@ namespace UNBROKE_GUI
                 loadingTimer.Stop(); // Stop the timer
 
                 // Load the next form
-                Budget_Loaded budgetLoadedForm = new Budget_Loaded();
+                Budget_Loaded budgetLoadedForm = new Budget_Loaded(currentuser);
                 budgetLoadedForm.Show();
 
                 // Close the current loading form

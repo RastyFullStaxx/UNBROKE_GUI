@@ -12,14 +12,17 @@ namespace UNBROKE_GUI
 {
     public partial class Budget_Wizard_Date : Form
     {
-        public Budget_Wizard_Date()
+        private string currentuser;
+
+        public Budget_Wizard_Date(string currentuser)
         {
             InitializeComponent();
+            this.currentuser = currentuser;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input();
+            Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser);
             budget_Wizard_Input.Show();
             this.Dispose();
         }
