@@ -85,6 +85,7 @@
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Poppins", 39.75F, System.Drawing.FontStyle.Bold);
             this.lblUser.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblUser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUser.Location = new System.Drawing.Point(40, 147);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(107, 93);

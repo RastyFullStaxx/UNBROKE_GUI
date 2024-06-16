@@ -126,6 +126,7 @@
             this.lblUsernameDisplay.Size = new System.Drawing.Size(70, 22);
             this.lblUsernameDisplay.TabIndex = 1;
             this.lblUsernameDisplay.Text = "username";
+            this.lblUsernameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlPassword
             // 
@@ -152,6 +153,7 @@
             // 
             this.lblUserpassDisplay.AutoSize = true;
             this.lblUserpassDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserpassDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUserpassDisplay.Location = new System.Drawing.Point(26, 26);
             this.lblUserpassDisplay.Name = "lblUserpassDisplay";
             this.lblUserpassDisplay.Size = new System.Drawing.Size(93, 22);
@@ -163,6 +165,7 @@
             // 
             this.lblFirstNameDisplay.AutoSize = true;
             this.lblFirstNameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFirstNameDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblFirstNameDisplay.Location = new System.Drawing.Point(26, 27);
             this.lblFirstNameDisplay.Name = "lblFirstNameDisplay";
             this.lblFirstNameDisplay.Size = new System.Drawing.Size(97, 22);
@@ -194,6 +197,7 @@
             // 
             this.lblLastNameDisplay.AutoSize = true;
             this.lblLastNameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastNameDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblLastNameDisplay.Location = new System.Drawing.Point(26, 26);
             this.lblLastNameDisplay.Name = "lblLastNameDisplay";
             this.lblLastNameDisplay.Size = new System.Drawing.Size(97, 22);

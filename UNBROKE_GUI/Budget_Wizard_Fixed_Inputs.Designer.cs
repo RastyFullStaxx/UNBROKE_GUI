@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Budget_Wizard_Fixed_Inputs));
-            this.lblBudgetWizard = new System.Windows.Forms.Label();
             this.lblPrompt2 = new System.Windows.Forms.Label();
             this.lblPrompt1 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
@@ -43,22 +42,11 @@
             this.lblSetFixedExpense = new System.Windows.Forms.Label();
             this.txtFoodExpenseAmount = new System.Windows.Forms.TextBox();
             this.lblPesoSign2 = new System.Windows.Forms.Label();
+            this.imgBudgetWizardTitle = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgGiantLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFixedLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblBudgetWizard
-            // 
-            this.lblBudgetWizard.AutoSize = true;
-            this.lblBudgetWizard.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblBudgetWizard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBudgetWizard.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudgetWizard.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblBudgetWizard.Location = new System.Drawing.Point(93, 24);
-            this.lblBudgetWizard.Name = "lblBudgetWizard";
-            this.lblBudgetWizard.Size = new System.Drawing.Size(197, 42);
-            this.lblBudgetWizard.TabIndex = 41;
-            this.lblBudgetWizard.Text = "Budget Wizard";
             // 
             // lblPrompt2
             // 
@@ -117,7 +105,7 @@
             this.lblDisplayTotalFixedExpenseAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDisplayTotalFixedExpenseAmount.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayTotalFixedExpenseAmount.ForeColor = System.Drawing.Color.Indigo;
-            this.lblDisplayTotalFixedExpenseAmount.Location = new System.Drawing.Point(232, 209);
+            this.lblDisplayTotalFixedExpenseAmount.Location = new System.Drawing.Point(258, 209);
             this.lblDisplayTotalFixedExpenseAmount.Name = "lblDisplayTotalFixedExpenseAmount";
             this.lblDisplayTotalFixedExpenseAmount.Size = new System.Drawing.Size(56, 23);
             this.lblDisplayTotalFixedExpenseAmount.TabIndex = 60;
@@ -223,11 +211,21 @@
             this.lblPesoSign2.TabIndex = 53;
             this.lblPesoSign2.Text = "₱";
             // 
+            // imgBudgetWizardTitle
+            // 
+            this.imgBudgetWizardTitle.Image = ((System.Drawing.Image)(resources.GetObject("imgBudgetWizardTitle.Image")));
+            this.imgBudgetWizardTitle.Location = new System.Drawing.Point(98, 41);
+            this.imgBudgetWizardTitle.Name = "imgBudgetWizardTitle";
+            this.imgBudgetWizardTitle.Size = new System.Drawing.Size(179, 28);
+            this.imgBudgetWizardTitle.TabIndex = 75;
+            this.imgBudgetWizardTitle.TabStop = false;
+            // 
             // Budget_Wizard_Fixed_Inputs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
+            this.Controls.Add(this.imgBudgetWizardTitle);
             this.Controls.Add(this.lblDisplayTotalFixedExpenseAmount);
             this.Controls.Add(this.txtRentExpenseAmount);
             this.Controls.Add(this.lblPesoSign3);
@@ -237,7 +235,6 @@
             this.Controls.Add(this.lblSetFixedExpense);
             this.Controls.Add(this.txtFoodExpenseAmount);
             this.Controls.Add(this.lblPesoSign2);
-            this.Controls.Add(this.lblBudgetWizard);
             this.Controls.Add(this.lblPrompt2);
             this.Controls.Add(this.lblPrompt1);
             this.Controls.Add(this.btnNext);
@@ -249,6 +246,7 @@
             this.Load += new System.EventHandler(this.Budget_Wizard_Fixed_Inputs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgGiantLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFixedLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,7 +258,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblBudgetWizard;
         private System.Windows.Forms.Label lblPrompt2;
         private System.Windows.Forms.Label lblPrompt1;
         private System.Windows.Forms.Button btnNext;
@@ -274,5 +271,6 @@
         private System.Windows.Forms.Label lblSetFixedExpense;
         private System.Windows.Forms.TextBox txtFoodExpenseAmount;
         private System.Windows.Forms.Label lblPesoSign2;
+        private System.Windows.Forms.PictureBox imgBudgetWizardTitle;
     }
 }

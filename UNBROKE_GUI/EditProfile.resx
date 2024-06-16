@@ -121,7 +121,7 @@
   <data name="btnEditUsername.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAL9JREFUOE+tUgERwjAQewmVMAlIQAIOQAIOBoqQgIRJqIRJgKTke5S2u8KRu9zt
+        DAAACwwBP0AiyAAAAL9JREFUOE+tUgERwjAQewmVMAlIQAIOQAIOBoqQgIRJqIRJgKTke5S2u8KRu9zt
         k09ua2ff4mI2gQu4zmZnF4MMMiSxAfkRfIiR4vwmJF7NjspkQP8MkzcaPtB03sH8JnhuhfkZIRdotwK8
         flgL3QLo22HCDY0FoG+HCTc1ZnDRPbEOE76gMQPaXt4KFodaQEutgh04aeyjV9ADdpfiP/mhoNz/WwHI
         Ox9hVcBT9pJRRsVTwQHkHfOnGeXplTZ7Ao9CqioWpIYIAAAAAElFTkSuQmCC
@@ -130,7 +130,7 @@
   <data name="btnEditUserPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DQAACw0B7QfALAAAAL9JREFUOE+tUgERwjAQewmVMAlIQAIOQAIOBoqQgIRJqIRJgKTke5S2u8KRu9zt
+        DAAACwwBP0AiyAAAAL9JREFUOE+tUgERwjAQewmVMAlIQAIOQAIOBoqQgIRJqIRJgKTke5S2u8KRu9zt
         k09ua2ff4mI2gQu4zmZnF4MMMiSxAfkRfIiR4vwmJF7NjspkQP8MkzcaPtB03sH8JnhuhfkZIRdotwK8
         flgL3QLo22HCDY0FoG+HCTc1ZnDRPbEOE76gMQPaXt4KFodaQEutgh04aeyjV9ADdpfiP/mhoNz/WwHI
         Ox9hVcBT9pJRRsVTwQHkHfOnGeXplTZ7Ao9CqioWpIYIAAAAAElFTkSuQmCC
@@ -157,7 +157,7 @@
   <data name="btnSave.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAVcAAAA3CAYAAAC4sgn2AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAA4pJREFUeF7t2z1SG0EQhmEdQUfQETiCboBvADeAG0DoDIXOpMxkUgaZyBwqdKjQ
+        EAAACxABrSO9dQAAA4pJREFUeF7t2z1SG0EQhmEdQUfQETiCboBvADeAG0DoDIXOpMxkUgaZyBwqdKjQ
         IaHD9XzSNjTNLNjstAPq7aqnMLM/dvTWMMKTONeTybxYFPuiAwAM2hXLYtYn9PWUi9Pipqi9AADwNvVz
         2if1OFooVODaAwCAv6OOPge2fMOOFQDauLGwzsIFAMA4c8V1FRYBAOMsFFfOWgGgrb3iWrsAABiBuAJA
         AuIKAAmIKwAkIK4AkIC4AkAC4goACYgrACQgrgCQgLgCQALiCgAJiCsAJCCuAJCAuAJAAuKKNOvz8+7n

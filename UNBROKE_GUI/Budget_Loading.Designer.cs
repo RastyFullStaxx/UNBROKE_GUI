@@ -49,6 +49,7 @@
             // 
             // imgLogo
             // 
+            this.imgLogo.BackColor = System.Drawing.Color.Transparent;
             this.imgLogo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgLogo.BackgroundImage")));
             this.imgLogo.Location = new System.Drawing.Point(72, 67);
             this.imgLogo.Name = "imgLogo";

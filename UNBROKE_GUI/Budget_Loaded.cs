@@ -31,5 +31,13 @@ namespace UNBROKE_GUI
         {
 
         }
+
+        private void btnGoToBudgetWizardResults_Click(object sender, EventArgs e)
+        {
+            Budget_Wizard_Result_Expense_Tab budget_Wizard_Result_Expense_Tab = new Budget_Wizard_Result_Expense_Tab(currentuser);
+            budget_Wizard_Result_Expense_Tab.Show();
+            this.Dispose();
+
+        }
     }
 }
