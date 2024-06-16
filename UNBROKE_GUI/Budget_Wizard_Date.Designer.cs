@@ -32,13 +32,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.lblSetDate = new System.Windows.Forms.Label();
-            this.lblBudget = new System.Windows.Forms.Label();
             this.lblPrompt2 = new System.Windows.Forms.Label();
             this.lblPrompt1 = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.imgGiantLogo = new System.Windows.Forms.PictureBox();
+            this.imgBudgetWizardTitle = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgGiantLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -74,19 +75,6 @@
             this.lblSetDate.Size = new System.Drawing.Size(93, 23);
             this.lblSetDate.TabIndex = 42;
             this.lblSetDate.Text = "Set End Date";
-            // 
-            // lblBudget
-            // 
-            this.lblBudget.AutoSize = true;
-            this.lblBudget.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBudget.Font = new System.Drawing.Font("Poppins SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBudget.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblBudget.Location = new System.Drawing.Point(93, 24);
-            this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(197, 42);
-            this.lblBudget.TabIndex = 41;
-            this.lblBudget.Text = "Budget Wizard";
             // 
             // lblPrompt2
             // 
@@ -137,14 +125,23 @@
             this.imgGiantLogo.TabIndex = 46;
             this.imgGiantLogo.TabStop = false;
             // 
+            // imgBudgetWizardTitle
+            // 
+            this.imgBudgetWizardTitle.Image = ((System.Drawing.Image)(resources.GetObject("imgBudgetWizardTitle.Image")));
+            this.imgBudgetWizardTitle.Location = new System.Drawing.Point(98, 41);
+            this.imgBudgetWizardTitle.Name = "imgBudgetWizardTitle";
+            this.imgBudgetWizardTitle.Size = new System.Drawing.Size(179, 28);
+            this.imgBudgetWizardTitle.TabIndex = 76;
+            this.imgBudgetWizardTitle.TabStop = false;
+            // 
             // Budget_Wizard_Date
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
+            this.Controls.Add(this.imgBudgetWizardTitle);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblSetDate);
-            this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.lblPrompt2);
             this.Controls.Add(this.lblPrompt1);
@@ -156,6 +153,7 @@
             this.Load += new System.EventHandler(this.Budget_Wizard_Date_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgGiantLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,11 +163,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblSetDate;
-        private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Label lblPrompt2;
         private System.Windows.Forms.Label lblPrompt1;
         private System.Windows.Forms.PictureBox imgGiantLogo;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.PictureBox imgBudgetWizardTitle;
     }
 }

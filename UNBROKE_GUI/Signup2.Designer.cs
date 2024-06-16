@@ -1,4 +1,6 @@
-﻿namespace UNBROKE_GUI
+﻿using System.Drawing;
+
+namespace UNBROKE_GUI
 {
     partial class Signup2
     {
@@ -42,6 +44,7 @@
             this.imgAlmostThere.Size = new System.Drawing.Size(243, 246);
             this.imgAlmostThere.TabIndex = 0;
             this.imgAlmostThere.TabStop = false;
+            this.imgAlmostThere.BackColor = Color.Transparent;
             // 
             // btnSetupProfile
             // 
