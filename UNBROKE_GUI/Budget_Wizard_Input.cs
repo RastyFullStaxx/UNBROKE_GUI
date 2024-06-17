@@ -69,13 +69,13 @@ namespace UNBROKE_GUI
 
                 if (userId != -1)
                 {
-                    bool success = db.InsertBudget(userId, totalBudget);
+                    bool success = db.InsertBudget(userId, totalBudget, DateTime.MinValue, null);
 
                     if (success)
                     {
-                        // Show the next form (Budget_Wizard_Fixed_Inputs) and pass necessary data
-                        Budget_Wizard_Fixed_Inputs budget_Wizard_Fixed_Inputs = new Budget_Wizard_Fixed_Inputs(currentuser);
-                        budget_Wizard_Fixed_Inputs.Show();
+                        // Show the Budget_Wizard_Date form and pass necessary data
+                        Budget_Wizard_Fixed_Inputs budget_Wizard_Date = new Budget_Wizard_Fixed_Inputs(currentuser);
+                        budget_Wizard_Date.Show();
                         this.Dispose();
                     }
                     else
@@ -85,6 +85,7 @@ namespace UNBROKE_GUI
                 }
                 else
                 {
+                    MessageBox.Show("User not found. Please log in again.");
                 }
             }
             else
@@ -93,7 +94,7 @@ namespace UNBROKE_GUI
             }
         }
 
-        private void Budget_Wizard_Input_Load(object sender, EventArgs e)
+            private void Budget_Wizard_Input_Load(object sender, EventArgs e)
         {
 
         }

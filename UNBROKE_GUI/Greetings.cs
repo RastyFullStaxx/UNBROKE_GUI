@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace UNBROKE_GUI
@@ -36,8 +37,8 @@ namespace UNBROKE_GUI
 
         private void btnProfileSetup_Click(object sender, EventArgs e)
         {
-            Dashboard dashboard = new Dashboard(nameofUser);
-            dashboard.Show();
+            Form2 login = new Form2();
+            login.Show();
             this.Dispose();
         }
     }

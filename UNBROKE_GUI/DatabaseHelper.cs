@@ -14,7 +14,11 @@ namespace UNBROKE_GUI
         private DatabaseHelper()
         {
             // Initialize connection string here
-            connectionString = "server=localhost;database=unbroke;uid=root;pwd='180503';";
+            //RASTY = connectionString = "server=localhost;database=unbroke;uid=root;pwd='180503';";
+            //EJAY = connectionString = "server=localhost;database=unbroke;uid=root;pwd='';";
+
+            connectionString = "server=localhost;database=unbroke;uid=root;pwd='';";
+
         }
 
         // Public static method to get the singleton instance
@@ -303,22 +307,33 @@ namespace UNBROKE_GUI
                         // Add parameters to the command
                         command.Parameters.AddWithValue("@username", username);
 
+                        // Log SQL query for debugging
+                        Console.WriteLine($"Executing query: {query}");
+
                         // Execute the command and fetch userId
                         object result = command.ExecuteScalar();
                         if (result != null)
                         {
                             userId = Convert.ToInt32(result);
+                            Console.WriteLine($"User ID found: {userId}");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"No user found with username: {username}");
                         }
                     }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error fetching user_id: {ex.Message}");
+                    throw; // Rethrow the exception to propagate it up for better debugging
                 }
             }
 
             return userId;
         }
+
+
         // Example method in DatabaseHelper.cs
         public bool ValidateUser(string username, string password)
         {
@@ -389,77 +404,104 @@ namespace UNBROKE_GUI
             return profileSetup;
         }
 
-        public bool InsertBudgetDate(int userId, DateTime startDate, DateTime endDate)
+        public bool InsertBudget(int userId, decimal totalBudget, DateTime startDate, DateTime? endDate)
         {
-            // SQL query with parameters
+            // Retrieve the highest budget_id for the user
+            int highestBudgetId = GetHighestBudgetIdByUserId(userId);
+
+            // SQL query to insert budget with specific budget_id
+            string query = "INSERT INTO `budget` (`budget_id`, `user_id`, `start_date`, `end_date`, `total_budget`, `savings`) " +
+                           "VALUES (@budgetId, @userId, @startDate, @endDate, @totalBudget, 0.0)";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameters to the command
+                        command.Parameters.AddWithValue("@budgetId", highestBudgetId); // Use the highest existing budget_id
+                        command.Parameters.AddWithValue("@userId", userId);
+                        command.Parameters.AddWithValue("@startDate", startDate);
+
+                        if (endDate.HasValue)
+                        {
+                            command.Parameters.AddWithValue("@endDate", endDate.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@endDate", DBNull.Value); // Set as DBNull.Value if endDate is null
+                        }
+
+                        command.Parameters.AddWithValue("@totalBudget", totalBudget);
+
+                        // Debugging output - print SQL query and parameter values
+                        Console.WriteLine($"Executing query: {command.CommandText}");
+                        foreach (MySqlParameter parameter in command.Parameters)
+                        {
+                            Console.WriteLine($"{parameter.ParameterName} = {parameter.Value}");
+                        }
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine($"Rows affected: {rowsAffected}");
+
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error inserting budget: {ex.Message}");
+                    return false;
+                }
+            }
+        }
+
+
+
+
+        // Method to insert budget start date and optional end date
+        public bool InsertBudgetDate(int userId, DateTime startDate, DateTime? endDate)
+        {
             string query = "INSERT INTO `budget` (`user_id`, `start_date`, `end_date`, `total_budget`, `savings`) " +
                            "VALUES (@userId, @startDate, @endDate, 0.0, 0.0)";
 
-            // Create MySqlConnection
             using (MySqlConnection connection = GetConnection())
             {
                 try
                 {
                     connection.Open();
 
-                    // Create MySqlCommand
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Add parameters to the command
                         command.Parameters.AddWithValue("@userId", userId);
                         command.Parameters.AddWithValue("@startDate", startDate);
-                        command.Parameters.AddWithValue("@endDate", endDate);
 
-                        // Execute the command
+                        if (endDate.HasValue)
+                        {
+                            command.Parameters.AddWithValue("@endDate", endDate.Value);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@endDate", DBNull.Value);
+                        }
+
                         int rowsAffected = command.ExecuteNonQuery();
                         Console.WriteLine($"Rows affected: {rowsAffected}");
 
-                        return rowsAffected > 0; // Insertion successful if rows affected > 0
+                        return rowsAffected > 0;
                     }
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error inserting budget: {ex.Message}");
-                    return false; // Insertion failed
+                    Console.WriteLine($"Error inserting budget date: {ex.Message}");
+                    return false;
                 }
             }
         }
 
-        public bool InsertBudget(int userId, Decimal budget)
-        {
-            // SQL query with parameters
-            string query = "INSERT INTO `budget` (`user_id`, `total_budget`,`savings` ) " +
-                       "VALUES (@userId, @budget, 0.0 )";
 
-            // Create MySqlConnection
-            using (MySqlConnection connection = GetConnection())
-            {
-                try
-                {
-                    connection.Open();
-
-                    // Create MySqlCommand
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        // Add parameters to the command
-                        command.Parameters.AddWithValue("@userId", userId);
-                        command.Parameters.AddWithValue("@budget", budget);
-
-
-                        // Execute the command
-                        int rowsAffected = command.ExecuteNonQuery();
-                        Console.WriteLine($"Rows affected: {rowsAffected}");
-
-                        return rowsAffected > 0; // Insertion successful if rows affected > 0
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error inserting budget: {ex.Message}");
-                    return false; // Insertion failed
-                }
-            }
-        }
         public byte[] GetProfileImageByUsername(string username)
         {
             byte[] profileImage = null;
@@ -497,6 +539,127 @@ namespace UNBROKE_GUI
 
             return profileImage;
         }
+        // Method to get start_date by user_id
+        public DateTime GetStartDateByUserID(int userID)
+        {
+            DateTime startDate = DateTime.MinValue; // Default value or error indicator
 
+            // SQL query to fetch start_date based on user_id
+            string query = "SELECT start_date FROM `budget` " +
+                           "WHERE user_id = @userID " +
+                           "ORDER BY budget_id DESC LIMIT 1";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameter to the command
+                        command.Parameters.AddWithValue("@userID", userID);
+
+                        // Execute the command and fetch start_date
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            startDate = Convert.ToDateTime(result); // Convert result to DateTime
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching start_date: {ex.Message}");
+                    // Optionally handle the exception or log it
+                    throw; // Rethrow the exception to propagate it up for better debugging
+                }
+            }
+
+            return startDate;
+        }
+
+        // Method to get end_date by user_id
+        public DateTime GetEndDateByUserID(int userID)
+        {
+            DateTime endDate = DateTime.MaxValue; // Default value or error indicator
+
+            // SQL query to fetch end_date based on user_id
+            string query = "SELECT end_date FROM `budget` " +
+                           "WHERE user_id = @userID " +
+                           "ORDER BY budget_id DESC LIMIT 1";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameter to the command
+                        command.Parameters.AddWithValue("@userID", userID);
+
+                        // Execute the command and fetch end_date
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            endDate = Convert.ToDateTime(result); // Convert result to DateTime
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching end_date: {ex.Message}");
+                    // Optionally handle the exception or log it
+                    throw; // Rethrow the exception to propagate it up for better debugging
+                }
+            }
+
+            return endDate;
+        }
+        // Method to fetch the highest budget ID for a given user ID
+        public int GetHighestBudgetIdByUserId(int userId)
+        {
+            int highestBudgetId = -1; // Default value or error indicator
+
+            // SQL query to fetch highest budget_id based on user_id
+            string query = "SELECT MAX(budget_id) FROM `budget` WHERE user_id = @userId";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameter to the command
+                        command.Parameters.AddWithValue("@userId", userId);
+
+                        // Execute the command and fetch highest budget_id
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            highestBudgetId = Convert.ToInt32(result); // Convert result to integer
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching highest budget ID: {ex.Message}");
+                    // Optionally handle the exception or log it
+                    throw; // Rethrow the exception to propagate it up for better debugging
+                }
+            }
+
+            return highestBudgetId;
+        }
     }
 }

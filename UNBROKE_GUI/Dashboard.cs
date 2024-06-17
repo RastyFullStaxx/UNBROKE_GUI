@@ -14,6 +14,7 @@ namespace UNBROKE_GUI
     public partial class Dashboard : Form
     {
         private string currentuser;
+
         public Dashboard(string currentuser)
         {
             InitializeComponent();
@@ -52,10 +53,17 @@ namespace UNBROKE_GUI
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            // Fetch user information from the database
+            LoadUserData();
+        }
+        private void LoadUserData()
+        {
             DatabaseHelper db = DatabaseHelper.GetInstance();
+
             try
             {
+                // Debug statement to check currentuser before fetching userId
+                Console.WriteLine($"Current user in LoadUserData: {currentuser}");
+
                 // Get user ID using current username
                 int userId = db.GetUserIdByUsername(currentuser);
 
@@ -66,14 +74,11 @@ namespace UNBROKE_GUI
 
                     // Display total budget in the format ₱0.00
                     lblTotalBalanceAmount.Text = $"₱{totalBudget.ToString("0.00")}"; // Formatting totalBudget to 2 decimal places
-
-                    // Get profile image
-                    Console.WriteLine($"SUCCESS FETCHING" + totalBudget);
-
                 }
                 else
                 {
-                    Console.WriteLine($"User did not set up budget yet");
+                    MessageBox.Show("User not found. Please log in again.");
+                    // Example: Redirect to login form or handle this case accordingly
                 }
             }
             catch (Exception ex)
@@ -82,6 +87,7 @@ namespace UNBROKE_GUI
                 // Handle exception as needed
             }
         }
+
 
         private void DashboardDate_TextChanged(object sender, EventArgs e)
         {

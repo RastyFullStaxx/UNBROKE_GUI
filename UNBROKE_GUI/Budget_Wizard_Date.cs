@@ -28,35 +28,46 @@ namespace UNBROKE_GUI
             // Get the selected end date from the DateTimePicker
             DateTime endDate = dateTimePicker.Value;
 
-            // Insert budget data into the database
+            // Insert budget date into the database
             DatabaseHelper db = DatabaseHelper.GetInstance();
-            int userId = db.GetUserIdByUsername(currentuser);
 
-            if (userId != -1)
+            try
             {
-                bool success = db.InsertBudgetDate(userId, startDate, endDate);
+                int userId = db.GetUserIdByUsername(currentuser);
 
-                if (success)
+                if (userId != -1)
                 {
-                    // Show the Budget_Wizard_Input form and pass necessary data
-                    Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser);
-                    budget_Wizard_Input.Show();
-                    this.Dispose();
+                    bool success = db.InsertBudgetDate(userId, startDate, endDate);
+
+                    if (success)
+                    {
+                        MessageBox.Show("Budget date set up successfully.");
+
+                        // Show the Budget_Wizard_Input form and pass necessary data
+                        Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser);
+                        budget_Wizard_Input.Show();
+                        this.Dispose();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to save budget data. Please try again.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Failed to save budget data. Please try again.");
+                    MessageBox.Show("User not found. Please log in again.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("User not found. Please log in again.");
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
 
-        private void Budget_Wizard_Date_Load(object sender, EventArgs e)
+
+    private void Budget_Wizard_Date_Load(object sender, EventArgs e)
         {
-            // Initialize DateTimePicker with current date or default value
+            // Initialize DateTimePicker with default values
             dateTimePicker.Value = DateTime.Today.AddDays(1); // Default to tomorrow's date
         }
     }
