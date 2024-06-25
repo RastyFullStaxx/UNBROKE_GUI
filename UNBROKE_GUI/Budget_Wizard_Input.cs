@@ -25,7 +25,6 @@ namespace UNBROKE_GUI
 
             userID = db.GetUserIdByUsername(currentuser);
 
-
             Placeholder.SetBudget(txtTotalBudget, "5000");
         }
 
@@ -82,7 +81,7 @@ namespace UNBROKE_GUI
 
                     if (success)
                     {
-                        Budget_Wizard_Fixed_Inputs budget_Wizard_Date = new Budget_Wizard_Fixed_Inputs(currentuser);
+                        Budget_Wizard_Fixed_Inputs budget_Wizard_Date = new Budget_Wizard_Fixed_Inputs(currentuser, totalBudget);
                         budget_Wizard_Date.Show();
                         this.Dispose();
                     }

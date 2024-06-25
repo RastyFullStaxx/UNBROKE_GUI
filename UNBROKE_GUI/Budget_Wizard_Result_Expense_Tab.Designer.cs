@@ -76,12 +76,12 @@
             this.btnBudgetWizard2 = new System.Windows.Forms.Button();
             this.imgBudgetWizardTitle = new System.Windows.Forms.PictureBox();
             this.needsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.wantsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.savingsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.needsLabel = new System.Windows.Forms.Label();
+            this.wantsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.wantsLabel = new System.Windows.Forms.Label();
+            this.savingsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.savingsLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgWantsIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNeedIcon)).BeginInit();
@@ -714,6 +714,19 @@
             this.needsProgressBar.TabIndex = 75;
             this.needsProgressBar.Text = "guna2CircleProgressBar1";
             // 
+            // needsLabel
+            // 
+            this.needsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.needsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.needsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.needsLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.needsLabel.Location = new System.Drawing.Point(28, 40);
+            this.needsLabel.Name = "needsLabel";
+            this.needsLabel.Size = new System.Drawing.Size(46, 24);
+            this.needsLabel.TabIndex = 59;
+            this.needsLabel.Text = "50%";
+            this.needsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // wantsProgressBar
             // 
             this.wantsProgressBar.Controls.Add(this.wantsLabel);
@@ -730,6 +743,20 @@
             this.wantsProgressBar.Size = new System.Drawing.Size(102, 102);
             this.wantsProgressBar.TabIndex = 76;
             this.wantsProgressBar.Text = "guna2CircleProgressBar1";
+            // 
+            // wantsLabel
+            // 
+            this.wantsLabel.AutoSize = true;
+            this.wantsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.wantsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wantsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wantsLabel.ForeColor = System.Drawing.Color.OrangeRed;
+            this.wantsLabel.Location = new System.Drawing.Point(28, 40);
+            this.wantsLabel.Name = "wantsLabel";
+            this.wantsLabel.Size = new System.Drawing.Size(45, 20);
+            this.wantsLabel.TabIndex = 60;
+            this.wantsLabel.Text = "30%";
+            this.wantsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // savingsProgressBar
             // 
@@ -748,37 +775,6 @@
             this.savingsProgressBar.TabIndex = 77;
             this.savingsProgressBar.Text = "guna2CircleProgressBar1";
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // needsLabel
-            // 
-            this.needsLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.needsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.needsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.needsLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.needsLabel.Location = new System.Drawing.Point(28, 40);
-            this.needsLabel.Name = "needsLabel";
-            this.needsLabel.Size = new System.Drawing.Size(46, 24);
-            this.needsLabel.TabIndex = 59;
-            this.needsLabel.Text = "50%";
-            this.needsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // wantsLabel
-            // 
-            this.wantsLabel.AutoSize = true;
-            this.wantsLabel.Cursor = System.Windows.Forms.Cursors.Default;
-            this.wantsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.wantsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wantsLabel.ForeColor = System.Drawing.Color.OrangeRed;
-            this.wantsLabel.Location = new System.Drawing.Point(28, 40);
-            this.wantsLabel.Name = "wantsLabel";
-            this.wantsLabel.Size = new System.Drawing.Size(45, 20);
-            this.wantsLabel.TabIndex = 60;
-            this.wantsLabel.Text = "30%";
-            this.wantsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // savingsLabel
             // 
             this.savingsLabel.AutoSize = true;
@@ -790,8 +786,12 @@
             this.savingsLabel.Name = "savingsLabel";
             this.savingsLabel.Size = new System.Drawing.Size(45, 20);
             this.savingsLabel.TabIndex = 61;
-            this.savingsLabel.Text = "30%";
+            this.savingsLabel.Text = "20%";
             this.savingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Budget_Wizard_Result_Expense_Tab
             // 

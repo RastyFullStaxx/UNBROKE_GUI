@@ -7,24 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UNBROKE_GUI.Enums; 
+using UNBROKE_GUI.Enums;
+using UNBROKE_GUI.BaseCalculation;
 
 namespace UNBROKE_GUI
 {
     public partial class Budget_Wizard_Fixed_Inputs : Form
     {
         DatabaseHelper db = DatabaseHelper.GetInstance();
+        BaseClass budget;
+
         private string currentuser;
         private int userId;
         private int budgetId;
-
-        public Budget_Wizard_Fixed_Inputs(string currentuser)
+        private decimal totalB;
+        public Budget_Wizard_Fixed_Inputs(string currentuser, decimal totalBudget)
         {
             InitializeComponent();
             this.currentuser = currentuser;
             Placeholder.SetFixedInput(txtFoodExpenseAmount, "5000");
             Placeholder.SetFixedInput(txtRentExpenseAmount, "5000");
-
+            this.totalB = totalBudget;
 
             userId = db.GetUserIdByUsername(currentuser);
             budgetId = db.GetHighestBudgetIdByUserId(userId);
@@ -69,6 +72,35 @@ namespace UNBROKE_GUI
             else
             {
                 Console.WriteLine("Invalid rent expense amount.");
+            }
+
+            // Parse input values from text boxes
+            if (decimal.TryParse(txtRentExpenseAmount.Text, out decimal rent) &&
+                decimal.TryParse(txtFoodExpenseAmount.Text, out decimal food))
+            {
+                // Initialize BaseClass with TotalBudget, Rent, and Food
+                budget = new BaseClass(totalB, rent, food);
+
+                Console.WriteLine("Total Budget: " + totalB.ToString("N2"));
+                Console.WriteLine("Fixed Expenses: " + budget.FixedExpenses.ToString("N2"));
+                Console.WriteLine("Rent: " + budget.Rent.ToString("N2"));
+                Console.WriteLine("Food: " + budget.Food.ToString("N2"));
+                Console.WriteLine("Non-Fixed Expenses: " + budget.NonFixedExpenses.ToString("N2"));
+                Console.WriteLine("Needs: " + budget.Needs.ToString("N2"));
+                Console.WriteLine("Bills: " + budget.Bills.ToString("N2"));
+                Console.WriteLine("Transportation: " + budget.Transportation.ToString("N2"));
+                Console.WriteLine("Supplies: " + budget.Supplies.ToString("N2"));
+                Console.WriteLine("Others: " + budget.Others.ToString("N2"));
+                Console.WriteLine("Wants: " + budget.Wants.ToString("N2"));
+                Console.WriteLine("Entertainment: " + budget.Entertainment.ToString("N2"));
+                Console.WriteLine("Clothing: " + budget.Clothing.ToString("N2"));
+                Console.WriteLine("Savings: " + budget.Savings.ToString("N2"));
+
+            }
+            else
+            {
+                Console.WriteLine("ERROR");
+
             }
 
             // Proceed to the next form
