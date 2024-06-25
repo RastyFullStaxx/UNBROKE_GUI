@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using UNBROKE_GUI.Enums;
 
 namespace UNBROKE_GUI
 {
@@ -404,6 +406,39 @@ namespace UNBROKE_GUI
             return profileSetup;
         }
 
+        public bool InsertExpense(int budgetID, ExpenseCategory category, ExpenseSubCategory subCategory, decimal amount)
+        {
+
+            string query = @" INSERT INTO expense (budget_ID, category, subcategory, amount)
+                           VALUES (@budgetID, @category, @subCategory, @amount)";
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+            {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@budgetID", budgetID);
+                        command.Parameters.AddWithValue("@category", category.ToString());
+                        command.Parameters.AddWithValue("@subCategory", subCategory.ToString());
+                        command.Parameters.AddWithValue("@amount", amount);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+               
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle exception (log it, rethrow it, etc.)
+                Console.WriteLine("An error occurred: " + ex.Message);
+                return false;
+            }
+            }
+        }
+
+
         public bool InsertBudget(int userId, decimal totalBudget, DateTime startDate, DateTime? endDate)
         {
             string query = @"
@@ -491,6 +526,8 @@ namespace UNBROKE_GUI
             }
         }
 */
+
+
         public byte[] GetProfileImageByUsername(string username)
         {
             byte[] profileImage = null;

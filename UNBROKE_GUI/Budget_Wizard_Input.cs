@@ -25,6 +25,8 @@ namespace UNBROKE_GUI
 
             userID = db.GetUserIdByUsername(currentuser);
 
+
+            Placeholder.SetBudget(txtTotalBudget, "5000");
         }
 
         private void Budget_Wizard_Input_Load(object sender, EventArgs e)
