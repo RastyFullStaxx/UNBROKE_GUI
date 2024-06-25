@@ -165,6 +165,7 @@
     <Compile Include="A_Launch.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BaseCalculation\BaseClass.cs" />
     <Compile Include="Budget_Loaded.cs">
       <SubType>Form</SubType>
     </Compile>
