@@ -40,16 +40,16 @@ namespace UNBROKE_GUI
                 bool success = db.InsertExpense(budgetId, ExpenseCategory.Fix, ExpenseSubCategory.Food, foodExpense);
                 if (success)
                 {
-                    MessageBox.Show("Food expense inserted successfully.");
+                    Console.WriteLine("Food expense inserted successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to insert food expense.");
+                    Console.WriteLine("Failed to insert food expense.");
                 }
             }
             else
             {
-                MessageBox.Show("Invalid food expense amount.");
+                Console.WriteLine("Invalid food expense amount.");
             }
 
             // Parse the rent expense amount from the textbox
@@ -59,16 +59,16 @@ namespace UNBROKE_GUI
                 bool success = db.InsertExpense(budgetId, ExpenseCategory.Fix, ExpenseSubCategory.Rent, rentExpense);
                 if (success)
                 {
-                    MessageBox.Show("Rent expense inserted successfully.");
+                    Console.WriteLine("Rent expense inserted successfully.");
                 }
                 else
                 {
-                    MessageBox.Show("Failed to insert rent expense.");
+                    Console.WriteLine("Failed to insert rent expense.");
                 }
             }
             else
             {
-                MessageBox.Show("Invalid rent expense amount.");
+                Console.WriteLine("Invalid rent expense amount.");
             }
 
             // Proceed to the next form
