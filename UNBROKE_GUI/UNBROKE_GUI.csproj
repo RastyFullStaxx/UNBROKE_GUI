@@ -257,6 +257,7 @@
     <Compile Include="Greetings.Designer.cs">
       <DependentUpon>Greetings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managers\ProgressManager.cs" />
     <Compile Include="Placeholder.cs" />
     <Compile Include="Signup_Setup_Profile.cs">
       <SubType>Form</SubType>

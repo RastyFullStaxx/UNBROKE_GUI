@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Budget_Wizard_Result_Expense_Tab));
             this.lblNeeds = new System.Windows.Forms.Label();
             this.lblWants = new System.Windows.Forms.Label();
@@ -73,15 +74,23 @@
             this.btnProfile = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnBudgetWizard2 = new System.Windows.Forms.Button();
-            this.imgGraphs = new System.Windows.Forms.PictureBox();
             this.imgBudgetWizardTitle = new System.Windows.Forms.PictureBox();
+            this.needsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.wantsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.savingsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.needsLabel = new System.Windows.Forms.Label();
+            this.wantsLabel = new System.Windows.Forms.Label();
+            this.savingsLabel = new System.Windows.Forms.Label();
             this.pnlExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgWantsIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNeedIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgFixedIcon)).BeginInit();
             this.pnlTotalBudgetAndDate.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgGraphs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).BeginInit();
+            this.needsProgressBar.SuspendLayout();
+            this.wantsProgressBar.SuspendLayout();
+            this.savingsProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNeeds
@@ -89,11 +98,11 @@
             this.lblNeeds.AutoSize = true;
             this.lblNeeds.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNeeds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNeeds.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNeeds.ForeColor = System.Drawing.Color.DarkRed;
             this.lblNeeds.Location = new System.Drawing.Point(36, 229);
             this.lblNeeds.Name = "lblNeeds";
-            this.lblNeeds.Size = new System.Drawing.Size(51, 23);
+            this.lblNeeds.Size = new System.Drawing.Size(59, 16);
             this.lblNeeds.TabIndex = 44;
             this.lblNeeds.Text = "NEEDS";
             // 
@@ -102,11 +111,11 @@
             this.lblWants.AutoSize = true;
             this.lblWants.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblWants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblWants.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWants.ForeColor = System.Drawing.Color.DarkRed;
             this.lblWants.Location = new System.Drawing.Point(159, 229);
             this.lblWants.Name = "lblWants";
-            this.lblWants.Size = new System.Drawing.Size(58, 23);
+            this.lblWants.Size = new System.Drawing.Size(62, 16);
             this.lblWants.TabIndex = 45;
             this.lblWants.Text = "WANTS";
             this.lblWants.Click += new System.EventHandler(this.label1_Click);
@@ -116,11 +125,11 @@
             this.lblSavings.AutoSize = true;
             this.lblSavings.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSavings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSavings.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSavings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSavings.ForeColor = System.Drawing.Color.DarkRed;
             this.lblSavings.Location = new System.Drawing.Point(277, 229);
             this.lblSavings.Name = "lblSavings";
-            this.lblSavings.Size = new System.Drawing.Size(68, 23);
+            this.lblSavings.Size = new System.Drawing.Size(73, 16);
             this.lblSavings.TabIndex = 46;
             this.lblSavings.Text = "SAVINGS";
             // 
@@ -165,11 +174,11 @@
             this.lblClothingAmountDisplay.AutoSize = true;
             this.lblClothingAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblClothingAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClothingAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClothingAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClothingAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblClothingAmountDisplay.Location = new System.Drawing.Point(231, 498);
             this.lblClothingAmountDisplay.Name = "lblClothingAmountDisplay";
-            this.lblClothingAmountDisplay.Size = new System.Drawing.Size(64, 23);
+            this.lblClothingAmountDisplay.Size = new System.Drawing.Size(61, 16);
             this.lblClothingAmountDisplay.TabIndex = 87;
             this.lblClothingAmountDisplay.Text = "₱500.00";
             this.lblClothingAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -179,11 +188,11 @@
             this.lblEntertainmentAmountDisplay.AutoSize = true;
             this.lblEntertainmentAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblEntertainmentAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEntertainmentAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntertainmentAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntertainmentAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEntertainmentAmountDisplay.Location = new System.Drawing.Point(226, 456);
             this.lblEntertainmentAmountDisplay.Name = "lblEntertainmentAmountDisplay";
-            this.lblEntertainmentAmountDisplay.Size = new System.Drawing.Size(69, 23);
+            this.lblEntertainmentAmountDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblEntertainmentAmountDisplay.TabIndex = 86;
             this.lblEntertainmentAmountDisplay.Text = "₱1500.00";
             this.lblEntertainmentAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -205,11 +214,11 @@
             this.lblTotalWantsAmountDisplay.AutoSize = true;
             this.lblTotalWantsAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalWantsAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotalWantsAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalWantsAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalWantsAmountDisplay.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblTotalWantsAmountDisplay.Location = new System.Drawing.Point(193, 416);
             this.lblTotalWantsAmountDisplay.Name = "lblTotalWantsAmountDisplay";
-            this.lblTotalWantsAmountDisplay.Size = new System.Drawing.Size(73, 23);
+            this.lblTotalWantsAmountDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblTotalWantsAmountDisplay.TabIndex = 85;
             this.lblTotalWantsAmountDisplay.Text = "₱4000.00";
             this.lblTotalWantsAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,11 +228,11 @@
             this.LblWant.AutoSize = true;
             this.LblWant.Cursor = System.Windows.Forms.Cursors.Default;
             this.LblWant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LblWant.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblWant.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblWant.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.LblWant.Location = new System.Drawing.Point(70, 416);
             this.LblWant.Name = "LblWant";
-            this.LblWant.Size = new System.Drawing.Size(53, 23);
+            this.LblWant.Size = new System.Drawing.Size(50, 16);
             this.LblWant.TabIndex = 81;
             this.LblWant.Text = "Wants";
             this.LblWant.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,11 +251,11 @@
             this.lblEntertainment.AutoSize = true;
             this.lblEntertainment.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblEntertainment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEntertainment.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntertainment.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntertainment.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblEntertainment.Location = new System.Drawing.Point(24, 456);
             this.lblEntertainment.Name = "lblEntertainment";
-            this.lblEntertainment.Size = new System.Drawing.Size(107, 23);
+            this.lblEntertainment.Size = new System.Drawing.Size(101, 16);
             this.lblEntertainment.TabIndex = 82;
             this.lblEntertainment.Text = "Entertainment";
             // 
@@ -255,11 +264,11 @@
             this.lblClothing.AutoSize = true;
             this.lblClothing.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblClothing.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClothing.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClothing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClothing.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblClothing.Location = new System.Drawing.Point(24, 498);
             this.lblClothing.Name = "lblClothing";
-            this.lblClothing.Size = new System.Drawing.Size(68, 23);
+            this.lblClothing.Size = new System.Drawing.Size(63, 16);
             this.lblClothing.TabIndex = 83;
             this.lblClothing.Text = "Clothing";
             // 
@@ -268,12 +277,12 @@
             this.lblOthersAmountDisplay.AutoSize = true;
             this.lblOthersAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOthersAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblOthersAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOthersAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOthersAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblOthersAmountDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblOthersAmountDisplay.Location = new System.Drawing.Point(247, 342);
             this.lblOthersAmountDisplay.Name = "lblOthersAmountDisplay";
-            this.lblOthersAmountDisplay.Size = new System.Drawing.Size(48, 23);
+            this.lblOthersAmountDisplay.Size = new System.Drawing.Size(45, 16);
             this.lblOthersAmountDisplay.TabIndex = 79;
             this.lblOthersAmountDisplay.Text = "₱0.00";
             this.lblOthersAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -283,11 +292,11 @@
             this.lblSuppliesAmountDisplay.AutoSize = true;
             this.lblSuppliesAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSuppliesAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSuppliesAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuppliesAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSuppliesAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblSuppliesAmountDisplay.Location = new System.Drawing.Point(226, 302);
             this.lblSuppliesAmountDisplay.Name = "lblSuppliesAmountDisplay";
-            this.lblSuppliesAmountDisplay.Size = new System.Drawing.Size(69, 23);
+            this.lblSuppliesAmountDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblSuppliesAmountDisplay.TabIndex = 78;
             this.lblSuppliesAmountDisplay.Text = "₱1500.00";
             this.lblSuppliesAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -297,11 +306,11 @@
             this.lblSupplies.AutoSize = true;
             this.lblSupplies.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSupplies.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSupplies.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSupplies.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSupplies.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblSupplies.Location = new System.Drawing.Point(24, 302);
             this.lblSupplies.Name = "lblSupplies";
-            this.lblSupplies.Size = new System.Drawing.Size(68, 23);
+            this.lblSupplies.Size = new System.Drawing.Size(68, 16);
             this.lblSupplies.TabIndex = 76;
             this.lblSupplies.Text = "Supplies";
             // 
@@ -310,11 +319,11 @@
             this.lblOthers.AutoSize = true;
             this.lblOthers.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblOthers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblOthers.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOthers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOthers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblOthers.Location = new System.Drawing.Point(24, 342);
             this.lblOthers.Name = "lblOthers";
-            this.lblOthers.Size = new System.Drawing.Size(54, 23);
+            this.lblOthers.Size = new System.Drawing.Size(52, 16);
             this.lblOthers.TabIndex = 77;
             this.lblOthers.Text = "Others";
             // 
@@ -323,11 +332,11 @@
             this.lblTransportationAmountDisplay.AutoSize = true;
             this.lblTransportationAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTransportationAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTransportationAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransportationAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransportationAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTransportationAmountDisplay.Location = new System.Drawing.Point(231, 260);
             this.lblTransportationAmountDisplay.Name = "lblTransportationAmountDisplay";
-            this.lblTransportationAmountDisplay.Size = new System.Drawing.Size(64, 23);
+            this.lblTransportationAmountDisplay.Size = new System.Drawing.Size(61, 16);
             this.lblTransportationAmountDisplay.TabIndex = 75;
             this.lblTransportationAmountDisplay.Text = "₱600.00";
             this.lblTransportationAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -337,11 +346,11 @@
             this.lblBillsAmountDisplay.AutoSize = true;
             this.lblBillsAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBillsAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBillsAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillsAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBillsAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblBillsAmountDisplay.Location = new System.Drawing.Point(231, 218);
             this.lblBillsAmountDisplay.Name = "lblBillsAmountDisplay";
-            this.lblBillsAmountDisplay.Size = new System.Drawing.Size(64, 23);
+            this.lblBillsAmountDisplay.Size = new System.Drawing.Size(61, 16);
             this.lblBillsAmountDisplay.TabIndex = 74;
             this.lblBillsAmountDisplay.Text = "₱900.00";
             this.lblBillsAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -363,11 +372,11 @@
             this.lblDisplayTotalNeedsExpenseDisplay.AutoSize = true;
             this.lblDisplayTotalNeedsExpenseDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDisplayTotalNeedsExpenseDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDisplayTotalNeedsExpenseDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayTotalNeedsExpenseDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayTotalNeedsExpenseDisplay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblDisplayTotalNeedsExpenseDisplay.Location = new System.Drawing.Point(193, 178);
             this.lblDisplayTotalNeedsExpenseDisplay.Name = "lblDisplayTotalNeedsExpenseDisplay";
-            this.lblDisplayTotalNeedsExpenseDisplay.Size = new System.Drawing.Size(72, 23);
+            this.lblDisplayTotalNeedsExpenseDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblDisplayTotalNeedsExpenseDisplay.TabIndex = 73;
             this.lblDisplayTotalNeedsExpenseDisplay.Text = "₱3000.00";
             this.lblDisplayTotalNeedsExpenseDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -377,11 +386,11 @@
             this.lblNeed.AutoSize = true;
             this.lblNeed.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNeed.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblNeed.Location = new System.Drawing.Point(70, 178);
             this.lblNeed.Name = "lblNeed";
-            this.lblNeed.Size = new System.Drawing.Size(52, 23);
+            this.lblNeed.Size = new System.Drawing.Size(53, 16);
             this.lblNeed.TabIndex = 69;
             this.lblNeed.Text = "Needs";
             this.lblNeed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -400,11 +409,11 @@
             this.lblBills.AutoSize = true;
             this.lblBills.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblBills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBills.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBills.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBills.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblBills.Location = new System.Drawing.Point(24, 218);
             this.lblBills.Name = "lblBills";
-            this.lblBills.Size = new System.Drawing.Size(37, 23);
+            this.lblBills.Size = new System.Drawing.Size(37, 16);
             this.lblBills.TabIndex = 70;
             this.lblBills.Text = "Bills";
             // 
@@ -413,11 +422,11 @@
             this.lblTransportation.AutoSize = true;
             this.lblTransportation.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTransportation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTransportation.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransportation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransportation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.lblTransportation.Location = new System.Drawing.Point(24, 260);
             this.lblTransportation.Name = "lblTransportation";
-            this.lblTransportation.Size = new System.Drawing.Size(110, 23);
+            this.lblTransportation.Size = new System.Drawing.Size(108, 16);
             this.lblTransportation.TabIndex = 71;
             this.lblTransportation.Text = "Transportation";
             // 
@@ -426,11 +435,11 @@
             this.lblRentAmountDisplay.AutoSize = true;
             this.lblRentAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblRentAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRentAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRentAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRentAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblRentAmountDisplay.Location = new System.Drawing.Point(224, 101);
             this.lblRentAmountDisplay.Name = "lblRentAmountDisplay";
-            this.lblRentAmountDisplay.Size = new System.Drawing.Size(71, 23);
+            this.lblRentAmountDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblRentAmountDisplay.TabIndex = 67;
             this.lblRentAmountDisplay.Text = "₱2500.00";
             this.lblRentAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -440,11 +449,11 @@
             this.lblFoodAmountDisplay.AutoSize = true;
             this.lblFoodAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblFoodAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFoodAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFoodAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblFoodAmountDisplay.Location = new System.Drawing.Point(226, 59);
             this.lblFoodAmountDisplay.Name = "lblFoodAmountDisplay";
-            this.lblFoodAmountDisplay.Size = new System.Drawing.Size(69, 23);
+            this.lblFoodAmountDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblFoodAmountDisplay.TabIndex = 66;
             this.lblFoodAmountDisplay.Text = "₱1500.00";
             this.lblFoodAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -466,11 +475,11 @@
             this.lblDisplayTotalFixedExpenseAmountDisplay.AutoSize = true;
             this.lblDisplayTotalFixedExpenseAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDisplayTotalFixedExpenseAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDisplayTotalFixedExpenseAmountDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayTotalFixedExpenseAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayTotalFixedExpenseAmountDisplay.ForeColor = System.Drawing.Color.Indigo;
             this.lblDisplayTotalFixedExpenseAmountDisplay.Location = new System.Drawing.Point(192, 19);
             this.lblDisplayTotalFixedExpenseAmountDisplay.Name = "lblDisplayTotalFixedExpenseAmountDisplay";
-            this.lblDisplayTotalFixedExpenseAmountDisplay.Size = new System.Drawing.Size(73, 23);
+            this.lblDisplayTotalFixedExpenseAmountDisplay.Size = new System.Drawing.Size(69, 16);
             this.lblDisplayTotalFixedExpenseAmountDisplay.TabIndex = 65;
             this.lblDisplayTotalFixedExpenseAmountDisplay.Text = "₱4000.00";
             this.lblDisplayTotalFixedExpenseAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -480,11 +489,11 @@
             this.lblFixedExpense.AutoSize = true;
             this.lblFixedExpense.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblFixedExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFixedExpense.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFixedExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFixedExpense.ForeColor = System.Drawing.Color.Indigo;
             this.lblFixedExpense.Location = new System.Drawing.Point(70, 19);
             this.lblFixedExpense.Name = "lblFixedExpense";
-            this.lblFixedExpense.Size = new System.Drawing.Size(110, 23);
+            this.lblFixedExpense.Size = new System.Drawing.Size(117, 16);
             this.lblFixedExpense.TabIndex = 61;
             this.lblFixedExpense.Text = "Fixed Expenses";
             this.lblFixedExpense.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -503,11 +512,11 @@
             this.lblFood.AutoSize = true;
             this.lblFood.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFood.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFood.ForeColor = System.Drawing.Color.Indigo;
             this.lblFood.Location = new System.Drawing.Point(24, 59);
             this.lblFood.Name = "lblFood";
-            this.lblFood.Size = new System.Drawing.Size(42, 23);
+            this.lblFood.Size = new System.Drawing.Size(43, 16);
             this.lblFood.TabIndex = 62;
             this.lblFood.Text = "Food";
             // 
@@ -516,11 +525,11 @@
             this.lblRent.AutoSize = true;
             this.lblRent.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRent.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRent.ForeColor = System.Drawing.Color.Indigo;
             this.lblRent.Location = new System.Drawing.Point(24, 101);
             this.lblRent.Name = "lblRent";
-            this.lblRent.Size = new System.Drawing.Size(40, 23);
+            this.lblRent.Size = new System.Drawing.Size(39, 16);
             this.lblRent.TabIndex = 63;
             this.lblRent.Text = "Rent";
             // 
@@ -529,11 +538,11 @@
             this.lblTotalBudget.AutoSize = true;
             this.lblTotalBudget.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotalBudget.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBudget.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTotalBudget.Location = new System.Drawing.Point(46, 23);
             this.lblTotalBudget.Name = "lblTotalBudget";
-            this.lblTotalBudget.Size = new System.Drawing.Size(95, 23);
+            this.lblTotalBudget.Size = new System.Drawing.Size(96, 16);
             this.lblTotalBudget.TabIndex = 52;
             this.lblTotalBudget.Text = "Total Budget";
             // 
@@ -542,11 +551,11 @@
             this.lblTotalBudgetAmountDisplay.AutoSize = true;
             this.lblTotalBudgetAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalBudgetAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotalBudgetAmountDisplay.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBudgetAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBudgetAmountDisplay.ForeColor = System.Drawing.Color.DarkRed;
             this.lblTotalBudgetAmountDisplay.Location = new System.Drawing.Point(36, 38);
             this.lblTotalBudgetAmountDisplay.Name = "lblTotalBudgetAmountDisplay";
-            this.lblTotalBudgetAmountDisplay.Size = new System.Drawing.Size(111, 34);
+            this.lblTotalBudgetAmountDisplay.Size = new System.Drawing.Size(102, 24);
             this.lblTotalBudgetAmountDisplay.TabIndex = 54;
             this.lblTotalBudgetAmountDisplay.Text = "₱5,700.00";
             this.lblTotalBudgetAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -556,11 +565,11 @@
             this.lblStartDate.AutoSize = true;
             this.lblStartDate.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStartDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblStartDate.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblStartDate.Location = new System.Drawing.Point(193, 10);
             this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(76, 23);
+            this.lblStartDate.Size = new System.Drawing.Size(76, 16);
             this.lblStartDate.TabIndex = 55;
             this.lblStartDate.Text = "Start Date";
             // 
@@ -569,11 +578,11 @@
             this.lblStartDateDisplay.AutoSize = true;
             this.lblStartDateDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblStartDateDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblStartDateDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStartDateDisplay.ForeColor = System.Drawing.Color.DarkRed;
             this.lblStartDateDisplay.Location = new System.Drawing.Point(193, 26);
             this.lblStartDateDisplay.Name = "lblStartDateDisplay";
-            this.lblStartDateDisplay.Size = new System.Drawing.Size(87, 23);
+            this.lblStartDateDisplay.Size = new System.Drawing.Size(81, 16);
             this.lblStartDateDisplay.TabIndex = 56;
             this.lblStartDateDisplay.Text = "2024-06-14";
             // 
@@ -582,11 +591,11 @@
             this.lblEndDateDisplay.AutoSize = true;
             this.lblEndDateDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblEndDateDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEndDateDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndDateDisplay.ForeColor = System.Drawing.Color.DarkRed;
             this.lblEndDateDisplay.Location = new System.Drawing.Point(193, 63);
             this.lblEndDateDisplay.Name = "lblEndDateDisplay";
-            this.lblEndDateDisplay.Size = new System.Drawing.Size(86, 23);
+            this.lblEndDateDisplay.Size = new System.Drawing.Size(81, 16);
             this.lblEndDateDisplay.TabIndex = 58;
             this.lblEndDateDisplay.Text = "2024-07-14";
             // 
@@ -595,11 +604,11 @@
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblEndDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEndDate.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblEndDate.Location = new System.Drawing.Point(193, 47);
             this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(69, 23);
+            this.lblEndDate.Size = new System.Drawing.Size(71, 16);
             this.lblEndDate.TabIndex = 57;
             this.lblEndDate.Text = "End Date";
             // 
@@ -679,15 +688,6 @@
             this.btnBudgetWizard2.TabIndex = 48;
             this.btnBudgetWizard2.UseVisualStyleBackColor = true;
             // 
-            // imgGraphs
-            // 
-            this.imgGraphs.Image = ((System.Drawing.Image)(resources.GetObject("imgGraphs.Image")));
-            this.imgGraphs.Location = new System.Drawing.Point(22, 137);
-            this.imgGraphs.Name = "imgGraphs";
-            this.imgGraphs.Size = new System.Drawing.Size(332, 89);
-            this.imgGraphs.TabIndex = 43;
-            this.imgGraphs.TabStop = false;
-            // 
             // imgBudgetWizardTitle
             // 
             this.imgBudgetWizardTitle.Image = ((System.Drawing.Image)(resources.GetObject("imgBudgetWizardTitle.Image")));
@@ -697,11 +697,110 @@
             this.imgBudgetWizardTitle.TabIndex = 74;
             this.imgBudgetWizardTitle.TabStop = false;
             // 
+            // needsProgressBar
+            // 
+            this.needsProgressBar.Controls.Add(this.needsLabel);
+            this.needsProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.needsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.needsProgressBar.ForeColor = System.Drawing.Color.White;
+            this.needsProgressBar.Location = new System.Drawing.Point(19, 124);
+            this.needsProgressBar.Maximum = 50;
+            this.needsProgressBar.Minimum = 0;
+            this.needsProgressBar.Name = "needsProgressBar";
+            this.needsProgressBar.ProgressColor = System.Drawing.Color.DarkSlateBlue;
+            this.needsProgressBar.ProgressColor2 = System.Drawing.Color.DarkSlateBlue;
+            this.needsProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.needsProgressBar.Size = new System.Drawing.Size(102, 102);
+            this.needsProgressBar.TabIndex = 75;
+            this.needsProgressBar.Text = "guna2CircleProgressBar1";
+            // 
+            // wantsProgressBar
+            // 
+            this.wantsProgressBar.Controls.Add(this.wantsLabel);
+            this.wantsProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.wantsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.wantsProgressBar.ForeColor = System.Drawing.Color.White;
+            this.wantsProgressBar.Location = new System.Drawing.Point(141, 124);
+            this.wantsProgressBar.Maximum = 30;
+            this.wantsProgressBar.Minimum = 0;
+            this.wantsProgressBar.Name = "wantsProgressBar";
+            this.wantsProgressBar.ProgressColor = System.Drawing.Color.OrangeRed;
+            this.wantsProgressBar.ProgressColor2 = System.Drawing.Color.OrangeRed;
+            this.wantsProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.wantsProgressBar.Size = new System.Drawing.Size(102, 102);
+            this.wantsProgressBar.TabIndex = 76;
+            this.wantsProgressBar.Text = "guna2CircleProgressBar1";
+            // 
+            // savingsProgressBar
+            // 
+            this.savingsProgressBar.Controls.Add(this.savingsLabel);
+            this.savingsProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.savingsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.savingsProgressBar.ForeColor = System.Drawing.Color.White;
+            this.savingsProgressBar.Location = new System.Drawing.Point(260, 124);
+            this.savingsProgressBar.Maximum = 20;
+            this.savingsProgressBar.Minimum = 0;
+            this.savingsProgressBar.Name = "savingsProgressBar";
+            this.savingsProgressBar.ProgressColor = System.Drawing.Color.Aqua;
+            this.savingsProgressBar.ProgressColor2 = System.Drawing.Color.Aqua;
+            this.savingsProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.savingsProgressBar.Size = new System.Drawing.Size(102, 102);
+            this.savingsProgressBar.TabIndex = 77;
+            this.savingsProgressBar.Text = "guna2CircleProgressBar1";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // needsLabel
+            // 
+            this.needsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.needsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.needsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.needsLabel.ForeColor = System.Drawing.Color.DarkSlateBlue;
+            this.needsLabel.Location = new System.Drawing.Point(28, 40);
+            this.needsLabel.Name = "needsLabel";
+            this.needsLabel.Size = new System.Drawing.Size(46, 24);
+            this.needsLabel.TabIndex = 59;
+            this.needsLabel.Text = "50%";
+            this.needsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // wantsLabel
+            // 
+            this.wantsLabel.AutoSize = true;
+            this.wantsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.wantsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wantsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wantsLabel.ForeColor = System.Drawing.Color.OrangeRed;
+            this.wantsLabel.Location = new System.Drawing.Point(28, 40);
+            this.wantsLabel.Name = "wantsLabel";
+            this.wantsLabel.Size = new System.Drawing.Size(45, 20);
+            this.wantsLabel.TabIndex = 60;
+            this.wantsLabel.Text = "30%";
+            this.wantsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // savingsLabel
+            // 
+            this.savingsLabel.AutoSize = true;
+            this.savingsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.savingsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savingsLabel.ForeColor = System.Drawing.Color.Aqua;
+            this.savingsLabel.Location = new System.Drawing.Point(29, 40);
+            this.savingsLabel.Name = "savingsLabel";
+            this.savingsLabel.Size = new System.Drawing.Size(45, 20);
+            this.savingsLabel.TabIndex = 61;
+            this.savingsLabel.Text = "30%";
+            this.savingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Budget_Wizard_Result_Expense_Tab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
+            this.Controls.Add(this.savingsProgressBar);
+            this.Controls.Add(this.wantsProgressBar);
+            this.Controls.Add(this.needsProgressBar);
             this.Controls.Add(this.imgBudgetWizardTitle);
             this.Controls.Add(this.btnSavingsTab);
             this.Controls.Add(this.btnExpenseTab);
@@ -711,7 +810,6 @@
             this.Controls.Add(this.lblSavings);
             this.Controls.Add(this.lblWants);
             this.Controls.Add(this.lblNeeds);
-            this.Controls.Add(this.imgGraphs);
             this.Controls.Add(this.pnlExpenses);
             this.Controls.Add(this.pnlTotalBudgetAndDate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -726,15 +824,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.imgFixedIcon)).EndInit();
             this.pnlTotalBudgetAndDate.ResumeLayout(false);
             this.pnlTotalBudgetAndDate.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgGraphs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).EndInit();
+            this.needsProgressBar.ResumeLayout(false);
+            this.wantsProgressBar.ResumeLayout(false);
+            this.wantsProgressBar.PerformLayout();
+            this.savingsProgressBar.ResumeLayout(false);
+            this.savingsProgressBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox imgGraphs;
         private System.Windows.Forms.Label lblNeeds;
         private System.Windows.Forms.Label lblWants;
         private System.Windows.Forms.Label lblSavings;
@@ -780,5 +881,12 @@
         private System.Windows.Forms.Label lblSupplies;
         private System.Windows.Forms.Label lblOthers;
         private System.Windows.Forms.PictureBox imgBudgetWizardTitle;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar needsProgressBar;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar wantsProgressBar;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar savingsProgressBar;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label needsLabel;
+        private System.Windows.Forms.Label wantsLabel;
+        private System.Windows.Forms.Label savingsLabel;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UNBROKE_GUI.Managers;
 
 namespace UNBROKE_GUI
 {
@@ -15,11 +16,32 @@ namespace UNBROKE_GUI
         private string currentuser;
         DatabaseHelper db = DatabaseHelper.GetInstance();
 
+        private Timer timer;
+        private ProgressManager progressBarManager;
+
 
         public Budget_Wizard_Result_Expense_Tab(string currentuser)
         {
             InitializeComponent();
             this.currentuser = currentuser;
+
+
+            InitializeProgressBars();
+
+            needsProgressBar.Maximum = 100;
+            wantsProgressBar.Maximum = 100; // Assuming you have a wants progress bar
+            savingsProgressBar.Maximum = 100;
+
+            timer = new Timer();
+            timer.Interval = 10; // Interval in milliseconds
+            timer.Tick += timer1_Tick;
+            timer.Start();
+        }
+        private void InitializeProgressBars()
+        {
+            progressBarManager = new ProgressManager(needsProgressBar, wantsProgressBar, savingsProgressBar);
+            progressBarManager.InitializeTargets(50, 30, 20); // Set initial targets
+            progressBarManager.SetMaximumValues(); // Set maximum values for progress bars
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,7 +52,7 @@ namespace UNBROKE_GUI
         private void Budget_Wizard_Result_Load(object sender, EventArgs e)
         {
             FetchBudgetDetails();
-
+            /* PopulateProgressBar();*/
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)
@@ -83,5 +105,18 @@ namespace UNBROKE_GUI
                 MessageBox.Show("User not found in database.");
             }
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // Update progress bars through the ProgressBarManager
+            progressBarManager.UpdateProgress();
+
+            // Check if all progress bars have reached their targets to stop the timer
+            if (progressBarManager.AllProgressReachedTargets())
+            {
+                timer.Stop();
+            }
+        }
+
     }
 }
