@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `expense` (
   `expense_ID` int(11) NOT NULL AUTO_INCREMENT,
   `budget_ID` int(11) NOT NULL,
   `category` enum('Fix','Needs','Wants') NOT NULL,
-  `subcategory` varchar(50) NOT NULL,
+  `subcategory` enum('Food','Rent','Bills','Transportation','Supplies','Others','Entertainment','Clothing') NOT NULL,
   `amount` decimal(10,2) NOT NULL,
   PRIMARY KEY (`expense_ID`),
   KEY `budget_ID` (`budget_ID`),

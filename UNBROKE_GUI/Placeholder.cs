@@ -29,6 +29,48 @@ namespace UNBROKE_GUI
                 }
             };
         }
+        public static void SetFixedInput(TextBox textBox, string text)
+        {
+            textBox.Text = text;
+            textBox.Font = new Font("Poppins", 8.25F);
+
+            textBox.Enter += (sender, e) =>
+            {
+                if (textBox.Text == text)
+                {
+                    textBox.Text = "";
+                }
+            };
+
+            textBox.Leave += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = text;
+                }
+            };
+        }
+        public static void SetBudget(TextBox textBox, string text)
+        {
+            textBox.Text = text;
+            textBox.Font = new Font("Poppins", 8.25F);
+
+            textBox.Enter += (sender, e) =>
+            {
+                if (textBox.Text == text)
+                {
+                    textBox.Text = "";
+                }
+            };
+
+            textBox.Leave += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = text;
+                }
+            };
+        }
 
         public static void SetPlaceholderPassword(TextBox textBox, string text, Button btnShowpass)
         {

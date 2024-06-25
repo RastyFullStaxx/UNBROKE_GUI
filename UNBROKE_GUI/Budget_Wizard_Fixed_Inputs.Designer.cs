@@ -53,11 +53,11 @@
             this.lblPrompt2.AutoSize = true;
             this.lblPrompt2.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblPrompt2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPrompt2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrompt2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrompt2.ForeColor = System.Drawing.Color.DarkRed;
             this.lblPrompt2.Location = new System.Drawing.Point(25, 147);
             this.lblPrompt2.Name = "lblPrompt2";
-            this.lblPrompt2.Size = new System.Drawing.Size(210, 42);
+            this.lblPrompt2.Size = new System.Drawing.Size(195, 29);
             this.lblPrompt2.TabIndex = 45;
             this.lblPrompt2.Text = "fixed expenses!";
             // 
@@ -66,14 +66,13 @@
             this.lblPrompt1.AutoSize = true;
             this.lblPrompt1.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblPrompt1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPrompt1.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrompt1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrompt1.ForeColor = System.Drawing.Color.Black;
             this.lblPrompt1.Location = new System.Drawing.Point(26, 111);
             this.lblPrompt1.Name = "lblPrompt1";
-            this.lblPrompt1.Size = new System.Drawing.Size(302, 42);
+            this.lblPrompt1.Size = new System.Drawing.Size(286, 29);
             this.lblPrompt1.TabIndex = 44;
             this.lblPrompt1.Text = "FInally, let\'s set up your";
-            this.lblPrompt1.Click += new System.EventHandler(this.lblPrompt1_Click);
             // 
             // btnNext
             // 
@@ -103,11 +102,11 @@
             this.lblDisplayTotalFixedExpenseAmount.AutoSize = true;
             this.lblDisplayTotalFixedExpenseAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDisplayTotalFixedExpenseAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDisplayTotalFixedExpenseAmount.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisplayTotalFixedExpenseAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayTotalFixedExpenseAmount.ForeColor = System.Drawing.Color.Indigo;
             this.lblDisplayTotalFixedExpenseAmount.Location = new System.Drawing.Point(258, 209);
             this.lblDisplayTotalFixedExpenseAmount.Name = "lblDisplayTotalFixedExpenseAmount";
-            this.lblDisplayTotalFixedExpenseAmount.Size = new System.Drawing.Size(56, 23);
+            this.lblDisplayTotalFixedExpenseAmount.Size = new System.Drawing.Size(53, 16);
             this.lblDisplayTotalFixedExpenseAmount.TabIndex = 60;
             this.lblDisplayTotalFixedExpenseAmount.Text = "₱00.00";
             this.lblDisplayTotalFixedExpenseAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -116,10 +115,10 @@
             // 
             this.txtRentExpenseAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtRentExpenseAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtRentExpenseAmount.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRentExpenseAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRentExpenseAmount.Location = new System.Drawing.Point(134, 294);
             this.txtRentExpenseAmount.Name = "txtRentExpenseAmount";
-            this.txtRentExpenseAmount.Size = new System.Drawing.Size(102, 17);
+            this.txtRentExpenseAmount.Size = new System.Drawing.Size(102, 13);
             this.txtRentExpenseAmount.TabIndex = 58;
             this.txtRentExpenseAmount.Text = "5000";
             this.txtRentExpenseAmount.TextChanged += new System.EventHandler(this.txtRentExpenseAmount_TextChanged);
@@ -129,11 +128,11 @@
             this.lblPesoSign3.AutoSize = true;
             this.lblPesoSign3.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblPesoSign3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPesoSign3.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoSign3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesoSign3.ForeColor = System.Drawing.Color.Black;
             this.lblPesoSign3.Location = new System.Drawing.Point(116, 291);
             this.lblPesoSign3.Name = "lblPesoSign3";
-            this.lblPesoSign3.Size = new System.Drawing.Size(21, 23);
+            this.lblPesoSign3.Size = new System.Drawing.Size(17, 16);
             this.lblPesoSign3.TabIndex = 59;
             this.lblPesoSign3.Text = "₱";
             // 
@@ -151,11 +150,11 @@
             this.lblRent.AutoSize = true;
             this.lblRent.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblRent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRent.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRent.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRent.ForeColor = System.Drawing.Color.Indigo;
             this.lblRent.Location = new System.Drawing.Point(46, 291);
             this.lblRent.Name = "lblRent";
-            this.lblRent.Size = new System.Drawing.Size(40, 23);
+            this.lblRent.Size = new System.Drawing.Size(39, 16);
             this.lblRent.TabIndex = 56;
             this.lblRent.Text = "Rent";
             // 
@@ -164,11 +163,11 @@
             this.lblFood.AutoSize = true;
             this.lblFood.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblFood.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFood.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFood.ForeColor = System.Drawing.Color.Indigo;
             this.lblFood.Location = new System.Drawing.Point(46, 249);
             this.lblFood.Name = "lblFood";
-            this.lblFood.Size = new System.Drawing.Size(42, 23);
+            this.lblFood.Size = new System.Drawing.Size(43, 16);
             this.lblFood.TabIndex = 55;
             this.lblFood.Text = "Food";
             // 
@@ -177,11 +176,11 @@
             this.lblSetFixedExpense.AutoSize = true;
             this.lblSetFixedExpense.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSetFixedExpense.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSetFixedExpense.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSetFixedExpense.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSetFixedExpense.ForeColor = System.Drawing.Color.Indigo;
             this.lblSetFixedExpense.Location = new System.Drawing.Point(92, 209);
             this.lblSetFixedExpense.Name = "lblSetFixedExpense";
-            this.lblSetFixedExpense.Size = new System.Drawing.Size(134, 23);
+            this.lblSetFixedExpense.Size = new System.Drawing.Size(144, 16);
             this.lblSetFixedExpense.TabIndex = 54;
             this.lblSetFixedExpense.Text = "Set Fixed Expenses";
             this.lblSetFixedExpense.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -190,10 +189,10 @@
             // 
             this.txtFoodExpenseAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtFoodExpenseAmount.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFoodExpenseAmount.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFoodExpenseAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFoodExpenseAmount.Location = new System.Drawing.Point(134, 252);
             this.txtFoodExpenseAmount.Name = "txtFoodExpenseAmount";
-            this.txtFoodExpenseAmount.Size = new System.Drawing.Size(102, 17);
+            this.txtFoodExpenseAmount.Size = new System.Drawing.Size(102, 13);
             this.txtFoodExpenseAmount.TabIndex = 52;
             this.txtFoodExpenseAmount.Text = "5000";
             this.txtFoodExpenseAmount.TextChanged += new System.EventHandler(this.txtFoodExpenseAmount_TextChanged);
@@ -203,11 +202,11 @@
             this.lblPesoSign2.AutoSize = true;
             this.lblPesoSign2.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblPesoSign2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblPesoSign2.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPesoSign2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesoSign2.ForeColor = System.Drawing.Color.Black;
             this.lblPesoSign2.Location = new System.Drawing.Point(116, 249);
             this.lblPesoSign2.Name = "lblPesoSign2";
-            this.lblPesoSign2.Size = new System.Drawing.Size(21, 23);
+            this.lblPesoSign2.Size = new System.Drawing.Size(17, 16);
             this.lblPesoSign2.TabIndex = 53;
             this.lblPesoSign2.Text = "₱";
             // 

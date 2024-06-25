@@ -238,6 +238,7 @@
     <Compile Include="Edit_Profile_Confirm_Dialogs.Designer.cs">
       <DependentUpon>Edit_Profile_Confirm_Dialogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enums\Enums.cs" />
     <Compile Include="Feedback.cs">
       <SubType>Form</SubType>
     </Compile>
