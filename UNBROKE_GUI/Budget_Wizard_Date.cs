@@ -25,7 +25,7 @@ namespace UNBROKE_GUI
             // Get current date as start date
             DateTime startDate = DateTime.Today;
 
-            // Get the selected end date from the DateTimePicker
+            // Get the selected end date from the DateTimePicker, allowing it to be nullable
             DateTime endDate = dateTimePicker.Value;
 
             // Insert budget date into the database
@@ -37,21 +37,10 @@ namespace UNBROKE_GUI
 
                 if (userId != -1)
                 {
-                    bool success = db.InsertBudgetDate(userId, startDate, endDate);
-
-                    if (success)
-                    {
-                        MessageBox.Show("Budget date set up successfully.");
-
-                        // Show the Budget_Wizard_Input form and pass necessary data
-                        Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser);
+                       // Show the Budget_Wizard_Input form and pass necessary data
+                        Budget_Wizard_Input budget_Wizard_Input = new Budget_Wizard_Input(currentuser, endDate);
                         budget_Wizard_Input.Show();
                         this.Dispose();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to save budget data. Please try again.");
-                    }
                 }
                 else
                 {
@@ -65,10 +54,12 @@ namespace UNBROKE_GUI
         }
 
 
-    private void Budget_Wizard_Date_Load(object sender, EventArgs e)
+
+        private void Budget_Wizard_Date_Load(object sender, EventArgs e)
         {
             // Initialize DateTimePicker with default values
             dateTimePicker.Value = DateTime.Today.AddDays(1); // Default to tomorrow's date
+            dateTimePicker.Checked = false; // Allow the picker to have no value
         }
     }
 }
