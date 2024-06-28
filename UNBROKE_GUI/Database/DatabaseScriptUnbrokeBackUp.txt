@@ -1,0 +1,42 @@
+-- Create database if not exists
+CREATE DATABASE IF NOT EXISTS `UNBROKE`;
+
+-- Use the created database
+USE `UNBROKE`;
+
+-- Create table `user`
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `first_name` VARCHAR(50),
+  `last_name` VARCHAR(50),
+  `profile_image` LONGBLOB,
+  `profile_setup` BOOLEAN NOT NULL DEFAULT FALSE,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci AUTO_INCREMENT = 1000;
+
+-- Create table `budget`
+CREATE TABLE IF NOT EXISTS `budget` (
+  `budget_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `start_date` DATE NOT NULL DEFAULT CURRENT_DATE,
+  `end_date` DATE NOT NULL DEFAULT '9999-12-31',
+  `total_budget` decimal(10,2) NOT NULL,
+  `savings` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`budget_id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `fk_budget_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Create table `expense`
+CREATE TABLE IF NOT EXISTS `expense` (
+  `expense_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `budget_ID` int(11) NOT NULL,
+  `category` enum('Fix','Needs','Wants') NOT NULL,
+  `subcategory` enum('Food','Rent','Bills','Transportation','Supplies','Others','Entertainment','Clothing') NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`expense_ID`),
+  KEY `budget_ID` (`budget_ID`),
+  CONSTRAINT `fk_expense_budget_ID` FOREIGN KEY (`budget_ID`) REFERENCES `budget` (`budget_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;

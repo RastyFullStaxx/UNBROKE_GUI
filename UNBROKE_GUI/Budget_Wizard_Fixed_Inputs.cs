@@ -81,7 +81,8 @@ namespace UNBROKE_GUI
                 // Initialize BaseClass with TotalBudget, Rent, and Food
                 budget = new BaseClass(totalB, rent, food);
 
-                Console.WriteLine("Total Budget: " + totalB.ToString("N2"));
+
+        /*      Console.WriteLine("Total Budget: " + totalB.ToString("N2"));
                 Console.WriteLine("Fixed Expenses: " + budget.FixedExpenses.ToString("N2"));
                 Console.WriteLine("Rent: " + budget.Rent.ToString("N2"));
                 Console.WriteLine("Food: " + budget.Food.ToString("N2"));
@@ -95,7 +96,20 @@ namespace UNBROKE_GUI
                 Console.WriteLine("Entertainment: " + budget.Entertainment.ToString("N2"));
                 Console.WriteLine("Clothing: " + budget.Clothing.ToString("N2"));
                 Console.WriteLine("Savings: " + budget.Savings.ToString("N2"));
+        
+         */
 
+
+
+                bool Bills = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Bills, budget.Bills);
+                bool Transportation = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Transportation, budget.Transportation);
+                bool Supplies = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Supplies, budget.Supplies);
+                bool Others = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Others, budget.Others);
+
+                bool Entertainment = db.InsertExpense(budgetId, ExpenseCategory.Wants, ExpenseSubCategory.Entertainment, budget.Entertainment);
+                bool Clothing = db.InsertExpense(budgetId, ExpenseCategory.Wants, ExpenseSubCategory.Clothing, budget.Clothing);
+
+                bool Savings = db.InsertSavings(userId, budgetId, budget.Savings);
             }
             else
             {
