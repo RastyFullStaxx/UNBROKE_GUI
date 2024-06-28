@@ -437,6 +437,34 @@ namespace UNBROKE_GUI
             }
             }
         }
+        public bool InsertSavings(int userID, int budgetID, decimal amount)
+        {
+            string query = @"UPDATE budget SET savings = @amount WHERE budget_id = @budgetID AND user_id = @userID";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@budgetID", budgetID);
+                        command.Parameters.AddWithValue("@userID", userID);
+                        command.Parameters.AddWithValue("@amount", amount);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log it, rethrow it, etc.)
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    return false;
+                }
+            }
+        }
 
 
         public bool InsertBudget(int userId, decimal totalBudget, DateTime startDate, DateTime? endDate)
