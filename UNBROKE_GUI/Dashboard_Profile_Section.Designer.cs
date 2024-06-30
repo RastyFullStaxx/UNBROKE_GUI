@@ -47,6 +47,7 @@
             this.imgFeedbackIcon = new System.Windows.Forms.PictureBox();
             this.imgDefaultPhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblFullNameDisplay = new System.Windows.Forms.Label();
+            this.pnlFullNameDisplay = new System.Windows.Forms.Panel();
             this.pnlEditProfile.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgProfileIcon)).BeginInit();
             this.pnlFinancialResources.SuspendLayout();
@@ -191,7 +192,7 @@
             this.imgUnbrokeLabel.FlatAppearance.BorderSize = 0;
             this.imgUnbrokeLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.imgUnbrokeLabel.Image = ((System.Drawing.Image)(resources.GetObject("imgUnbrokeLabel.Image")));
-            this.imgUnbrokeLabel.Location = new System.Drawing.Point(161, 250);
+            this.imgUnbrokeLabel.Location = new System.Drawing.Point(161, 256);
             this.imgUnbrokeLabel.Name = "imgUnbrokeLabel";
             this.imgUnbrokeLabel.Size = new System.Drawing.Size(56, 21);
             this.imgUnbrokeLabel.TabIndex = 49;
@@ -257,17 +258,26 @@
             // 
             // lblFullNameDisplay
             // 
-            this.lblFullNameDisplay.AutoSize = true;
+            this.lblFullNameDisplay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblFullNameDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblFullNameDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFullNameDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullNameDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFullNameDisplay.Location = new System.Drawing.Point(105, 221);
+            this.lblFullNameDisplay.Location = new System.Drawing.Point(32, 223);
             this.lblFullNameDisplay.Name = "lblFullNameDisplay";
-            this.lblFullNameDisplay.Size = new System.Drawing.Size(182, 28);
+            this.lblFullNameDisplay.Size = new System.Drawing.Size(312, 28);
             this.lblFullNameDisplay.TabIndex = 55;
             this.lblFullNameDisplay.Text = "FirstName LastName";
             this.lblFullNameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlFullNameDisplay
+            // 
+            this.pnlFullNameDisplay.AutoSize = true;
+            this.pnlFullNameDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFullNameDisplay.Location = new System.Drawing.Point(29, 218);
+            this.pnlFullNameDisplay.Name = "pnlFullNameDisplay";
+            this.pnlFullNameDisplay.Size = new System.Drawing.Size(318, 37);
+            this.pnlFullNameDisplay.TabIndex = 56;
             // 
             // Dashboard_Profile_Section
             // 
@@ -284,6 +294,7 @@
             this.Controls.Add(this.imgFeedbackIcon);
             this.Controls.Add(this.imgDefaultPhoto);
             this.Controls.Add(this.pnlFeedback);
+            this.Controls.Add(this.pnlFullNameDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard_Profile_Section";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -323,5 +334,6 @@
         private System.Windows.Forms.Button btnFeedback;
         private System.Windows.Forms.Button imgUnbrokeLabel;
         private System.Windows.Forms.Label lblFullNameDisplay;
+        private System.Windows.Forms.Panel pnlFullNameDisplay;
     }
 }

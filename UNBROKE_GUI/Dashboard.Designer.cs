@@ -47,8 +47,14 @@ namespace UNBROKE_GUI
             this.btnDashboard = new System.Windows.Forms.Button();
             this.btnBudgetWizard2 = new System.Windows.Forms.Button();
             this.btnBudgetWizard1 = new System.Windows.Forms.Button();
+            this.pnlBalanceAmount = new System.Windows.Forms.Panel();
+            this.pnlExpenseBreakdowns = new System.Windows.Forms.Panel();
+            this.pnlActivity = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBalanceTitle)).BeginInit();
+            this.pnlBalanceAmount.SuspendLayout();
+            this.pnlExpenseBreakdowns.SuspendLayout();
+            this.pnlActivity.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotalBalanceText
@@ -65,15 +71,14 @@ namespace UNBROKE_GUI
             // 
             // lblTotalBalanceAmount
             // 
-            this.lblTotalBalanceAmount.AutoSize = true;
             this.lblTotalBalanceAmount.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalBalanceAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblTotalBalanceAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTotalBalanceAmount.Font = new System.Drawing.Font("Poppins", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBalanceAmount.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblTotalBalanceAmount.Location = new System.Drawing.Point(112, 125);
+            this.lblTotalBalanceAmount.Location = new System.Drawing.Point(5, 42);
             this.lblTotalBalanceAmount.Name = "lblTotalBalanceAmount";
-            this.lblTotalBalanceAmount.Size = new System.Drawing.Size(141, 65);
+            this.lblTotalBalanceAmount.Size = new System.Drawing.Size(307, 65);
             this.lblTotalBalanceAmount.TabIndex = 31;
             this.lblTotalBalanceAmount.Text = "₱0.00";
             this.lblTotalBalanceAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -124,7 +129,7 @@ namespace UNBROKE_GUI
             this.lblNoBudgetActivity.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNoBudgetActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblNoBudgetActivity.Font = new System.Drawing.Font("Poppins ExtraLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoBudgetActivity.Location = new System.Drawing.Point(68, 506);
+            this.lblNoBudgetActivity.Location = new System.Drawing.Point(44, 33);
             this.lblNoBudgetActivity.Name = "lblNoBudgetActivity";
             this.lblNoBudgetActivity.Size = new System.Drawing.Size(258, 38);
             this.lblNoBudgetActivity.TabIndex = 35;
@@ -137,7 +142,7 @@ namespace UNBROKE_GUI
             this.label1.Cursor = System.Windows.Forms.Cursors.Default;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Poppins ExtraLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(77, 365);
+            this.label1.Location = new System.Drawing.Point(53, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 19);
             this.label1.TabIndex = 36;
@@ -151,7 +156,7 @@ namespace UNBROKE_GUI
             this.link_lblBudgetWizard.Font = new System.Drawing.Font("Poppins ExtraLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_lblBudgetWizard.ForeColor = System.Drawing.Color.DarkRed;
             this.link_lblBudgetWizard.LinkColor = System.Drawing.Color.DarkRed;
-            this.link_lblBudgetWizard.Location = new System.Drawing.Point(113, 384);
+            this.link_lblBudgetWizard.Location = new System.Drawing.Point(89, 136);
             this.link_lblBudgetWizard.Name = "link_lblBudgetWizard";
             this.link_lblBudgetWizard.Size = new System.Drawing.Size(176, 19);
             this.link_lblBudgetWizard.TabIndex = 37;
@@ -173,7 +178,7 @@ namespace UNBROKE_GUI
             // imgNotificationIcon
             // 
             this.imgNotificationIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgNotificationIcon.BackgroundImage")));
-            this.imgNotificationIcon.Location = new System.Drawing.Point(99, 384);
+            this.imgNotificationIcon.Location = new System.Drawing.Point(75, 136);
             this.imgNotificationIcon.Name = "imgNotificationIcon";
             this.imgNotificationIcon.Size = new System.Drawing.Size(16, 16);
             this.imgNotificationIcon.TabIndex = 38;
@@ -244,11 +249,44 @@ namespace UNBROKE_GUI
             this.btnBudgetWizard1.FlatAppearance.BorderSize = 0;
             this.btnBudgetWizard1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBudgetWizard1.Image = ((System.Drawing.Image)(resources.GetObject("btnBudgetWizard1.Image")));
-            this.btnBudgetWizard1.Location = new System.Drawing.Point(148, 274);
+            this.btnBudgetWizard1.Location = new System.Drawing.Point(124, 26);
             this.btnBudgetWizard1.Name = "btnBudgetWizard1";
             this.btnBudgetWizard1.Size = new System.Drawing.Size(83, 82);
             this.btnBudgetWizard1.TabIndex = 7;
             this.btnBudgetWizard1.UseVisualStyleBackColor = true;
+            // 
+            // pnlBalanceAmount
+            // 
+            this.pnlBalanceAmount.AutoSize = true;
+            this.pnlBalanceAmount.BackColor = System.Drawing.Color.Transparent;
+            this.pnlBalanceAmount.Controls.Add(this.lblTotalBalanceAmount);
+            this.pnlBalanceAmount.Location = new System.Drawing.Point(24, 92);
+            this.pnlBalanceAmount.Name = "pnlBalanceAmount";
+            this.pnlBalanceAmount.Size = new System.Drawing.Size(334, 108);
+            this.pnlBalanceAmount.TabIndex = 57;
+            // 
+            // pnlExpenseBreakdowns
+            // 
+            this.pnlExpenseBreakdowns.AutoSize = true;
+            this.pnlExpenseBreakdowns.BackColor = System.Drawing.Color.Transparent;
+            this.pnlExpenseBreakdowns.Controls.Add(this.btnBudgetWizard1);
+            this.pnlExpenseBreakdowns.Controls.Add(this.imgNotificationIcon);
+            this.pnlExpenseBreakdowns.Controls.Add(this.label1);
+            this.pnlExpenseBreakdowns.Controls.Add(this.link_lblBudgetWizard);
+            this.pnlExpenseBreakdowns.Location = new System.Drawing.Point(24, 250);
+            this.pnlExpenseBreakdowns.Name = "pnlExpenseBreakdowns";
+            this.pnlExpenseBreakdowns.Size = new System.Drawing.Size(334, 177);
+            this.pnlExpenseBreakdowns.TabIndex = 58;
+            // 
+            // pnlActivity
+            // 
+            this.pnlActivity.AutoSize = true;
+            this.pnlActivity.BackColor = System.Drawing.Color.Transparent;
+            this.pnlActivity.Controls.Add(this.lblNoBudgetActivity);
+            this.pnlActivity.Location = new System.Drawing.Point(24, 474);
+            this.pnlActivity.Name = "pnlActivity";
+            this.pnlActivity.Size = new System.Drawing.Size(334, 244);
+            this.pnlActivity.TabIndex = 59;
             // 
             // Dashboard
             // 
@@ -256,10 +294,6 @@ namespace UNBROKE_GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.imgNotificationIcon);
-            this.Controls.Add(this.link_lblBudgetWizard);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblNoBudgetActivity);
             this.Controls.Add(this.lblActivity);
             this.Controls.Add(this.lblBudget);
             this.Controls.Add(this.lblPesoSign);
@@ -269,8 +303,9 @@ namespace UNBROKE_GUI
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.btnBudgetWizard2);
-            this.Controls.Add(this.btnBudgetWizard1);
-            this.Controls.Add(this.lblTotalBalanceAmount);
+            this.Controls.Add(this.pnlBalanceAmount);
+            this.Controls.Add(this.pnlExpenseBreakdowns);
+            this.Controls.Add(this.pnlActivity);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
@@ -279,6 +314,11 @@ namespace UNBROKE_GUI
             this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBalanceTitle)).EndInit();
+            this.pnlBalanceAmount.ResumeLayout(false);
+            this.pnlExpenseBreakdowns.ResumeLayout(false);
+            this.pnlExpenseBreakdowns.PerformLayout();
+            this.pnlActivity.ResumeLayout(false);
+            this.pnlActivity.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +341,8 @@ namespace UNBROKE_GUI
         private System.Windows.Forms.LinkLabel link_lblBudgetWizard;
         private System.Windows.Forms.PictureBox imgNotificationIcon;
         private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Panel pnlBalanceAmount;
+        private System.Windows.Forms.Panel pnlExpenseBreakdowns;
+        private System.Windows.Forms.Panel pnlActivity;
     }
 }
