@@ -51,6 +51,7 @@
             this.btnUploadPhoto = new System.Windows.Forms.Button();
             this.imgDefaultPhoto = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnBack = new System.Windows.Forms.Button();
+            this.pnlFullNameDisplay = new System.Windows.Forms.Panel();
             this.pnlUsername.SuspendLayout();
             this.pnlPassword.SuspendLayout();
             this.pnlLastName.SuspendLayout();
@@ -119,11 +120,10 @@
             // 
             // lblUsernameDisplay
             // 
-            this.lblUsernameDisplay.AutoSize = true;
             this.lblUsernameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsernameDisplay.Location = new System.Drawing.Point(26, 27);
             this.lblUsernameDisplay.Name = "lblUsernameDisplay";
-            this.lblUsernameDisplay.Size = new System.Drawing.Size(70, 22);
+            this.lblUsernameDisplay.Size = new System.Drawing.Size(258, 22);
             this.lblUsernameDisplay.TabIndex = 1;
             this.lblUsernameDisplay.Text = "username";
             this.lblUsernameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -151,24 +151,22 @@
             // 
             // lblUserpassDisplay
             // 
-            this.lblUserpassDisplay.AutoSize = true;
             this.lblUserpassDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserpassDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblUserpassDisplay.Location = new System.Drawing.Point(26, 26);
             this.lblUserpassDisplay.Name = "lblUserpassDisplay";
-            this.lblUserpassDisplay.Size = new System.Drawing.Size(93, 22);
+            this.lblUserpassDisplay.Size = new System.Drawing.Size(258, 22);
             this.lblUserpassDisplay.TabIndex = 0;
             this.lblUserpassDisplay.Text = "userpassword";
             this.lblUserpassDisplay.Click += new System.EventHandler(this.lblUserpass_Click);
             // 
             // lblFirstNameDisplay
             // 
-            this.lblFirstNameDisplay.AutoSize = true;
             this.lblFirstNameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFirstNameDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblFirstNameDisplay.Location = new System.Drawing.Point(26, 27);
             this.lblFirstNameDisplay.Name = "lblFirstNameDisplay";
-            this.lblFirstNameDisplay.Size = new System.Drawing.Size(97, 22);
+            this.lblFirstNameDisplay.Size = new System.Drawing.Size(258, 22);
             this.lblFirstNameDisplay.TabIndex = 1;
             this.lblFirstNameDisplay.Text = "user first name";
             // 
@@ -195,12 +193,11 @@
             // 
             // lblLastNameDisplay
             // 
-            this.lblLastNameDisplay.AutoSize = true;
             this.lblLastNameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLastNameDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblLastNameDisplay.Location = new System.Drawing.Point(26, 26);
             this.lblLastNameDisplay.Name = "lblLastNameDisplay";
-            this.lblLastNameDisplay.Size = new System.Drawing.Size(97, 22);
+            this.lblLastNameDisplay.Size = new System.Drawing.Size(258, 22);
             this.lblLastNameDisplay.TabIndex = 0;
             this.lblLastNameDisplay.Text = "user last name";
             // 
@@ -251,14 +248,13 @@
             // 
             // lblFullNameDisplay
             // 
-            this.lblFullNameDisplay.AutoSize = true;
             this.lblFullNameDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblFullNameDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblFullNameDisplay.Font = new System.Drawing.Font("Poppins SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullNameDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFullNameDisplay.Location = new System.Drawing.Point(95, 303);
+            this.lblFullNameDisplay.Location = new System.Drawing.Point(25, 306);
             this.lblFullNameDisplay.Name = "lblFullNameDisplay";
-            this.lblFullNameDisplay.Size = new System.Drawing.Size(182, 28);
+            this.lblFullNameDisplay.Size = new System.Drawing.Size(325, 28);
             this.lblFullNameDisplay.TabIndex = 54;
             this.lblFullNameDisplay.Text = "FirstName LastName";
             this.lblFullNameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -311,6 +307,15 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // pnlFullNameDisplay
+            // 
+            this.pnlFullNameDisplay.AutoSize = true;
+            this.pnlFullNameDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.pnlFullNameDisplay.Location = new System.Drawing.Point(22, 299);
+            this.pnlFullNameDisplay.Name = "pnlFullNameDisplay";
+            this.pnlFullNameDisplay.Size = new System.Drawing.Size(331, 41);
+            this.pnlFullNameDisplay.TabIndex = 57;
+            // 
             // EditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,19 +335,16 @@
             this.Controls.Add(this.lblEditProfile);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlLastName);
+            this.Controls.Add(this.pnlFullNameDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProfile";
             this.Load += new System.EventHandler(this.EditProfile_Load);
             this.pnlUsername.ResumeLayout(false);
-            this.pnlUsername.PerformLayout();
             this.pnlPassword.ResumeLayout(false);
-            this.pnlPassword.PerformLayout();
             this.pnlLastName.ResumeLayout(false);
-            this.pnlLastName.PerformLayout();
             this.pnlFirstName.ResumeLayout(false);
-            this.pnlFirstName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgDefaultPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -373,5 +375,6 @@
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Panel pnlFirstName;
         private System.Windows.Forms.Label lblFullNameDisplay;
+        private System.Windows.Forms.Panel pnlFullNameDisplay;
     }
 }

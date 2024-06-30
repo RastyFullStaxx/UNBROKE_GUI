@@ -51,7 +51,6 @@
             // 
             // lblExpenseAmount
             // 
-            this.lblExpenseAmount.AutoSize = true;
             this.lblExpenseAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblExpenseAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblExpenseAmount.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -59,7 +58,7 @@
             this.lblExpenseAmount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblExpenseAmount.Location = new System.Drawing.Point(33, 198);
             this.lblExpenseAmount.Name = "lblExpenseAmount";
-            this.lblExpenseAmount.Size = new System.Drawing.Size(74, 23);
+            this.lblExpenseAmount.Size = new System.Drawing.Size(126, 23);
             this.lblExpenseAmount.TabIndex = 80;
             this.lblExpenseAmount.Text = "₱4300.00";
             // 
@@ -78,7 +77,6 @@
             // 
             // lblExpectedSavingsAmount
             // 
-            this.lblExpectedSavingsAmount.AutoSize = true;
             this.lblExpectedSavingsAmount.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblExpectedSavingsAmount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblExpectedSavingsAmount.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -86,7 +84,7 @@
             this.lblExpectedSavingsAmount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblExpectedSavingsAmount.Location = new System.Drawing.Point(173, 198);
             this.lblExpectedSavingsAmount.Name = "lblExpectedSavingsAmount";
-            this.lblExpectedSavingsAmount.Size = new System.Drawing.Size(70, 23);
+            this.lblExpectedSavingsAmount.Size = new System.Drawing.Size(153, 23);
             this.lblExpectedSavingsAmount.TabIndex = 82;
             this.lblExpectedSavingsAmount.Text = "₱1000.00";
             // 
