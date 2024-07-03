@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Budget_Wizard_Result_Savings_Tab));
             this.lblExpenseAmount = new System.Windows.Forms.Label();
             this.lblExpense = new System.Windows.Forms.Label();
@@ -35,7 +36,6 @@
             this.lblExpectedSavings = new System.Windows.Forms.Label();
             this.lblCurrentPlan = new System.Windows.Forms.Label();
             this.lblSavingsDate = new System.Windows.Forms.Label();
-            this.imgSavingsGraph = new System.Windows.Forms.PictureBox();
             this.btnEditCurrentPlan = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnProfile = new System.Windows.Forms.Button();
@@ -44,9 +44,12 @@
             this.btnSavingsTab = new System.Windows.Forms.Button();
             this.btnExpenseTab = new System.Windows.Forms.Button();
             this.imgBudgetWizardTitle = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.imgSavingsGraph)).BeginInit();
+            this.savingsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.savingsLabel = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).BeginInit();
+            this.savingsProgressBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblExpenseAmount
@@ -126,15 +129,6 @@
             this.lblSavingsDate.Size = new System.Drawing.Size(74, 23);
             this.lblSavingsDate.TabIndex = 86;
             this.lblSavingsDate.Text = "June 2024";
-            // 
-            // imgSavingsGraph
-            // 
-            this.imgSavingsGraph.Image = ((System.Drawing.Image)(resources.GetObject("imgSavingsGraph.Image")));
-            this.imgSavingsGraph.Location = new System.Drawing.Point(190, 294);
-            this.imgSavingsGraph.Name = "imgSavingsGraph";
-            this.imgSavingsGraph.Size = new System.Drawing.Size(87, 87);
-            this.imgSavingsGraph.TabIndex = 87;
-            this.imgSavingsGraph.TabStop = false;
             // 
             // btnEditCurrentPlan
             // 
@@ -229,12 +223,47 @@
             this.imgBudgetWizardTitle.TabIndex = 73;
             this.imgBudgetWizardTitle.TabStop = false;
             // 
+            // savingsProgressBar
+            // 
+            this.savingsProgressBar.Controls.Add(this.savingsLabel);
+            this.savingsProgressBar.FillColor = System.Drawing.Color.Silver;
+            this.savingsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.savingsProgressBar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.savingsProgressBar.Location = new System.Drawing.Point(224, 277);
+            this.savingsProgressBar.Maximum = 20;
+            this.savingsProgressBar.Minimum = 0;
+            this.savingsProgressBar.Name = "savingsProgressBar";
+            this.savingsProgressBar.ProgressColor = System.Drawing.Color.DarkRed;
+            this.savingsProgressBar.ProgressColor2 = System.Drawing.Color.DarkRed;
+            this.savingsProgressBar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.savingsProgressBar.Size = new System.Drawing.Size(102, 102);
+            this.savingsProgressBar.TabIndex = 87;
+            this.savingsProgressBar.Text = "guna2CircleProgressBar1";
+            // 
+            // savingsLabel
+            // 
+            this.savingsLabel.AutoSize = true;
+            this.savingsLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.savingsLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savingsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.savingsLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.savingsLabel.Location = new System.Drawing.Point(29, 40);
+            this.savingsLabel.Name = "savingsLabel";
+            this.savingsLabel.Size = new System.Drawing.Size(45, 20);
+            this.savingsLabel.TabIndex = 61;
+            this.savingsLabel.Text = "20%";
+            this.savingsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Budget_Wizard_Result_Savings_Tab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 812);
-            this.Controls.Add(this.imgSavingsGraph);
+            this.Controls.Add(this.savingsProgressBar);
             this.Controls.Add(this.lblSavingsDate);
             this.Controls.Add(this.btnEditCurrentPlan);
             this.Controls.Add(this.lblCurrentPlan);
@@ -253,9 +282,11 @@
             this.Name = "Budget_Wizard_Result_Savings_Tab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Wizard_Result_Savings_Tab";
-            ((System.ComponentModel.ISupportInitialize)(this.imgSavingsGraph)).EndInit();
+            this.Load += new System.EventHandler(this.Budget_Wizard_Result_Savings_Tab_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgBudgetWizardTitle)).EndInit();
+            this.savingsProgressBar.ResumeLayout(false);
+            this.savingsProgressBar.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,6 +308,8 @@
         private System.Windows.Forms.Label lblCurrentPlan;
         private System.Windows.Forms.Button btnEditCurrentPlan;
         private System.Windows.Forms.Label lblSavingsDate;
-        private System.Windows.Forms.PictureBox imgSavingsGraph;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar savingsProgressBar;
+        private System.Windows.Forms.Label savingsLabel;
+        private System.Windows.Forms.Timer timer1;
     }
 }

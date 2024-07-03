@@ -36,7 +36,6 @@ namespace UNBROKE_GUI
             this.lblPesoSign = new System.Windows.Forms.Label();
             this.lblBudget = new System.Windows.Forms.Label();
             this.lblActivity = new System.Windows.Forms.Label();
-            this.lblNoBudgetActivity = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.link_lblBudgetWizard = new System.Windows.Forms.LinkLabel();
             this.lblDate = new System.Windows.Forms.Label();
@@ -49,12 +48,10 @@ namespace UNBROKE_GUI
             this.btnBudgetWizard1 = new System.Windows.Forms.Button();
             this.pnlBalanceAmount = new System.Windows.Forms.Panel();
             this.pnlExpenseBreakdowns = new System.Windows.Forms.Panel();
-            this.pnlActivity = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBalanceTitle)).BeginInit();
             this.pnlBalanceAmount.SuspendLayout();
             this.pnlExpenseBreakdowns.SuspendLayout();
-            this.pnlActivity.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotalBalanceText
@@ -119,22 +116,8 @@ namespace UNBROKE_GUI
             this.lblActivity.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivity.Location = new System.Drawing.Point(24, 445);
             this.lblActivity.Name = "lblActivity";
-            this.lblActivity.Size = new System.Drawing.Size(70, 26);
+            this.lblActivity.Size = new System.Drawing.Size(0, 26);
             this.lblActivity.TabIndex = 34;
-            this.lblActivity.Text = "Activity";
-            // 
-            // lblNoBudgetActivity
-            // 
-            this.lblNoBudgetActivity.AutoSize = true;
-            this.lblNoBudgetActivity.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblNoBudgetActivity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNoBudgetActivity.Font = new System.Drawing.Font("Poppins ExtraLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoBudgetActivity.Location = new System.Drawing.Point(44, 33);
-            this.lblNoBudgetActivity.Name = "lblNoBudgetActivity";
-            this.lblNoBudgetActivity.Size = new System.Drawing.Size(258, 38);
-            this.lblNoBudgetActivity.TabIndex = 35;
-            this.lblNoBudgetActivity.Text = "Looks like you haven’t added any expenses yet.\r\n              Set up your budget " +
-    "to get started.";
             // 
             // label1
             // 
@@ -275,18 +258,8 @@ namespace UNBROKE_GUI
             this.pnlExpenseBreakdowns.Controls.Add(this.link_lblBudgetWizard);
             this.pnlExpenseBreakdowns.Location = new System.Drawing.Point(24, 250);
             this.pnlExpenseBreakdowns.Name = "pnlExpenseBreakdowns";
-            this.pnlExpenseBreakdowns.Size = new System.Drawing.Size(334, 177);
+            this.pnlExpenseBreakdowns.Size = new System.Drawing.Size(334, 466);
             this.pnlExpenseBreakdowns.TabIndex = 58;
-            // 
-            // pnlActivity
-            // 
-            this.pnlActivity.AutoSize = true;
-            this.pnlActivity.BackColor = System.Drawing.Color.Transparent;
-            this.pnlActivity.Controls.Add(this.lblNoBudgetActivity);
-            this.pnlActivity.Location = new System.Drawing.Point(24, 474);
-            this.pnlActivity.Name = "pnlActivity";
-            this.pnlActivity.Size = new System.Drawing.Size(334, 244);
-            this.pnlActivity.TabIndex = 59;
             // 
             // Dashboard
             // 
@@ -305,7 +278,6 @@ namespace UNBROKE_GUI
             this.Controls.Add(this.btnBudgetWizard2);
             this.Controls.Add(this.pnlBalanceAmount);
             this.Controls.Add(this.pnlExpenseBreakdowns);
-            this.Controls.Add(this.pnlActivity);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
@@ -317,8 +289,6 @@ namespace UNBROKE_GUI
             this.pnlBalanceAmount.ResumeLayout(false);
             this.pnlExpenseBreakdowns.ResumeLayout(false);
             this.pnlExpenseBreakdowns.PerformLayout();
-            this.pnlActivity.ResumeLayout(false);
-            this.pnlActivity.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,13 +306,11 @@ namespace UNBROKE_GUI
         private System.Windows.Forms.Label lblPesoSign;
         private System.Windows.Forms.Label lblBudget;
         private System.Windows.Forms.Label lblActivity;
-        private System.Windows.Forms.Label lblNoBudgetActivity;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel link_lblBudgetWizard;
         private System.Windows.Forms.PictureBox imgNotificationIcon;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel pnlBalanceAmount;
         private System.Windows.Forms.Panel pnlExpenseBreakdowns;
-        private System.Windows.Forms.Panel pnlActivity;
     }
 }

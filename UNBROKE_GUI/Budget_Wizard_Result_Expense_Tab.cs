@@ -7,6 +7,7 @@ using UNBROKE_GUI.Enums;
 using static UNBROKE_GUI.DatabaseHelper;
 using UNBROKE_GUI.Managers;
 using System.Drawing; // Add this directive for Point
+using MySql.Data.MySqlClient;
 
 namespace UNBROKE_GUI
 {
@@ -24,8 +25,6 @@ namespace UNBROKE_GUI
         private decimal Fixed_Food, Fixed_Rent;
         private decimal Needs_Bills, Needs_Transportation, Needs_Supplies, Needs_Others;
         private decimal Wants_Entertainment, Wants_Clothing;
-
-
 
 
 
@@ -418,7 +417,10 @@ namespace UNBROKE_GUI
 
         private void label1_Click(object sender, EventArgs e) { }
 
+        private void savingsProgressBar_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
 
         private void Budget_Wizard_Result_Load(object sender, EventArgs e)
         {
