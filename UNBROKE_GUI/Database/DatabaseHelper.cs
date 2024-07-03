@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using UNBROKE_GUI.Enums;
@@ -7,6 +8,14 @@ namespace UNBROKE_GUI
 {
     internal class DatabaseHelper
     {
+        public class Expense
+        {
+            public int ExpenseId { get; set; }
+            public ExpenseCategory Category { get; set; }
+            public ExpenseSubCategory Subcategory { get; set; }
+            public decimal Amount { get; set; }
+        }
+
         private string connectionString;
 
         // Singleton instance
@@ -19,7 +28,7 @@ namespace UNBROKE_GUI
             //RASTY = connectionString = "server=localhost;database=unbroke;uid=root;pwd='180503';";
             //EJAY = connectionString = "server=localhost;database=unbroke;uid=root;pwd='';";
 
-            connectionString = "server=localhost;database=unbroke;uid=root;pwd='';";
+            connectionString = "server=localhost;port=3307;database=unbroke;uid=root;pwd='';";
 
         }
 
@@ -289,6 +298,8 @@ namespace UNBROKE_GUI
 
             return username;
         }
+
+
         public int GetUserIdByUsername(string username)
         {
             int userId = -1; // Default value or error indicator
@@ -509,53 +520,6 @@ namespace UNBROKE_GUI
             }
         }
 
-
-/*
-        public bool InsertBudgetDate(int userId, DateTime startDate, DateTime? endDate)
-        {
-            string query = "INSERT INTO `budget` (`user_id`, `start_date`, `end_date`, `total_budget`, `savings`) " +
-                           "VALUES (@userId, @startDate, @endDate, 0.0, 0.0)";
-
-            using (MySqlConnection connection = GetConnection())
-            {
-                try
-                {
-                    connection.Open();
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@userId", userId);
-                        command.Parameters.AddWithValue("@startDate", startDate);
-
-                        // Check if endDate has a value and handle appropriately
-                        if (endDate.HasValue)
-                        {
-                            command.Parameters.AddWithValue("@endDate", endDate.Value);
-                        }
-                        else
-                        {
-                            // Modify the query to not insert `end_date` if it's null
-                            query = "INSERT INTO `budget` (`user_id`, `start_date`, `total_budget`, `savings`) " +
-                                    "VALUES (@userId, @startDate, 0.0, 0.0)";
-                            command.CommandText = query;
-                        }
-
-                        int rowsAffected = command.ExecuteNonQuery();
-                        Console.WriteLine($"Rows affected: {rowsAffected}");
-
-                        return rowsAffected > 0;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error inserting budget date: {ex.Message}");
-                    return false;
-                }
-            }
-        }
-*/
-
-
         public byte[] GetProfileImageByUsername(string username)
         {
             byte[] profileImage = null;
@@ -714,5 +678,65 @@ namespace UNBROKE_GUI
 
             return highestBudgetId;
         }
+
+        public List<Expense> GetExpensesByBudgetId(int budgetId)
+        {
+            List<Expense> expenses = new List<Expense>();
+            string query = "SELECT expense_ID, category, subcategory, amount FROM `expense` WHERE budget_ID = @budgetId";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@budgetId", budgetId);
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Expense expense = new Expense
+                                {
+                                    ExpenseId = reader.GetInt32("expense_ID"),
+                                    Category = (ExpenseCategory)Enum.Parse(typeof(ExpenseCategory), reader.GetString("category")),
+                                    Subcategory = (ExpenseSubCategory)Enum.Parse(typeof(ExpenseSubCategory), reader.GetString("subcategory")),
+                                    Amount = reader.GetDecimal("amount")
+                                };
+                                expenses.Add(expense);
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error fetching expenses: {ex.Message}");
+                    throw;
+                }
+            }
+
+            return expenses;
+        }
+
+
+        public List<Expense> GetExpensesByUsername(string username)
+        {
+            int userId = GetUserIdByUsername(username);
+            if (userId == -1)
+            {
+                throw new Exception("User not found");
+            }
+
+            int highestBudgetId = GetHighestBudgetIdByUserId(userId);
+            if (highestBudgetId == -1)
+            {
+                throw new Exception("No budget found for user");
+            }
+
+            List<Expense> expenses = GetExpensesByBudgetId(highestBudgetId);
+
+            return expenses;
+        }
+
     }
 }

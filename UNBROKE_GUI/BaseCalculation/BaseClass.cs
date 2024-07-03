@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UNBROKE_GUI.BaseCalculation
 {
     internal class BaseClass
     {
+        // Attributes
         private decimal totalBudget;
         private decimal fixedExpenses;
         private decimal rent;
@@ -23,7 +20,7 @@ namespace UNBROKE_GUI.BaseCalculation
         private decimal clothing;
         private decimal savings;
 
-        // Constructor to initialize with TotalBudget and fixed expenses
+        // Constructor to initialize with TotalBudget, Rent, and Food
         public BaseClass(decimal totalBudget, decimal rent, decimal food)
         {
             this.totalBudget = totalBudget;
@@ -42,12 +39,12 @@ namespace UNBROKE_GUI.BaseCalculation
             savings = nonFixedExpenses * 0.20m;
 
             // Calculate individual categories within needs and wants
-            bills = needs * 0.20m;
-            transportation = needs * 0.10m;
-            supplies = needs * 0.10m;
-            others = needs * 0.10m;
-            entertainment = wants * 0.15m;
-            clothing = wants * 0.15m;
+            bills = nonFixedExpenses * 0.20m;
+            transportation = nonFixedExpenses * 0.10m;
+            supplies = nonFixedExpenses * 0.10m;
+            others = nonFixedExpenses * 0.10m;
+            entertainment = nonFixedExpenses * 0.15m;
+            clothing = nonFixedExpenses * 0.15m;
         }
 
         // Properties to access calculated values
@@ -65,5 +62,22 @@ namespace UNBROKE_GUI.BaseCalculation
         public decimal Entertainment => entertainment;
         public decimal Clothing => clothing;
         public decimal Savings => savings;
+
+        // Method to display results
+        public void DisplayResults()
+        {
+            Console.WriteLine($"Total Budget: {TotalBudget:C}");
+            Console.WriteLine($"Fixed Expenses: {FixedExpenses:C} (Rent: {Rent:C}, Food: {Food:C})");
+            Console.WriteLine($"Total for Non-Fixed Expenses: {NonFixedExpenses:C}");
+            Console.WriteLine($"Needs (50%): {Needs:C}");
+            Console.WriteLine($"  - Bills (20%): {Bills:C}");
+            Console.WriteLine($"  - Transportation (10%): {Transportation:C}");
+            Console.WriteLine($"  - Supplies (10%): {Supplies:C}");
+            Console.WriteLine($"  - Others (10%): {Others:C}");
+            Console.WriteLine($"Wants (30%): {Wants:C}");
+            Console.WriteLine($"  - Entertainment (15%): {Entertainment:C}");
+            Console.WriteLine($"  - Clothing (15%): {Clothing:C}");
+            Console.WriteLine($"Savings (20%): {Savings:C}");
+        }
     }
 }
