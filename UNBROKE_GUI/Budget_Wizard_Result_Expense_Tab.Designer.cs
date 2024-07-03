@@ -34,28 +34,22 @@
             this.lblWants = new System.Windows.Forms.Label();
             this.lblSavings = new System.Windows.Forms.Label();
             this.pnlExpenses = new System.Windows.Forms.Panel();
-            this.lblClothingAmountDisplay = new System.Windows.Forms.Label();
-            this.lblEntertainmentAmountDisplay = new System.Windows.Forms.Label();
+            this.lblRentAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblFoodAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEditWantsExpense = new System.Windows.Forms.Button();
             this.lblTotalWantsAmountDisplay = new System.Windows.Forms.Label();
             this.LblWant = new System.Windows.Forms.Label();
             this.imgWantsIcon = new System.Windows.Forms.PictureBox();
             this.lblEntertainment = new System.Windows.Forms.Label();
             this.lblClothing = new System.Windows.Forms.Label();
-            this.lblOthersAmountDisplay = new System.Windows.Forms.Label();
-            this.lblSuppliesAmountDisplay = new System.Windows.Forms.Label();
             this.lblSupplies = new System.Windows.Forms.Label();
             this.lblOthers = new System.Windows.Forms.Label();
-            this.lblTransportationAmountDisplay = new System.Windows.Forms.Label();
-            this.lblBillsAmountDisplay = new System.Windows.Forms.Label();
             this.btnEditNeedsExpense = new System.Windows.Forms.Button();
             this.lblDisplayTotalNeedsExpenseDisplay = new System.Windows.Forms.Label();
             this.lblNeed = new System.Windows.Forms.Label();
             this.imgNeedIcon = new System.Windows.Forms.PictureBox();
             this.lblBills = new System.Windows.Forms.Label();
             this.lblTransportation = new System.Windows.Forms.Label();
-            this.lblRentAmountDisplay = new System.Windows.Forms.Label();
-            this.lblFoodAmountDisplay = new System.Windows.Forms.Label();
             this.btnEditFixedExpense = new System.Windows.Forms.Button();
             this.lblDisplayTotalFixedExpenseAmountDisplay = new System.Windows.Forms.Label();
             this.lblFixedExpense = new System.Windows.Forms.Label();
@@ -82,6 +76,12 @@
             this.savingsProgressBar = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.savingsLabel = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblBillsAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTransportationAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblSuppliesAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblOthersAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblEntertainmentAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblClothingAmountDisplay = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlExpenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgWantsIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgNeedIcon)).BeginInit();
@@ -138,26 +138,26 @@
             this.pnlExpenses.AutoScroll = true;
             this.pnlExpenses.Controls.Add(this.lblClothingAmountDisplay);
             this.pnlExpenses.Controls.Add(this.lblEntertainmentAmountDisplay);
+            this.pnlExpenses.Controls.Add(this.lblOthersAmountDisplay);
+            this.pnlExpenses.Controls.Add(this.lblSuppliesAmountDisplay);
+            this.pnlExpenses.Controls.Add(this.lblTransportationAmountDisplay);
+            this.pnlExpenses.Controls.Add(this.lblBillsAmountDisplay);
+            this.pnlExpenses.Controls.Add(this.lblRentAmountDisplay);
+            this.pnlExpenses.Controls.Add(this.lblFoodAmountDisplay);
             this.pnlExpenses.Controls.Add(this.btnEditWantsExpense);
             this.pnlExpenses.Controls.Add(this.lblTotalWantsAmountDisplay);
             this.pnlExpenses.Controls.Add(this.LblWant);
             this.pnlExpenses.Controls.Add(this.imgWantsIcon);
             this.pnlExpenses.Controls.Add(this.lblEntertainment);
             this.pnlExpenses.Controls.Add(this.lblClothing);
-            this.pnlExpenses.Controls.Add(this.lblOthersAmountDisplay);
-            this.pnlExpenses.Controls.Add(this.lblSuppliesAmountDisplay);
             this.pnlExpenses.Controls.Add(this.lblSupplies);
             this.pnlExpenses.Controls.Add(this.lblOthers);
-            this.pnlExpenses.Controls.Add(this.lblTransportationAmountDisplay);
-            this.pnlExpenses.Controls.Add(this.lblBillsAmountDisplay);
             this.pnlExpenses.Controls.Add(this.btnEditNeedsExpense);
             this.pnlExpenses.Controls.Add(this.lblDisplayTotalNeedsExpenseDisplay);
             this.pnlExpenses.Controls.Add(this.lblNeed);
             this.pnlExpenses.Controls.Add(this.imgNeedIcon);
             this.pnlExpenses.Controls.Add(this.lblBills);
             this.pnlExpenses.Controls.Add(this.lblTransportation);
-            this.pnlExpenses.Controls.Add(this.lblRentAmountDisplay);
-            this.pnlExpenses.Controls.Add(this.lblFoodAmountDisplay);
             this.pnlExpenses.Controls.Add(this.btnEditFixedExpense);
             this.pnlExpenses.Controls.Add(this.lblDisplayTotalFixedExpenseAmountDisplay);
             this.pnlExpenses.Controls.Add(this.lblFixedExpense);
@@ -169,33 +169,57 @@
             this.pnlExpenses.Size = new System.Drawing.Size(328, 347);
             this.pnlExpenses.TabIndex = 51;
             // 
-            // lblClothingAmountDisplay
+            // lblRentAmountDisplay
             // 
-            this.lblClothingAmountDisplay.AutoSize = true;
-            this.lblClothingAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblClothingAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblClothingAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClothingAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblClothingAmountDisplay.Location = new System.Drawing.Point(247, 498);
-            this.lblClothingAmountDisplay.Name = "lblClothingAmountDisplay";
-            this.lblClothingAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblClothingAmountDisplay.TabIndex = 87;
-            this.lblClothingAmountDisplay.Text = "₱00.00";
-            this.lblClothingAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblRentAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblRentAmountDisplay.BorderThickness = 0;
+            this.lblRentAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblRentAmountDisplay.DefaultText = "";
+            this.lblRentAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblRentAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblRentAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblRentAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblRentAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblRentAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblRentAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRentAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblRentAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblRentAmountDisplay.Location = new System.Drawing.Point(202, 90);
+            this.lblRentAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblRentAmountDisplay.Name = "lblRentAmountDisplay";
+            this.lblRentAmountDisplay.PasswordChar = '\0';
+            this.lblRentAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblRentAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblRentAmountDisplay.SelectedText = "";
+            this.lblRentAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblRentAmountDisplay.TabIndex = 89;
+            this.lblRentAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // lblEntertainmentAmountDisplay
+            // lblFoodAmountDisplay
             // 
-            this.lblEntertainmentAmountDisplay.AutoSize = true;
-            this.lblEntertainmentAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEntertainmentAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEntertainmentAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEntertainmentAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblEntertainmentAmountDisplay.Location = new System.Drawing.Point(247, 456);
-            this.lblEntertainmentAmountDisplay.Name = "lblEntertainmentAmountDisplay";
-            this.lblEntertainmentAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblEntertainmentAmountDisplay.TabIndex = 86;
-            this.lblEntertainmentAmountDisplay.Text = "₱00.00";
-            this.lblEntertainmentAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFoodAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblFoodAmountDisplay.BorderThickness = 0;
+            this.lblFoodAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblFoodAmountDisplay.DefaultText = "";
+            this.lblFoodAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblFoodAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblFoodAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblFoodAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblFoodAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblFoodAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblFoodAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFoodAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblFoodAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblFoodAmountDisplay.Location = new System.Drawing.Point(210, 48);
+            this.lblFoodAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblFoodAmountDisplay.Name = "lblFoodAmountDisplay";
+            this.lblFoodAmountDisplay.PasswordChar = '\0';
+            this.lblFoodAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblFoodAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblFoodAmountDisplay.SelectedText = "";
+            this.lblFoodAmountDisplay.Size = new System.Drawing.Size(98, 27);
+            this.lblFoodAmountDisplay.TabIndex = 88;
+            this.lblFoodAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnEditWantsExpense
             // 
@@ -208,6 +232,7 @@
             this.btnEditWantsExpense.Size = new System.Drawing.Size(16, 16);
             this.btnEditWantsExpense.TabIndex = 80;
             this.btnEditWantsExpense.UseVisualStyleBackColor = true;
+            this.btnEditWantsExpense.Click += new System.EventHandler(this.btnEditWantsExpense_Click);
             // 
             // lblTotalWantsAmountDisplay
             // 
@@ -272,35 +297,6 @@
             this.lblClothing.TabIndex = 83;
             this.lblClothing.Text = "Clothing";
             // 
-            // lblOthersAmountDisplay
-            // 
-            this.lblOthersAmountDisplay.AutoSize = true;
-            this.lblOthersAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblOthersAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblOthersAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOthersAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblOthersAmountDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblOthersAmountDisplay.Location = new System.Drawing.Point(247, 342);
-            this.lblOthersAmountDisplay.Name = "lblOthersAmountDisplay";
-            this.lblOthersAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblOthersAmountDisplay.TabIndex = 79;
-            this.lblOthersAmountDisplay.Text = "₱00.00";
-            this.lblOthersAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSuppliesAmountDisplay
-            // 
-            this.lblSuppliesAmountDisplay.AutoSize = true;
-            this.lblSuppliesAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblSuppliesAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSuppliesAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSuppliesAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblSuppliesAmountDisplay.Location = new System.Drawing.Point(247, 302);
-            this.lblSuppliesAmountDisplay.Name = "lblSuppliesAmountDisplay";
-            this.lblSuppliesAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblSuppliesAmountDisplay.TabIndex = 78;
-            this.lblSuppliesAmountDisplay.Text = "₱00.00";
-            this.lblSuppliesAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // lblSupplies
             // 
             this.lblSupplies.AutoSize = true;
@@ -327,34 +323,6 @@
             this.lblOthers.TabIndex = 77;
             this.lblOthers.Text = "Others";
             // 
-            // lblTransportationAmountDisplay
-            // 
-            this.lblTransportationAmountDisplay.AutoSize = true;
-            this.lblTransportationAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTransportationAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTransportationAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTransportationAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblTransportationAmountDisplay.Location = new System.Drawing.Point(247, 260);
-            this.lblTransportationAmountDisplay.Name = "lblTransportationAmountDisplay";
-            this.lblTransportationAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblTransportationAmountDisplay.TabIndex = 75;
-            this.lblTransportationAmountDisplay.Text = "₱00.00";
-            this.lblTransportationAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblBillsAmountDisplay
-            // 
-            this.lblBillsAmountDisplay.AutoSize = true;
-            this.lblBillsAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblBillsAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblBillsAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBillsAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblBillsAmountDisplay.Location = new System.Drawing.Point(242, 218);
-            this.lblBillsAmountDisplay.Name = "lblBillsAmountDisplay";
-            this.lblBillsAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblBillsAmountDisplay.TabIndex = 74;
-            this.lblBillsAmountDisplay.Text = "₱00.00";
-            this.lblBillsAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnEditNeedsExpense
             // 
             this.btnEditNeedsExpense.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -366,6 +334,7 @@
             this.btnEditNeedsExpense.Size = new System.Drawing.Size(16, 16);
             this.btnEditNeedsExpense.TabIndex = 68;
             this.btnEditNeedsExpense.UseVisualStyleBackColor = true;
+            this.btnEditNeedsExpense.Click += new System.EventHandler(this.btnEditNeedsExpense_Click);
             // 
             // lblDisplayTotalNeedsExpenseDisplay
             // 
@@ -430,34 +399,6 @@
             this.lblTransportation.TabIndex = 71;
             this.lblTransportation.Text = "Transportation";
             // 
-            // lblRentAmountDisplay
-            // 
-            this.lblRentAmountDisplay.AutoSize = true;
-            this.lblRentAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblRentAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblRentAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRentAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblRentAmountDisplay.Location = new System.Drawing.Point(247, 101);
-            this.lblRentAmountDisplay.Name = "lblRentAmountDisplay";
-            this.lblRentAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblRentAmountDisplay.TabIndex = 67;
-            this.lblRentAmountDisplay.Text = "₱00.00";
-            this.lblRentAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblFoodAmountDisplay
-            // 
-            this.lblFoodAmountDisplay.AutoSize = true;
-            this.lblFoodAmountDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblFoodAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblFoodAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFoodAmountDisplay.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblFoodAmountDisplay.Location = new System.Drawing.Point(247, 59);
-            this.lblFoodAmountDisplay.Name = "lblFoodAmountDisplay";
-            this.lblFoodAmountDisplay.Size = new System.Drawing.Size(53, 16);
-            this.lblFoodAmountDisplay.TabIndex = 66;
-            this.lblFoodAmountDisplay.Text = "₱00.00";
-            this.lblFoodAmountDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnEditFixedExpense
             // 
             this.btnEditFixedExpense.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -469,6 +410,7 @@
             this.btnEditFixedExpense.Size = new System.Drawing.Size(16, 16);
             this.btnEditFixedExpense.TabIndex = 54;
             this.btnEditFixedExpense.UseVisualStyleBackColor = true;
+            this.btnEditFixedExpense.Click += new System.EventHandler(this.btnEditFixedExpense_Click);
             // 
             // lblDisplayTotalFixedExpenseAmountDisplay
             // 
@@ -477,7 +419,7 @@
             this.lblDisplayTotalFixedExpenseAmountDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblDisplayTotalFixedExpenseAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayTotalFixedExpenseAmountDisplay.ForeColor = System.Drawing.Color.Indigo;
-            this.lblDisplayTotalFixedExpenseAmountDisplay.Location = new System.Drawing.Point(192, 19);
+            this.lblDisplayTotalFixedExpenseAmountDisplay.Location = new System.Drawing.Point(209, 19);
             this.lblDisplayTotalFixedExpenseAmountDisplay.Name = "lblDisplayTotalFixedExpenseAmountDisplay";
             this.lblDisplayTotalFixedExpenseAmountDisplay.Size = new System.Drawing.Size(53, 16);
             this.lblDisplayTotalFixedExpenseAmountDisplay.TabIndex = 65;
@@ -793,6 +735,162 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lblBillsAmountDisplay
+            // 
+            this.lblBillsAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblBillsAmountDisplay.BorderThickness = 0;
+            this.lblBillsAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblBillsAmountDisplay.DefaultText = "";
+            this.lblBillsAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblBillsAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblBillsAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblBillsAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblBillsAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblBillsAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblBillsAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBillsAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblBillsAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblBillsAmountDisplay.Location = new System.Drawing.Point(205, 207);
+            this.lblBillsAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblBillsAmountDisplay.Name = "lblBillsAmountDisplay";
+            this.lblBillsAmountDisplay.PasswordChar = '\0';
+            this.lblBillsAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblBillsAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblBillsAmountDisplay.SelectedText = "";
+            this.lblBillsAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblBillsAmountDisplay.TabIndex = 90;
+            this.lblBillsAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblTransportationAmountDisplay
+            // 
+            this.lblTransportationAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblTransportationAmountDisplay.BorderThickness = 0;
+            this.lblTransportationAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblTransportationAmountDisplay.DefaultText = "";
+            this.lblTransportationAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblTransportationAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblTransportationAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblTransportationAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblTransportationAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblTransportationAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblTransportationAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransportationAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblTransportationAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblTransportationAmountDisplay.Location = new System.Drawing.Point(205, 249);
+            this.lblTransportationAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblTransportationAmountDisplay.Name = "lblTransportationAmountDisplay";
+            this.lblTransportationAmountDisplay.PasswordChar = '\0';
+            this.lblTransportationAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblTransportationAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblTransportationAmountDisplay.SelectedText = "";
+            this.lblTransportationAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblTransportationAmountDisplay.TabIndex = 91;
+            this.lblTransportationAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblSuppliesAmountDisplay
+            // 
+            this.lblSuppliesAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblSuppliesAmountDisplay.BorderThickness = 0;
+            this.lblSuppliesAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblSuppliesAmountDisplay.DefaultText = "";
+            this.lblSuppliesAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblSuppliesAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblSuppliesAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblSuppliesAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblSuppliesAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblSuppliesAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblSuppliesAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSuppliesAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblSuppliesAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblSuppliesAmountDisplay.Location = new System.Drawing.Point(205, 291);
+            this.lblSuppliesAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblSuppliesAmountDisplay.Name = "lblSuppliesAmountDisplay";
+            this.lblSuppliesAmountDisplay.PasswordChar = '\0';
+            this.lblSuppliesAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblSuppliesAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblSuppliesAmountDisplay.SelectedText = "";
+            this.lblSuppliesAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblSuppliesAmountDisplay.TabIndex = 92;
+            this.lblSuppliesAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblOthersAmountDisplay
+            // 
+            this.lblOthersAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblOthersAmountDisplay.BorderThickness = 0;
+            this.lblOthersAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblOthersAmountDisplay.DefaultText = "";
+            this.lblOthersAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblOthersAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblOthersAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblOthersAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblOthersAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblOthersAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblOthersAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOthersAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblOthersAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblOthersAmountDisplay.Location = new System.Drawing.Point(205, 331);
+            this.lblOthersAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblOthersAmountDisplay.Name = "lblOthersAmountDisplay";
+            this.lblOthersAmountDisplay.PasswordChar = '\0';
+            this.lblOthersAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblOthersAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblOthersAmountDisplay.SelectedText = "";
+            this.lblOthersAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblOthersAmountDisplay.TabIndex = 93;
+            this.lblOthersAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblEntertainmentAmountDisplay
+            // 
+            this.lblEntertainmentAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblEntertainmentAmountDisplay.BorderThickness = 0;
+            this.lblEntertainmentAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblEntertainmentAmountDisplay.DefaultText = "";
+            this.lblEntertainmentAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblEntertainmentAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblEntertainmentAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblEntertainmentAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblEntertainmentAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblEntertainmentAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblEntertainmentAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntertainmentAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblEntertainmentAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblEntertainmentAmountDisplay.Location = new System.Drawing.Point(205, 445);
+            this.lblEntertainmentAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblEntertainmentAmountDisplay.Name = "lblEntertainmentAmountDisplay";
+            this.lblEntertainmentAmountDisplay.PasswordChar = '\0';
+            this.lblEntertainmentAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblEntertainmentAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblEntertainmentAmountDisplay.SelectedText = "";
+            this.lblEntertainmentAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblEntertainmentAmountDisplay.TabIndex = 94;
+            this.lblEntertainmentAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // lblClothingAmountDisplay
+            // 
+            this.lblClothingAmountDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.lblClothingAmountDisplay.BorderThickness = 0;
+            this.lblClothingAmountDisplay.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblClothingAmountDisplay.DefaultText = "";
+            this.lblClothingAmountDisplay.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lblClothingAmountDisplay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lblClothingAmountDisplay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblClothingAmountDisplay.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lblClothingAmountDisplay.FillColor = System.Drawing.SystemColors.Control;
+            this.lblClothingAmountDisplay.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblClothingAmountDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClothingAmountDisplay.ForeColor = System.Drawing.Color.Black;
+            this.lblClothingAmountDisplay.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lblClothingAmountDisplay.Location = new System.Drawing.Point(205, 487);
+            this.lblClothingAmountDisplay.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.lblClothingAmountDisplay.Name = "lblClothingAmountDisplay";
+            this.lblClothingAmountDisplay.PasswordChar = '\0';
+            this.lblClothingAmountDisplay.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.lblClothingAmountDisplay.PlaceholderText = "₱00.00";
+            this.lblClothingAmountDisplay.SelectedText = "";
+            this.lblClothingAmountDisplay.Size = new System.Drawing.Size(106, 27);
+            this.lblClothingAmountDisplay.TabIndex = 95;
+            this.lblClothingAmountDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Budget_Wizard_Result_Expense_Tab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,26 +956,17 @@
         private System.Windows.Forms.PictureBox imgFixedIcon;
         private System.Windows.Forms.Label lblFood;
         private System.Windows.Forms.Label lblRent;
-        private System.Windows.Forms.Label lblTransportationAmountDisplay;
-        private System.Windows.Forms.Label lblBillsAmountDisplay;
         private System.Windows.Forms.Button btnEditNeedsExpense;
-        private System.Windows.Forms.Label lblDisplayTotalNeedsExpenseDisplay;
         private System.Windows.Forms.Label lblNeed;
         private System.Windows.Forms.PictureBox imgNeedIcon;
         private System.Windows.Forms.Label lblBills;
         private System.Windows.Forms.Label lblTransportation;
-        private System.Windows.Forms.Label lblRentAmountDisplay;
-        private System.Windows.Forms.Label lblFoodAmountDisplay;
-        private System.Windows.Forms.Label lblClothingAmountDisplay;
-        private System.Windows.Forms.Label lblEntertainmentAmountDisplay;
         private System.Windows.Forms.Button btnEditWantsExpense;
         private System.Windows.Forms.Label lblTotalWantsAmountDisplay;
         private System.Windows.Forms.Label LblWant;
         private System.Windows.Forms.PictureBox imgWantsIcon;
         private System.Windows.Forms.Label lblEntertainment;
         private System.Windows.Forms.Label lblClothing;
-        private System.Windows.Forms.Label lblOthersAmountDisplay;
-        private System.Windows.Forms.Label lblSuppliesAmountDisplay;
         private System.Windows.Forms.Label lblSupplies;
         private System.Windows.Forms.Label lblOthers;
         private System.Windows.Forms.PictureBox imgBudgetWizardTitle;
@@ -888,5 +977,14 @@
         private System.Windows.Forms.Label needsLabel;
         private System.Windows.Forms.Label wantsLabel;
         private System.Windows.Forms.Label savingsLabel;
+        private Guna.UI2.WinForms.Guna2TextBox lblRentAmountDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblFoodAmountDisplay;
+        private System.Windows.Forms.Label lblDisplayTotalNeedsExpenseDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblOthersAmountDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblSuppliesAmountDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblTransportationAmountDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblBillsAmountDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblEntertainmentAmountDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox lblClothingAmountDisplay;
     }
 }

@@ -448,6 +448,104 @@ namespace UNBROKE_GUI
             }
             }
         }
+        public bool UpdateExpense(int budgetID, ExpenseCategory category, ExpenseSubCategory subCategory, decimal amount)
+        {
+            string query = @"UPDATE expense
+                     SET amount = @amount
+                     WHERE budget_ID = @budgetID
+                     AND category = @category
+                     AND subcategory = @subCategory";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@budgetID", budgetID);
+                        command.Parameters.AddWithValue("@category", category.ToString());
+                        command.Parameters.AddWithValue("@subCategory", subCategory.ToString());
+                        command.Parameters.AddWithValue("@amount", amount);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log it, rethrow it, etc.)
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateTotalBudget(int budgetID, decimal newTotalBudget)
+        {
+            string query = @"UPDATE budget
+                     SET total_budget = @newTotalBudget
+                     WHERE budget_id = @budgetID";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@budgetID", budgetID);
+                        command.Parameters.AddWithValue("@newTotalBudget", newTotalBudget);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log it, rethrow it, etc.)
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        public bool UpdateTotalBudgetAndSavings(int budgetID, decimal newTotalBudget)
+        {
+            decimal newSavings = newTotalBudget * 0.20m;
+
+            string query = @"UPDATE budget
+                     SET total_budget = @newTotalBudget, savings = @newSavings
+                     WHERE budget_id = @budgetID";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@budgetID", budgetID);
+                        command.Parameters.AddWithValue("@newTotalBudget", newTotalBudget);
+                        command.Parameters.AddWithValue("@newSavings", newSavings);
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log it, rethrow it, etc.)
+                    Console.WriteLine("An error occurred: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+
         public bool InsertSavings(int userID, int budgetID, decimal amount)
         {
             string query = @"UPDATE budget SET savings = @amount WHERE budget_id = @budgetID AND user_id = @userID";
@@ -719,24 +817,7 @@ namespace UNBROKE_GUI
         }
 
 
-        public List<Expense> GetExpensesByUsername(string username)
-        {
-            int userId = GetUserIdByUsername(username);
-            if (userId == -1)
-            {
-                throw new Exception("User not found");
-            }
 
-            int highestBudgetId = GetHighestBudgetIdByUserId(userId);
-            if (highestBudgetId == -1)
-            {
-                throw new Exception("No budget found for user");
-            }
-
-            List<Expense> expenses = GetExpensesByBudgetId(highestBudgetId);
-
-            return expenses;
-        }
 
     }
 }

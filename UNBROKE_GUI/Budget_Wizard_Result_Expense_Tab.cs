@@ -18,6 +18,17 @@ namespace UNBROKE_GUI
         private Timer timer;
         private ProgressManager progressBarManager;
 
+        private decimal totalBudget, currentFixedExpense, newFixedExpense, currentNeedsExpense, newNeedsExpense,
+            currentWantsExpense, newWantsExpense;
+
+        private decimal Fixed_Food, Fixed_Rent;
+        private decimal Needs_Bills, Needs_Transportation, Needs_Supplies, Needs_Others;
+        private decimal Wants_Entertainment, Wants_Clothing;
+
+
+
+
+
         public Budget_Wizard_Result_Expense_Tab(string currentuser)
         {
             InitializeComponent();
@@ -33,7 +44,370 @@ namespace UNBROKE_GUI
             timer.Interval = 10; // Interval in milliseconds
             timer.Tick += timer1_Tick;
             timer.Start();
+
+
+
+
+            FetchAmounts();
+
         }
+
+
+        //EDIT BUTTONS
+        private void btnEditFixedExpense_Click(object sender, EventArgs e)
+        {
+            // Display confirmation MessageBox to update fixed expenses
+            DialogResult result = MessageBox.Show("Are you sure you want to update the fixed expense?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Proceed with updating fixed expenses
+                UpdateFixedExpenses();
+
+                // Attempt to parse and format lblFoodAmountDisplay and lblRentAmountDisplay
+                decimal foodAmount, rentAmount;
+
+                // Remove currency symbol and trim whitespace
+                string foodText = lblFoodAmountDisplay.Text.Replace("₱", "").Trim();
+                string rentText = lblRentAmountDisplay.Text.Replace("₱", "").Trim();
+
+                if (decimal.TryParse(foodText, out foodAmount) && decimal.TryParse(rentText, out rentAmount))
+                {
+                    lblFoodAmountDisplay.Text = FormatCurrency(foodAmount);
+                    lblRentAmountDisplay.Text = FormatCurrency(rentAmount);
+
+                    // Get the highest budget ID for the current user
+                    int userId = db.GetUserIdByUsername(currentuser);
+                    int budgetId = db.GetHighestBudgetIdByUserId(userId);
+
+                    if (budgetId != -1)
+                    {
+                        // Update the database with new values
+                        bool updatedFood = db.UpdateExpense(budgetId, ExpenseCategory.Fix, ExpenseSubCategory.Food, foodAmount);
+                        bool updatedRent = db.UpdateExpense(budgetId, ExpenseCategory.Fix, ExpenseSubCategory.Rent, rentAmount);
+
+                        // Calculate the new total budget
+                        totalBudget = RemoveCurrencySymbol(lblTotalBudgetAmountDisplay.Text);
+
+                        if (updatedFood && updatedRent)
+                        {
+                            // Update the total budget and savings in the database
+                            bool updatedTotalBudgetAndSavings = db.UpdateTotalBudgetAndSavings(budgetId, totalBudget);
+
+                            if (updatedTotalBudgetAndSavings)
+                            {
+                                Console.WriteLine("Fixed expenses, total budget, and savings updated successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update the total budget and savings.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update some or all fixed expenses.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No budget found for the current user.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid amount format in either Food or Rent expenses.");
+                }
+            }
+            else
+            {
+                // Handle cancel or no action
+            }
+        }
+
+        private void btnEditNeedsExpense_Click(object sender, EventArgs e)
+        {
+            // Display confirmation MessageBox to update needs expenses
+            DialogResult result = MessageBox.Show("Are you sure you want to update the needs expense?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Proceed with updating needs expenses
+                UpdateNeedsExpenses();
+
+                // Attempt to parse and format lblBillsAmountDisplay, lblTransportationAmountDisplay, lblSuppliesAmountDisplay, lblOthersAmountDisplay
+                decimal bills, transportation, supplies, others;
+
+                // Remove currency symbol and trim whitespace
+                string billsText = lblBillsAmountDisplay.Text.Replace("₱", "").Trim();
+                string transportationText = lblTransportationAmountDisplay.Text.Replace("₱", "").Trim();
+                string suppliesText = lblSuppliesAmountDisplay.Text.Replace("₱", "").Trim();
+                string othersText = lblOthersAmountDisplay.Text.Replace("₱", "").Trim();
+
+                if (decimal.TryParse(billsText, out bills) && decimal.TryParse(transportationText, out transportation) && decimal.TryParse(suppliesText, out supplies) && decimal.TryParse(othersText, out others))
+                {
+                    lblBillsAmountDisplay.Text = FormatCurrency(bills);
+                    lblTransportationAmountDisplay.Text = FormatCurrency(transportation);
+                    lblSuppliesAmountDisplay.Text = FormatCurrency(supplies);
+                    lblOthersAmountDisplay.Text = FormatCurrency(others);
+
+                    // Get the highest budget ID for the current user
+                    int userId = db.GetUserIdByUsername(currentuser);
+                    int budgetId = db.GetHighestBudgetIdByUserId(userId);
+
+                    if (budgetId != -1)
+                    {
+                        // Update the database with new values
+                        bool updatedBills = db.UpdateExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Bills, bills);
+                        bool updatedTransportation = db.UpdateExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Transportation, transportation);
+                        bool updatedSupplies = db.UpdateExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Supplies, supplies);
+                        bool updatedOthers = db.UpdateExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Others, others);
+
+                        // Calculate the new total budget
+                        totalBudget = RemoveCurrencySymbol(lblTotalBudgetAmountDisplay.Text);
+
+                        if (updatedBills && updatedTransportation && updatedSupplies && updatedOthers)
+                        {
+                            // Update the total budget and savings in the database
+                            bool updatedTotalBudgetAndSavings = db.UpdateTotalBudgetAndSavings(budgetId, totalBudget);
+
+                            if (updatedTotalBudgetAndSavings)
+                            {
+                                Console.WriteLine("Needs expenses, total budget, and savings updated successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update the total budget and savings.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update some or all needs expenses.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No budget found for the current user.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid amount format in either Bills, Transportation, Supplies, or Others expenses.");
+                }
+            }
+            else
+            {
+                // Handle cancel or no action
+            }
+        }
+
+        private void btnEditWantsExpense_Click(object sender, EventArgs e)
+        {
+            // Display confirmation MessageBox to update wants expenses
+            DialogResult result = MessageBox.Show("Are you sure you want to update the wants expense?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Proceed with updating wants expenses
+                UpdateWantsExpenses();
+
+                // Attempt to parse and format lblEntertainmentAmountDisplay and lblClothingAmountDisplay
+                decimal entertainment, clothing;
+
+                // Remove currency symbol and trim whitespace
+                string entertainmentText = lblEntertainmentAmountDisplay.Text.Replace("₱", "").Trim();
+                string clothingText = lblClothingAmountDisplay.Text.Replace("₱", "").Trim();
+
+                if (decimal.TryParse(entertainmentText, out entertainment) && decimal.TryParse(clothingText, out clothing))
+                {
+                    lblEntertainmentAmountDisplay.Text = FormatCurrency(entertainment);
+                    lblClothingAmountDisplay.Text = FormatCurrency(clothing);
+
+                    // Get the highest budget ID for the current user
+                    int userId = db.GetUserIdByUsername(currentuser);
+                    int budgetId = db.GetHighestBudgetIdByUserId(userId);
+
+                    if (budgetId != -1)
+                    {
+                        // Update the database with new values
+                        bool updatedEntertainment = db.UpdateExpense(budgetId, ExpenseCategory.Wants, ExpenseSubCategory.Entertainment, entertainment);
+                        bool updatedClothing = db.UpdateExpense(budgetId, ExpenseCategory.Wants, ExpenseSubCategory.Clothing, clothing);
+
+                        // Calculate the new total budget
+                        totalBudget = RemoveCurrencySymbol(lblTotalBudgetAmountDisplay.Text);
+
+                        if (updatedEntertainment && updatedClothing)
+                        {
+                            // Update the total budget and savings in the database
+                            bool updatedTotalBudgetAndSavings = db.UpdateTotalBudgetAndSavings(budgetId, totalBudget);
+
+                            if (updatedTotalBudgetAndSavings)
+                            {
+                                Console.WriteLine("Wants expenses, total budget, and savings updated successfully.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to update the total budget and savings.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update some or all wants expenses.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No budget found for the current user.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid amount format in either Entertainment or Clothing expenses.");
+                }
+            }
+            else
+            {
+                // Handle cancel or no action
+            }
+        }
+
+
+
+
+        private void UpdateFixedExpenses()
+        {
+            FetchAmounts(); // Assuming this method fetches Fixed_Food, Fixed_Rent, and currentFixedExpense
+            decimal newFixedExpense = Fixed_Food + Fixed_Rent;
+            decimal difference = 0.0m;
+
+            if (newFixedExpense > currentFixedExpense)
+            {
+                difference = newFixedExpense - currentFixedExpense;
+                totalBudget += difference;
+                Console.WriteLine($"Increased fixed expenses by: {difference.ToString("C")}");
+                lblDisplayTotalFixedExpenseAmountDisplay.Text = FormatCurrency(newFixedExpense);
+                lblTotalBudgetAmountDisplay.Text = FormatCurrency(totalBudget);
+
+            }
+            else if (newFixedExpense < currentFixedExpense)
+            {
+                difference = currentFixedExpense - newFixedExpense;
+                totalBudget -= difference;
+                Console.WriteLine($"Decreased fixed expenses by: {difference.ToString("C")}");
+                lblDisplayTotalFixedExpenseAmountDisplay.Text = FormatCurrency(newFixedExpense);
+                lblTotalBudgetAmountDisplay.Text = FormatCurrency(totalBudget);
+
+            }
+        }
+        private void UpdateNeedsExpenses()
+        {
+            FetchAmounts(); // Assuming this method fetches Fixed_Food, Fixed_Rent, and currentFixedExpense
+
+
+            decimal newNeedsExpense = Needs_Transportation + Needs_Bills + Needs_Supplies + Needs_Others;
+            decimal difference = 0.0m;
+
+            if(newNeedsExpense > currentNeedsExpense)
+            {
+                difference = newNeedsExpense - currentNeedsExpense;
+                totalBudget += difference;
+                lblDisplayTotalNeedsExpenseDisplay.Text = FormatCurrency(newNeedsExpense);
+                lblTotalBudgetAmountDisplay.Text = FormatCurrency(totalBudget);
+
+
+            }else if(newNeedsExpense < currentNeedsExpense)
+            {
+                difference = currentNeedsExpense - newNeedsExpense;
+                totalBudget -= difference;
+                lblDisplayTotalNeedsExpenseDisplay.Text = FormatCurrency(newNeedsExpense);
+                lblTotalBudgetAmountDisplay.Text = FormatCurrency(totalBudget);
+            }
+
+
+        }
+
+        private void UpdateWantsExpenses()
+        {
+            FetchAmounts(); // Assuming this method fetches Fixed_Food, Fixed_Rent, and currentFixedExpense
+
+
+            decimal newWantsExpense = Wants_Entertainment + Wants_Clothing;
+            decimal difference = 0.0m;
+
+            if (newWantsExpense > currentWantsExpense)
+            {
+                difference = newWantsExpense - currentWantsExpense;
+                totalBudget += difference;
+                lblTotalWantsAmountDisplay.Text = FormatCurrency(newWantsExpense);
+                lblTotalBudgetAmountDisplay.Text = FormatCurrency(totalBudget);
+
+            }
+            else if (newWantsExpense < currentWantsExpense)
+            {
+                difference = currentWantsExpense - newWantsExpense;
+                totalBudget -= difference;
+                lblTotalWantsAmountDisplay.Text = FormatCurrency(newWantsExpense);
+                lblTotalBudgetAmountDisplay.Text = FormatCurrency(totalBudget);
+            }
+
+
+        }
+
+
+
+        private void FetchAmounts()
+        {
+            try
+            {
+                totalBudget = RemoveCurrencySymbol(lblTotalBudgetAmountDisplay.Text);
+                currentFixedExpense = RemoveCurrencySymbol(lblDisplayTotalFixedExpenseAmountDisplay.Text);
+                Fixed_Food = RemoveCurrencySymbol(lblFoodAmountDisplay.Text);
+                Fixed_Rent = RemoveCurrencySymbol(lblRentAmountDisplay.Text);
+
+                currentNeedsExpense = RemoveCurrencySymbol(lblDisplayTotalNeedsExpenseDisplay.Text);
+                Needs_Bills = RemoveCurrencySymbol(lblDisplayTotalNeedsExpenseDisplay.Text) ;
+                Needs_Transportation = RemoveCurrencySymbol(lblTransportationAmountDisplay.Text);
+                Needs_Supplies = RemoveCurrencySymbol(lblSuppliesAmountDisplay.Text);
+                Needs_Others = RemoveCurrencySymbol(lblOthersAmountDisplay.Text);
+
+                currentWantsExpense = RemoveCurrencySymbol(lblTotalWantsAmountDisplay.Text);
+                Wants_Entertainment = RemoveCurrencySymbol(lblEntertainmentAmountDisplay.Text);
+                Wants_Clothing = RemoveCurrencySymbol(lblClothingAmountDisplay.Text); 
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error fetching amounts: {ex.Message}");
+            }
+        }
+
+        private decimal RemoveCurrencySymbol(string amountText)
+        {
+            try
+            {
+                // Remove currency symbol (₱) and commas from the text
+                string cleanText = amountText.Replace("₱", "").Replace(",", "");
+
+                // Attempt to parse the cleaned text to a decimal without specifying a specific culture
+                if (decimal.TryParse(cleanText, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal amount))
+                {
+                    return amount;
+                }
+                else
+                {
+                    // Handle parsing error if the text is not a valid decimal format
+                    throw new FormatException($"Invalid amount format in label: {amountText}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return 0; // or return any default value based on your application logic
+            }
+        }
+
+
+
+
 
         private void InitializeProgressBars()
         {
@@ -43,6 +417,8 @@ namespace UNBROKE_GUI
         }
 
         private void label1_Click(object sender, EventArgs e) { }
+
+
 
         private void Budget_Wizard_Result_Load(object sender, EventArgs e)
         {
@@ -210,10 +586,14 @@ namespace UNBROKE_GUI
             lblClothingAmountDisplay.Text = FormatCurrency(clothingAmount);
         }
 
+
         private string FormatCurrency(decimal amount)
         {
             return string.Format(CultureInfo.GetCultureInfo("en-PH"), "₱{0:N2}", amount);
         }
+
+
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -227,22 +607,25 @@ namespace UNBROKE_GUI
             }
         }
 
+
+
+
         private void SetLabelPositionsAndMargins()
         {
             // Set the locations of the labels
             lblDisplayTotalFixedExpenseAmountDisplay.Location = new Point(192, 19);
-            lblFoodAmountDisplay.Location = new Point(247, 59);
-            lblRentAmountDisplay.Location = new Point(247, 101);
+            lblFoodAmountDisplay.Location = new Point(210, 48);
+            lblRentAmountDisplay.Location = new Point(202, 90);
 
             lblDisplayTotalNeedsExpenseDisplay.Location = new Point(193, 178);
-            lblBillsAmountDisplay.Location = new Point(247, 218);
-            lblTransportationAmountDisplay.Location = new Point(247, 260);
-            lblSuppliesAmountDisplay.Location = new Point(247, 302);
-            lblOthersAmountDisplay.Location = new Point(247, 342);
+            lblBillsAmountDisplay.Location = new Point(205, 207);
+            lblTransportationAmountDisplay.Location = new Point(205, 249);
+            lblSuppliesAmountDisplay.Location = new Point(205, 291);
+            lblOthersAmountDisplay.Location = new Point(205, 331);
 
             lblTotalWantsAmountDisplay.Location = new Point(193, 416);
-            lblEntertainmentAmountDisplay.Location = new Point(247, 456);
-            lblClothingAmountDisplay.Location = new Point(247, 498);
+            lblEntertainmentAmountDisplay.Location = new Point(205, 445);
+            lblClothingAmountDisplay.Location = new Point(205, 487);
 
             // Set the margins of the labels
             Padding labelMargin = new Padding(3, 0, 3, 0);
@@ -260,5 +643,7 @@ namespace UNBROKE_GUI
             lblEntertainmentAmountDisplay.Margin = labelMargin;
             lblClothingAmountDisplay.Margin = labelMargin;
         }
+
+  
     }
 }
