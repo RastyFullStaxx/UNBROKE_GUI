@@ -269,6 +269,7 @@
             this.lblFullNameDisplay.TabIndex = 55;
             this.lblFullNameDisplay.Text = "FirstName LastName";
             this.lblFullNameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFullNameDisplay.Click += new System.EventHandler(this.lblFullNameDisplay_Click);
             // 
             // pnlFullNameDisplay
             // 

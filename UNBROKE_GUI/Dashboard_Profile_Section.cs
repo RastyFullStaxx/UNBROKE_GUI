@@ -14,11 +14,15 @@ namespace UNBROKE_GUI
     public partial class Dashboard_Profile_Section : Form
     {
         private string currentuser;
+        private string first_name;
+        private string last_name;
 
         public Dashboard_Profile_Section(String currentUser)
         {
             InitializeComponent();
             this.currentuser = currentUser;
+            this.first_name = first_name;
+            this.last_name = last_name;
         }
 
         private void imgProfileIcon_Click(object sender, EventArgs e)
@@ -156,6 +160,11 @@ namespace UNBROKE_GUI
             Feedback feedback = new Feedback(currentuser);
             feedback.Show();
             this.Dispose();
+        }
+
+        private void lblFullNameDisplay_Click(object sender, EventArgs e)
+        {
+            lblFullNameDisplay.Text = first_name + last_name;
         }
     }
 }
