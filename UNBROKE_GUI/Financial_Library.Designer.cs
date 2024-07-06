@@ -135,69 +135,84 @@
             // 
             // imgResource21
             // 
+            this.imgResource21.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource21.Image = ((System.Drawing.Image)(resources.GetObject("imgResource21.Image")));
             this.imgResource21.Location = new System.Drawing.Point(9, 2106);
             this.imgResource21.Name = "imgResource21";
             this.imgResource21.Size = new System.Drawing.Size(162, 189);
             this.imgResource21.TabIndex = 20;
             this.imgResource21.TabStop = false;
+            this.imgResource21.Click += new System.EventHandler(this.imgResource21_Click);
             // 
             // imgResource20
             // 
+            this.imgResource20.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource20.Image = ((System.Drawing.Image)(resources.GetObject("imgResource20.Image")));
             this.imgResource20.Location = new System.Drawing.Point(177, 1896);
             this.imgResource20.Name = "imgResource20";
             this.imgResource20.Size = new System.Drawing.Size(162, 189);
             this.imgResource20.TabIndex = 19;
             this.imgResource20.TabStop = false;
+            this.imgResource20.Click += new System.EventHandler(this.imgResource20_Click);
             // 
             // imgResource19
             // 
+            this.imgResource19.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource19.Image = ((System.Drawing.Image)(resources.GetObject("imgResource19.Image")));
             this.imgResource19.Location = new System.Drawing.Point(9, 1896);
             this.imgResource19.Name = "imgResource19";
             this.imgResource19.Size = new System.Drawing.Size(162, 189);
             this.imgResource19.TabIndex = 18;
             this.imgResource19.TabStop = false;
+            this.imgResource19.Click += new System.EventHandler(this.imgResource19_Click);
             // 
             // imgResource18
             // 
+            this.imgResource18.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource18.Image = ((System.Drawing.Image)(resources.GetObject("imgResource18.Image")));
             this.imgResource18.Location = new System.Drawing.Point(178, 1685);
             this.imgResource18.Name = "imgResource18";
             this.imgResource18.Size = new System.Drawing.Size(162, 189);
             this.imgResource18.TabIndex = 17;
             this.imgResource18.TabStop = false;
+            this.imgResource18.Click += new System.EventHandler(this.imgResource18_Click);
             // 
             // imgResource17
             // 
+            this.imgResource17.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource17.Image = ((System.Drawing.Image)(resources.GetObject("imgResource17.Image")));
             this.imgResource17.Location = new System.Drawing.Point(10, 1685);
             this.imgResource17.Name = "imgResource17";
             this.imgResource17.Size = new System.Drawing.Size(162, 189);
             this.imgResource17.TabIndex = 16;
             this.imgResource17.TabStop = false;
+            this.imgResource17.Click += new System.EventHandler(this.imgResource17_Click);
             // 
             // imgResource16
             // 
+            this.imgResource16.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource16.Image = ((System.Drawing.Image)(resources.GetObject("imgResource16.Image")));
             this.imgResource16.Location = new System.Drawing.Point(177, 1476);
             this.imgResource16.Name = "imgResource16";
             this.imgResource16.Size = new System.Drawing.Size(162, 189);
             this.imgResource16.TabIndex = 15;
             this.imgResource16.TabStop = false;
+            this.imgResource16.Click += new System.EventHandler(this.imgResource16_Click);
             // 
             // imgResource15
             // 
+            this.imgResource15.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource15.Image = ((System.Drawing.Image)(resources.GetObject("imgResource15.Image")));
             this.imgResource15.Location = new System.Drawing.Point(9, 1476);
             this.imgResource15.Name = "imgResource15";
             this.imgResource15.Size = new System.Drawing.Size(162, 189);
             this.imgResource15.TabIndex = 14;
             this.imgResource15.TabStop = false;
+            this.imgResource15.Click += new System.EventHandler(this.imgResource15_Click);
             // 
             // imgResource14
             // 
+            this.imgResource14.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource14.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imgResource14.ErrorImage")));
             this.imgResource14.Image = ((System.Drawing.Image)(resources.GetObject("imgResource14.Image")));
             this.imgResource14.Location = new System.Drawing.Point(177, 1266);
@@ -205,54 +220,66 @@
             this.imgResource14.Size = new System.Drawing.Size(162, 189);
             this.imgResource14.TabIndex = 13;
             this.imgResource14.TabStop = false;
+            this.imgResource14.Click += new System.EventHandler(this.imgResource14_Click);
             // 
             // imgResource13
             // 
+            this.imgResource13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource13.Image = ((System.Drawing.Image)(resources.GetObject("imgResource13.Image")));
             this.imgResource13.Location = new System.Drawing.Point(9, 1266);
             this.imgResource13.Name = "imgResource13";
             this.imgResource13.Size = new System.Drawing.Size(162, 189);
             this.imgResource13.TabIndex = 12;
             this.imgResource13.TabStop = false;
+            this.imgResource13.Click += new System.EventHandler(this.imgResource13_Click);
             // 
             // imgResource12
             // 
+            this.imgResource12.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource12.Image = ((System.Drawing.Image)(resources.GetObject("imgResource12.Image")));
             this.imgResource12.Location = new System.Drawing.Point(177, 1058);
             this.imgResource12.Name = "imgResource12";
             this.imgResource12.Size = new System.Drawing.Size(162, 189);
             this.imgResource12.TabIndex = 11;
             this.imgResource12.TabStop = false;
+            this.imgResource12.Click += new System.EventHandler(this.imgResource12_Click);
             // 
             // imgResource11
             // 
+            this.imgResource11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource11.Image = ((System.Drawing.Image)(resources.GetObject("imgResource11.Image")));
             this.imgResource11.Location = new System.Drawing.Point(9, 1058);
             this.imgResource11.Name = "imgResource11";
             this.imgResource11.Size = new System.Drawing.Size(162, 189);
             this.imgResource11.TabIndex = 10;
             this.imgResource11.TabStop = false;
+            this.imgResource11.Click += new System.EventHandler(this.imgResource11_Click);
             // 
             // imgResource10
             // 
+            this.imgResource10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource10.Image = ((System.Drawing.Image)(resources.GetObject("imgResource10.Image")));
             this.imgResource10.Location = new System.Drawing.Point(177, 849);
             this.imgResource10.Name = "imgResource10";
             this.imgResource10.Size = new System.Drawing.Size(162, 189);
             this.imgResource10.TabIndex = 9;
             this.imgResource10.TabStop = false;
+            this.imgResource10.Click += new System.EventHandler(this.imgResource10_Click);
             // 
             // imgResource9
             // 
+            this.imgResource9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource9.Image = ((System.Drawing.Image)(resources.GetObject("imgResource9.Image")));
             this.imgResource9.Location = new System.Drawing.Point(9, 849);
             this.imgResource9.Name = "imgResource9";
             this.imgResource9.Size = new System.Drawing.Size(162, 189);
             this.imgResource9.TabIndex = 8;
             this.imgResource9.TabStop = false;
+            this.imgResource9.Click += new System.EventHandler(this.imgResource9_Click);
             // 
             // imgResource8
             // 
+            this.imgResource8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource8.Image = ((System.Drawing.Image)(resources.GetObject("imgResource8.Image")));
             this.imgResource8.Location = new System.Drawing.Point(177, 639);
             this.imgResource8.Name = "imgResource8";
@@ -263,51 +290,62 @@
             // 
             // imgResource6
             // 
+            this.imgResource6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource6.Image = ((System.Drawing.Image)(resources.GetObject("imgResource6.Image")));
             this.imgResource6.Location = new System.Drawing.Point(177, 431);
             this.imgResource6.Name = "imgResource6";
             this.imgResource6.Size = new System.Drawing.Size(162, 189);
             this.imgResource6.TabIndex = 5;
             this.imgResource6.TabStop = false;
+            this.imgResource6.Click += new System.EventHandler(this.imgResource6_Click);
             // 
             // imgResource7
             // 
+            this.imgResource7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource7.Image = ((System.Drawing.Image)(resources.GetObject("imgResource7.Image")));
             this.imgResource7.Location = new System.Drawing.Point(9, 639);
             this.imgResource7.Name = "imgResource7";
             this.imgResource7.Size = new System.Drawing.Size(162, 189);
             this.imgResource7.TabIndex = 6;
             this.imgResource7.TabStop = false;
+            this.imgResource7.Click += new System.EventHandler(this.imgResource7_Click);
             // 
             // imgResource5
             // 
+            this.imgResource5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource5.Image = ((System.Drawing.Image)(resources.GetObject("imgResource5.Image")));
             this.imgResource5.Location = new System.Drawing.Point(9, 431);
             this.imgResource5.Name = "imgResource5";
             this.imgResource5.Size = new System.Drawing.Size(162, 189);
             this.imgResource5.TabIndex = 4;
             this.imgResource5.TabStop = false;
+            this.imgResource5.Click += new System.EventHandler(this.imgResource5_Click);
             // 
             // imgResource4
             // 
+            this.imgResource4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource4.Image = ((System.Drawing.Image)(resources.GetObject("imgResource4.Image")));
             this.imgResource4.Location = new System.Drawing.Point(177, 223);
             this.imgResource4.Name = "imgResource4";
             this.imgResource4.Size = new System.Drawing.Size(162, 189);
             this.imgResource4.TabIndex = 3;
             this.imgResource4.TabStop = false;
+            this.imgResource4.Click += new System.EventHandler(this.imgResource4_Click);
             // 
             // imgResource3
             // 
+            this.imgResource3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource3.Image = ((System.Drawing.Image)(resources.GetObject("imgResource3.Image")));
             this.imgResource3.Location = new System.Drawing.Point(9, 223);
             this.imgResource3.Name = "imgResource3";
             this.imgResource3.Size = new System.Drawing.Size(162, 189);
             this.imgResource3.TabIndex = 2;
             this.imgResource3.TabStop = false;
+            this.imgResource3.Click += new System.EventHandler(this.imgResource3_Click);
             // 
             // imgResource2
             // 
+            this.imgResource2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource2.Image = ((System.Drawing.Image)(resources.GetObject("imgResource2.Image")));
             this.imgResource2.Location = new System.Drawing.Point(177, 13);
             this.imgResource2.Name = "imgResource2";
@@ -318,12 +356,14 @@
             // 
             // imgResource1
             // 
+            this.imgResource1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgResource1.Image = ((System.Drawing.Image)(resources.GetObject("imgResource1.Image")));
             this.imgResource1.Location = new System.Drawing.Point(9, 13);
             this.imgResource1.Name = "imgResource1";
             this.imgResource1.Size = new System.Drawing.Size(162, 189);
             this.imgResource1.TabIndex = 0;
             this.imgResource1.TabStop = false;
+            this.imgResource1.Click += new System.EventHandler(this.imgResource1_Click);
             // 
             // Financial_Library
             // 
