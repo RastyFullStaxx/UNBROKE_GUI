@@ -98,11 +98,11 @@
             this.lblNeeds.AutoSize = true;
             this.lblNeeds.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblNeeds.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNeeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNeeds.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblNeeds.Location = new System.Drawing.Point(36, 229);
+            this.lblNeeds.Location = new System.Drawing.Point(38, 254);
             this.lblNeeds.Name = "lblNeeds";
-            this.lblNeeds.Size = new System.Drawing.Size(59, 16);
+            this.lblNeeds.Size = new System.Drawing.Size(48, 13);
             this.lblNeeds.TabIndex = 44;
             this.lblNeeds.Text = "NEEDS";
             // 
@@ -111,11 +111,11 @@
             this.lblWants.AutoSize = true;
             this.lblWants.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblWants.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWants.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWants.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblWants.Location = new System.Drawing.Point(159, 229);
+            this.lblWants.Location = new System.Drawing.Point(161, 254);
             this.lblWants.Name = "lblWants";
-            this.lblWants.Size = new System.Drawing.Size(62, 16);
+            this.lblWants.Size = new System.Drawing.Size(47, 13);
             this.lblWants.TabIndex = 45;
             this.lblWants.Text = "WANTS";
             this.lblWants.Click += new System.EventHandler(this.label1_Click);
@@ -125,11 +125,11 @@
             this.lblSavings.AutoSize = true;
             this.lblSavings.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblSavings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblSavings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSavings.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSavings.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSavings.Location = new System.Drawing.Point(277, 229);
+            this.lblSavings.Location = new System.Drawing.Point(277, 254);
             this.lblSavings.Name = "lblSavings";
-            this.lblSavings.Size = new System.Drawing.Size(73, 16);
+            this.lblSavings.Size = new System.Drawing.Size(60, 13);
             this.lblSavings.TabIndex = 46;
             this.lblSavings.Text = "SAVINGS";
             // 
@@ -164,9 +164,9 @@
             this.pnlExpenses.Controls.Add(this.imgFixedIcon);
             this.pnlExpenses.Controls.Add(this.lblFood);
             this.pnlExpenses.Controls.Add(this.lblRent);
-            this.pnlExpenses.Location = new System.Drawing.Point(26, 367);
+            this.pnlExpenses.Location = new System.Drawing.Point(26, 392);
             this.pnlExpenses.Name = "pnlExpenses";
-            this.pnlExpenses.Size = new System.Drawing.Size(328, 347);
+            this.pnlExpenses.Size = new System.Drawing.Size(328, 322);
             this.pnlExpenses.TabIndex = 51;
             // 
             // lblClothingAmountDisplay
@@ -718,7 +718,7 @@
             this.pnlTotalBudgetAndDate.Controls.Add(this.lblTotalBudget);
             this.pnlTotalBudgetAndDate.Controls.Add(this.lblStartDateDisplay);
             this.pnlTotalBudgetAndDate.Controls.Add(this.lblStartDate);
-            this.pnlTotalBudgetAndDate.Location = new System.Drawing.Point(26, 263);
+            this.pnlTotalBudgetAndDate.Location = new System.Drawing.Point(26, 294);
             this.pnlTotalBudgetAndDate.Name = "pnlTotalBudgetAndDate";
             this.pnlTotalBudgetAndDate.Size = new System.Drawing.Size(311, 95);
             this.pnlTotalBudgetAndDate.TabIndex = 52;
@@ -801,7 +801,7 @@
             this.needsProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.needsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.needsProgressBar.ForeColor = System.Drawing.Color.White;
-            this.needsProgressBar.Location = new System.Drawing.Point(19, 124);
+            this.needsProgressBar.Location = new System.Drawing.Point(16, 149);
             this.needsProgressBar.Maximum = 50;
             this.needsProgressBar.Minimum = 0;
             this.needsProgressBar.Name = "needsProgressBar";
@@ -831,7 +831,7 @@
             this.wantsProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.wantsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.wantsProgressBar.ForeColor = System.Drawing.Color.White;
-            this.wantsProgressBar.Location = new System.Drawing.Point(141, 124);
+            this.wantsProgressBar.Location = new System.Drawing.Point(136, 149);
             this.wantsProgressBar.Maximum = 30;
             this.wantsProgressBar.Minimum = 0;
             this.wantsProgressBar.Name = "wantsProgressBar";
@@ -862,7 +862,7 @@
             this.savingsProgressBar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.savingsProgressBar.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.savingsProgressBar.ForeColor = System.Drawing.Color.White;
-            this.savingsProgressBar.Location = new System.Drawing.Point(260, 124);
+            this.savingsProgressBar.Location = new System.Drawing.Point(257, 149);
             this.savingsProgressBar.Maximum = 20;
             this.savingsProgressBar.Minimum = 0;
             this.savingsProgressBar.Name = "savingsProgressBar";

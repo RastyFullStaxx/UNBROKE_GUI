@@ -46,6 +46,13 @@ namespace UNBROKE_GUI
             this.btnBudgetWizard1 = new System.Windows.Forms.Button();
             this.pnlBalanceAmount = new System.Windows.Forms.Panel();
             this.pnlExpenseBreakdowns = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblEndDateDisplay = new System.Windows.Forms.Label();
             this.lblTotalBudget1 = new System.Windows.Forms.Label();
@@ -55,19 +62,12 @@ namespace UNBROKE_GUI
             this.lblStartDate = new System.Windows.Forms.Label();
             this.imgNotificationIcon = new System.Windows.Forms.PictureBox();
             this.link_lblBudgetWizard = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgTotalBalanceTitle)).BeginInit();
             this.pnlBalanceAmount.SuspendLayout();
             this.pnlExpenseBreakdowns.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTotalBalanceText
@@ -119,9 +119,9 @@ namespace UNBROKE_GUI
             this.lblBudget.Font = new System.Drawing.Font("Poppins SemiBold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBudget.Location = new System.Drawing.Point(24, 221);
             this.lblBudget.Name = "lblBudget";
-            this.lblBudget.Size = new System.Drawing.Size(67, 26);
+            this.lblBudget.Size = new System.Drawing.Size(129, 26);
             this.lblBudget.TabIndex = 33;
-            this.lblBudget.Text = "Budget";
+            this.lblBudget.Text = "Budget Activity";
             this.lblBudget.Click += new System.EventHandler(this.label1_Click_2);
             // 
             // lblActivity
@@ -254,124 +254,6 @@ namespace UNBROKE_GUI
             this.pnlExpenseBreakdowns.Size = new System.Drawing.Size(337, 466);
             this.pnlExpenseBreakdowns.TabIndex = 58;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Maroon;
-            this.panel1.Controls.Add(this.lblEndDateDisplay);
-            this.panel1.Controls.Add(this.lblTotalBudget1);
-            this.panel1.Controls.Add(this.lblEndDate);
-            this.panel1.Controls.Add(this.lblHistoryTotalBudget);
-            this.panel1.Controls.Add(this.lblStartDateDisplay);
-            this.panel1.Controls.Add(this.lblStartDate);
-            this.panel1.Location = new System.Drawing.Point(11, 295);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 94);
-            this.panel1.TabIndex = 39;
-            // 
-            // lblEndDateDisplay
-            // 
-            this.lblEndDateDisplay.AutoSize = true;
-            this.lblEndDateDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEndDateDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEndDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDateDisplay.ForeColor = System.Drawing.Color.Silver;
-            this.lblEndDateDisplay.Location = new System.Drawing.Point(166, 65);
-            this.lblEndDateDisplay.Name = "lblEndDateDisplay";
-            this.lblEndDateDisplay.Size = new System.Drawing.Size(81, 16);
-            this.lblEndDateDisplay.TabIndex = 62;
-            this.lblEndDateDisplay.Text = "2024-07-14";
-            // 
-            // lblTotalBudget1
-            // 
-            this.lblTotalBudget1.AutoSize = true;
-            this.lblTotalBudget1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblTotalBudget1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblTotalBudget1.Font = new System.Drawing.Font("Poppins Medium", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalBudget1.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBudget1.Location = new System.Drawing.Point(38, 25);
-            this.lblTotalBudget1.Name = "lblTotalBudget1";
-            this.lblTotalBudget1.Size = new System.Drawing.Size(91, 17);
-            this.lblTotalBudget1.TabIndex = 59;
-            this.lblTotalBudget1.Text = "Total Balance";
-            // 
-            // lblEndDate
-            // 
-            this.lblEndDate.AutoSize = true;
-            this.lblEndDate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblEndDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndDate.ForeColor = System.Drawing.Color.White;
-            this.lblEndDate.Location = new System.Drawing.Point(166, 49);
-            this.lblEndDate.Name = "lblEndDate";
-            this.lblEndDate.Size = new System.Drawing.Size(71, 16);
-            this.lblEndDate.TabIndex = 61;
-            this.lblEndDate.Text = "End Date";
-            // 
-            // lblHistoryTotalBudget
-            // 
-            this.lblHistoryTotalBudget.BackColor = System.Drawing.Color.Transparent;
-            this.lblHistoryTotalBudget.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblHistoryTotalBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblHistoryTotalBudget.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistoryTotalBudget.ForeColor = System.Drawing.Color.Silver;
-            this.lblHistoryTotalBudget.Location = new System.Drawing.Point(37, 43);
-            this.lblHistoryTotalBudget.Name = "lblHistoryTotalBudget";
-            this.lblHistoryTotalBudget.Size = new System.Drawing.Size(90, 29);
-            this.lblHistoryTotalBudget.TabIndex = 32;
-            this.lblHistoryTotalBudget.Text = "₱0.00";
-            this.lblHistoryTotalBudget.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblStartDateDisplay
-            // 
-            this.lblStartDateDisplay.AutoSize = true;
-            this.lblStartDateDisplay.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblStartDateDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblStartDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDateDisplay.ForeColor = System.Drawing.Color.Silver;
-            this.lblStartDateDisplay.Location = new System.Drawing.Point(166, 28);
-            this.lblStartDateDisplay.Name = "lblStartDateDisplay";
-            this.lblStartDateDisplay.Size = new System.Drawing.Size(81, 16);
-            this.lblStartDateDisplay.TabIndex = 60;
-            this.lblStartDateDisplay.Text = "2024-06-14";
-            // 
-            // lblStartDate
-            // 
-            this.lblStartDate.AutoSize = true;
-            this.lblStartDate.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblStartDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartDate.ForeColor = System.Drawing.Color.White;
-            this.lblStartDate.Location = new System.Drawing.Point(166, 12);
-            this.lblStartDate.Name = "lblStartDate";
-            this.lblStartDate.Size = new System.Drawing.Size(76, 16);
-            this.lblStartDate.TabIndex = 59;
-            this.lblStartDate.Text = "Start Date";
-            // 
-            // imgNotificationIcon
-            // 
-            this.imgNotificationIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgNotificationIcon.BackgroundImage")));
-            this.imgNotificationIcon.Location = new System.Drawing.Point(75, 136);
-            this.imgNotificationIcon.Name = "imgNotificationIcon";
-            this.imgNotificationIcon.Size = new System.Drawing.Size(16, 16);
-            this.imgNotificationIcon.TabIndex = 38;
-            this.imgNotificationIcon.TabStop = false;
-            // 
-            // link_lblBudgetWizard
-            // 
-            this.link_lblBudgetWizard.ActiveLinkColor = System.Drawing.Color.Red;
-            this.link_lblBudgetWizard.AutoSize = true;
-            this.link_lblBudgetWizard.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.link_lblBudgetWizard.Font = new System.Drawing.Font("Poppins ExtraLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.link_lblBudgetWizard.ForeColor = System.Drawing.Color.DarkRed;
-            this.link_lblBudgetWizard.LinkColor = System.Drawing.Color.DarkRed;
-            this.link_lblBudgetWizard.Location = new System.Drawing.Point(89, 136);
-            this.link_lblBudgetWizard.Name = "link_lblBudgetWizard";
-            this.link_lblBudgetWizard.Size = new System.Drawing.Size(176, 19);
-            this.link_lblBudgetWizard.TabIndex = 37;
-            this.link_lblBudgetWizard.TabStop = true;
-            this.link_lblBudgetWizard.Text = "Click here to create a new one.";
-            this.link_lblBudgetWizard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_lblBudgetWizard_LinkClicked);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label2);
@@ -463,6 +345,125 @@ namespace UNBROKE_GUI
             this.label7.TabIndex = 59;
             this.label7.Text = "Start Date";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.lblEndDateDisplay);
+            this.panel1.Controls.Add(this.lblTotalBudget1);
+            this.panel1.Controls.Add(this.lblEndDate);
+            this.panel1.Controls.Add(this.lblHistoryTotalBudget);
+            this.panel1.Controls.Add(this.lblStartDateDisplay);
+            this.panel1.Controls.Add(this.lblStartDate);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(11, 295);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(312, 94);
+            this.panel1.TabIndex = 39;
+            // 
+            // lblEndDateDisplay
+            // 
+            this.lblEndDateDisplay.AutoSize = true;
+            this.lblEndDateDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEndDateDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEndDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDateDisplay.ForeColor = System.Drawing.Color.Silver;
+            this.lblEndDateDisplay.Location = new System.Drawing.Point(166, 65);
+            this.lblEndDateDisplay.Name = "lblEndDateDisplay";
+            this.lblEndDateDisplay.Size = new System.Drawing.Size(81, 16);
+            this.lblEndDateDisplay.TabIndex = 62;
+            this.lblEndDateDisplay.Text = "2024-07-14";
+            // 
+            // lblTotalBudget1
+            // 
+            this.lblTotalBudget1.AutoSize = true;
+            this.lblTotalBudget1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTotalBudget1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTotalBudget1.Font = new System.Drawing.Font("Poppins Medium", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalBudget1.ForeColor = System.Drawing.Color.White;
+            this.lblTotalBudget1.Location = new System.Drawing.Point(38, 25);
+            this.lblTotalBudget1.Name = "lblTotalBudget1";
+            this.lblTotalBudget1.Size = new System.Drawing.Size(91, 17);
+            this.lblTotalBudget1.TabIndex = 59;
+            this.lblTotalBudget1.Text = "Total Balance";
+            // 
+            // lblEndDate
+            // 
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblEndDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndDate.ForeColor = System.Drawing.Color.White;
+            this.lblEndDate.Location = new System.Drawing.Point(166, 49);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(71, 16);
+            this.lblEndDate.TabIndex = 61;
+            this.lblEndDate.Text = "End Date";
+            // 
+            // lblHistoryTotalBudget
+            // 
+            this.lblHistoryTotalBudget.BackColor = System.Drawing.Color.Transparent;
+            this.lblHistoryTotalBudget.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblHistoryTotalBudget.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblHistoryTotalBudget.Font = new System.Drawing.Font("Poppins", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistoryTotalBudget.ForeColor = System.Drawing.Color.Silver;
+            this.lblHistoryTotalBudget.Location = new System.Drawing.Point(37, 43);
+            this.lblHistoryTotalBudget.Name = "lblHistoryTotalBudget";
+            this.lblHistoryTotalBudget.Size = new System.Drawing.Size(90, 29);
+            this.lblHistoryTotalBudget.TabIndex = 32;
+            this.lblHistoryTotalBudget.Text = "₱0.00";
+            this.lblHistoryTotalBudget.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStartDateDisplay
+            // 
+            this.lblStartDateDisplay.AutoSize = true;
+            this.lblStartDateDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblStartDateDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblStartDateDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDateDisplay.ForeColor = System.Drawing.Color.Silver;
+            this.lblStartDateDisplay.Location = new System.Drawing.Point(166, 28);
+            this.lblStartDateDisplay.Name = "lblStartDateDisplay";
+            this.lblStartDateDisplay.Size = new System.Drawing.Size(81, 16);
+            this.lblStartDateDisplay.TabIndex = 60;
+            this.lblStartDateDisplay.Text = "2024-06-14";
+            // 
+            // lblStartDate
+            // 
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblStartDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.ForeColor = System.Drawing.Color.White;
+            this.lblStartDate.Location = new System.Drawing.Point(166, 12);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(76, 16);
+            this.lblStartDate.TabIndex = 59;
+            this.lblStartDate.Text = "Start Date";
+            // 
+            // imgNotificationIcon
+            // 
+            this.imgNotificationIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgNotificationIcon.BackgroundImage")));
+            this.imgNotificationIcon.Location = new System.Drawing.Point(75, 136);
+            this.imgNotificationIcon.Name = "imgNotificationIcon";
+            this.imgNotificationIcon.Size = new System.Drawing.Size(16, 16);
+            this.imgNotificationIcon.TabIndex = 38;
+            this.imgNotificationIcon.TabStop = false;
+            // 
+            // link_lblBudgetWizard
+            // 
+            this.link_lblBudgetWizard.ActiveLinkColor = System.Drawing.Color.Red;
+            this.link_lblBudgetWizard.AutoSize = true;
+            this.link_lblBudgetWizard.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.link_lblBudgetWizard.Font = new System.Drawing.Font("Poppins ExtraLight", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_lblBudgetWizard.ForeColor = System.Drawing.Color.DarkRed;
+            this.link_lblBudgetWizard.LinkColor = System.Drawing.Color.DarkRed;
+            this.link_lblBudgetWizard.Location = new System.Drawing.Point(89, 136);
+            this.link_lblBudgetWizard.Name = "link_lblBudgetWizard";
+            this.link_lblBudgetWizard.Size = new System.Drawing.Size(176, 19);
+            this.link_lblBudgetWizard.TabIndex = 37;
+            this.link_lblBudgetWizard.TabStop = true;
+            this.link_lblBudgetWizard.Text = "Click here to create a new one.";
+            this.link_lblBudgetWizard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_lblBudgetWizard_LinkClicked);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,11 +491,11 @@ namespace UNBROKE_GUI
             this.pnlBalanceAmount.ResumeLayout(false);
             this.pnlExpenseBreakdowns.ResumeLayout(false);
             this.pnlExpenseBreakdowns.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgNotificationIcon)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

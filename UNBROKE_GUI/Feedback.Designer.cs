@@ -42,8 +42,8 @@
             this.btnOneStar = new System.Windows.Forms.Button();
             this.lblRatingPrompt = new System.Windows.Forms.Label();
             this.pnlComments = new System.Windows.Forms.Panel();
-            this.txtComments = new System.Windows.Forms.TextBox();
             this.lblCommentPrompt = new System.Windows.Forms.Label();
+            this.txtComments = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlRating.SuspendLayout();
             this.pnlComments.SuspendLayout();
             this.SuspendLayout();
@@ -209,17 +209,6 @@
             this.pnlComments.Size = new System.Drawing.Size(292, 314);
             this.pnlComments.TabIndex = 53;
             // 
-            // txtComments
-            // 
-            this.txtComments.BackColor = System.Drawing.Color.White;
-            this.txtComments.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtComments.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComments.Location = new System.Drawing.Point(18, 37);
-            this.txtComments.Multiline = true;
-            this.txtComments.Name = "txtComments";
-            this.txtComments.Size = new System.Drawing.Size(255, 161);
-            this.txtComments.TabIndex = 54;
-            // 
             // lblCommentPrompt
             // 
             this.lblCommentPrompt.AutoSize = true;
@@ -232,6 +221,29 @@
             this.lblCommentPrompt.Size = new System.Drawing.Size(155, 23);
             this.lblCommentPrompt.TabIndex = 55;
             this.lblCommentPrompt.Text = "Tell us your thoughts!";
+            // 
+            // txtComments
+            // 
+            this.txtComments.BorderColor = System.Drawing.Color.Transparent;
+            this.txtComments.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtComments.DefaultText = "";
+            this.txtComments.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtComments.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtComments.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtComments.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtComments.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtComments.Font = new System.Drawing.Font("Poppins", 8.25F);
+            this.txtComments.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtComments.Location = new System.Drawing.Point(21, 38);
+            this.txtComments.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtComments.Multiline = true;
+            this.txtComments.Name = "txtComments";
+            this.txtComments.PasswordChar = '\0';
+            this.txtComments.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtComments.PlaceholderText = "Add your comments here...";
+            this.txtComments.SelectedText = "";
+            this.txtComments.Size = new System.Drawing.Size(245, 247);
+            this.txtComments.TabIndex = 56;
             // 
             // Feedback
             // 
@@ -275,6 +287,6 @@
         private System.Windows.Forms.Button btnFourStar;
         private System.Windows.Forms.Button btnThreeStar;
         private System.Windows.Forms.Button btnTwoStar;
-        private System.Windows.Forms.TextBox txtComments;
+        private Guna.UI2.WinForms.Guna2TextBox txtComments;
     }
 }
