@@ -42,7 +42,7 @@
             this.btnOneStar = new System.Windows.Forms.Button();
             this.lblRatingPrompt = new System.Windows.Forms.Label();
             this.pnlComments = new System.Windows.Forms.Panel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtComments = new System.Windows.Forms.TextBox();
             this.lblCommentPrompt = new System.Windows.Forms.Label();
             this.pnlRating.SuspendLayout();
             this.pnlComments.SuspendLayout();
@@ -72,6 +72,7 @@
             this.btnSubmit.Size = new System.Drawing.Size(343, 55);
             this.btnSubmit.TabIndex = 48;
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblFeedback
             // 
@@ -132,6 +133,7 @@
             this.btnFiveStar.Size = new System.Drawing.Size(30, 30);
             this.btnFiveStar.TabIndex = 57;
             this.btnFiveStar.UseVisualStyleBackColor = true;
+            this.btnFiveStar.Click += new System.EventHandler(this.btnFiveStar_Click);
             // 
             // btnFourStar
             // 
@@ -144,6 +146,7 @@
             this.btnFourStar.Size = new System.Drawing.Size(30, 30);
             this.btnFourStar.TabIndex = 56;
             this.btnFourStar.UseVisualStyleBackColor = true;
+            this.btnFourStar.Click += new System.EventHandler(this.btnFourStar_Click);
             // 
             // btnThreeStar
             // 
@@ -156,6 +159,7 @@
             this.btnThreeStar.Size = new System.Drawing.Size(30, 30);
             this.btnThreeStar.TabIndex = 56;
             this.btnThreeStar.UseVisualStyleBackColor = true;
+            this.btnThreeStar.Click += new System.EventHandler(this.btnThreeStar_Click);
             // 
             // btnTwoStar
             // 
@@ -168,6 +172,7 @@
             this.btnTwoStar.Size = new System.Drawing.Size(30, 30);
             this.btnTwoStar.TabIndex = 55;
             this.btnTwoStar.UseVisualStyleBackColor = true;
+            this.btnTwoStar.Click += new System.EventHandler(this.btnTwoStar_Click);
             // 
             // btnOneStar
             // 
@@ -180,6 +185,7 @@
             this.btnOneStar.Size = new System.Drawing.Size(30, 30);
             this.btnOneStar.TabIndex = 54;
             this.btnOneStar.UseVisualStyleBackColor = true;
+            this.btnOneStar.Click += new System.EventHandler(this.btnOneStar_Click);
             // 
             // lblRatingPrompt
             // 
@@ -196,24 +202,23 @@
             // 
             // pnlComments
             // 
-            this.pnlComments.Controls.Add(this.txtUsername);
+            this.pnlComments.Controls.Add(this.txtComments);
             this.pnlComments.Controls.Add(this.lblCommentPrompt);
             this.pnlComments.Location = new System.Drawing.Point(41, 348);
             this.pnlComments.Name = "pnlComments";
             this.pnlComments.Size = new System.Drawing.Size(292, 314);
             this.pnlComments.TabIndex = 53;
             // 
-            // txtUsername
+            // txtComments
             // 
-            this.txtUsername.BackColor = System.Drawing.Color.White;
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(18, 37);
-            this.txtUsername.Multiline = true;
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(251, 161);
-            this.txtUsername.TabIndex = 54;
-            this.txtUsername.Text = "Add your comment here";
+            this.txtComments.BackColor = System.Drawing.Color.White;
+            this.txtComments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtComments.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComments.Location = new System.Drawing.Point(18, 37);
+            this.txtComments.Multiline = true;
+            this.txtComments.Name = "txtComments";
+            this.txtComments.Size = new System.Drawing.Size(255, 161);
+            this.txtComments.TabIndex = 54;
             // 
             // lblCommentPrompt
             // 
@@ -270,6 +275,6 @@
         private System.Windows.Forms.Button btnFourStar;
         private System.Windows.Forms.Button btnThreeStar;
         private System.Windows.Forms.Button btnTwoStar;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtComments;
     }
 }

@@ -31,5 +31,80 @@ namespace UNBROKE_GUI
         {
 
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Feedback received, thank you!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
+
+            Dashboard dashboardForm = new Dashboard(currentuser);
+            dashboardForm.Show();
+        }
+
+        private void btnOneStar_Click(object sender, EventArgs e)
+        {
+            // Update Button Images
+            btnOneStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png"); 
+            btnTwoStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png"); 
+            btnThreeStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png"); 
+            btnFourStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png"); 
+            btnFiveStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png"); 
+
+            // Store Rating 
+            int rating = 1;             
+        }
+
+        private void btnTwoStar_Click(object sender, EventArgs e)
+        {
+            // Update Button Images
+            btnOneStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnTwoStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnThreeStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png");
+            btnFourStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png");
+            btnFiveStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png");
+
+            // Store Rating 
+            int rating = 2;
+        }
+
+        private void btnThreeStar_Click(object sender, EventArgs e)
+        {
+            // Update Button Images
+            btnOneStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnTwoStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnThreeStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnFourStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png");
+            btnFiveStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png");
+
+            // Store Rating 
+            int rating = 3;
+        }
+
+        private void btnFourStar_Click(object sender, EventArgs e)
+        {
+            // Update Button Images
+            btnOneStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnTwoStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnThreeStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnFourStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnFiveStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnGreyStar.png");
+
+            // Store Rating 
+            int rating = 4;
+        }
+
+        private void btnFiveStar_Click(object sender, EventArgs e)
+        {
+            // Update Button Images
+            btnOneStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnTwoStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnThreeStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnFourStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+            btnFiveStar.Image = Image.FromFile("C:\\Users\\MSI\\OneDrive\\Attachments\\Documents\\UNBROKE\\UNBROKE\\assets\\btnYellowStar.png");
+
+            // Store Rating 
+            int rating = 5;
+        }
     }
 }
