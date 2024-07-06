@@ -720,7 +720,7 @@
             this.pnlTotalBudgetAndDate.Controls.Add(this.lblStartDate);
             this.pnlTotalBudgetAndDate.Location = new System.Drawing.Point(26, 263);
             this.pnlTotalBudgetAndDate.Name = "pnlTotalBudgetAndDate";
-            this.pnlTotalBudgetAndDate.Size = new System.Drawing.Size(328, 95);
+            this.pnlTotalBudgetAndDate.Size = new System.Drawing.Size(311, 95);
             this.pnlTotalBudgetAndDate.TabIndex = 52;
             // 
             // btnSavingsTab

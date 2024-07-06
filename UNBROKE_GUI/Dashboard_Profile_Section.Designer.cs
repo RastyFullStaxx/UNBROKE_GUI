@@ -68,6 +68,7 @@
             this.pnlEditProfile.Name = "pnlEditProfile";
             this.pnlEditProfile.Size = new System.Drawing.Size(320, 41);
             this.pnlEditProfile.TabIndex = 45;
+            this.pnlEditProfile.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlEditProfile_Paint);
             // 
             // btnEditProfile
             // 

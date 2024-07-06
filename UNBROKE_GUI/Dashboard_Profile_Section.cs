@@ -21,8 +21,7 @@ namespace UNBROKE_GUI
         {
             InitializeComponent();
             this.currentuser = currentUser;
-            this.first_name = first_name;
-            this.last_name = last_name;
+
         }
 
         private void imgProfileIcon_Click(object sender, EventArgs e)
@@ -75,7 +74,11 @@ namespace UNBROKE_GUI
                 }
                 else
                 {
-                    MessageBox.Show("User not found. Please log in again.");
+                    MessageBox.Show("Please log in again.");
+
+                    Form2 loginForm = new Form2();
+                    loginForm.Show();
+                    this.Dispose();
                 }
             }
             catch (Exception ex)
@@ -165,6 +168,10 @@ namespace UNBROKE_GUI
         private void lblFullNameDisplay_Click(object sender, EventArgs e)
         {
             lblFullNameDisplay.Text = first_name + last_name;
+        }
+
+        private void pnlEditProfile_Paint(object sender, PaintEventArgs e)
+        {
         }
     }
 }

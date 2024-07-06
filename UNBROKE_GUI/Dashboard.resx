@@ -118,15 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="imgNotificationIcon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAMJJREFUOE+1UtsNwjAQywiM0FEYhQ3KCNkENsgIfEbKQx2ho4Bdjkebu0iVwJI/
-        mjtfLq7dX5BzPpZSxlrrhcS3n6ZpkLINNB0gDOBdI4eZg2KMAxpmTfhNbDPzIpF9kFK6KoKbcHseRPYE
-        b1eayJOwqdEnkS+mea2pR2jOIjfXX0zr1URuDwDNJ6wGcB2tCex54EX+Dk7TBJoDmjzgUAuQ+htX67/A
-        cOwIkp3GjqFkUFO4BQfRJK5KQjjSJyn/Es49ADoADJklHLG8AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="imgTotalBalanceTitle.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGUAAAATCAYAAACJB8MTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -331,6 +322,15 @@
         C8ELLzuBql61qRRxoFIgnRsEwJ3jOA3BXiyLFjLP7Nt0kRTbeOBaOBhtmyeQqF3O7wqvadd7s21tpHcS
         SSn9+we3RZsIJBY20bksvyRHyzy2B7092whEzsbjLe56qBUb/ovTVvP/hq+S4nqbcxvPvKOZObcDqaLX
         9gTxOdpLP/qjzeoJfCMZjf4Fa6ltw/Cny0YAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="imgNotificationIcon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAMJJREFUOE+1UtsNwjAQywiM0FEYhQ3KCNkENsgIfEbKQx2ho4Bdjkebu0iVwJI/
+        mjtfLq7dX5BzPpZSxlrrhcS3n6ZpkLINNB0gDOBdI4eZg2KMAxpmTfhNbDPzIpF9kFK6KoKbcHseRPYE
+        b1eayJOwqdEnkS+mea2pR2jOIjfXX0zr1URuDwDNJ6wGcB2tCex54EX+Dk7TBJoDmjzgUAuQ+htX67/A
+        cOwIkp3GjqFkUFO4BQfRJK5KQjjSJyn/Es49ADoADJklHLG8AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

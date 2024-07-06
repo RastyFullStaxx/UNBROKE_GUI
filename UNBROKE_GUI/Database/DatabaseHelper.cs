@@ -108,7 +108,6 @@ namespace UNBROKE_GUI
 
         public bool SetupProfile(int userId, string firstname, string lastname, byte[] profileImage, bool profileSetup)
         {
-            // SQL query with parameters
             string query = "UPDATE `user` " +
                            "SET `first_name` = @firstname, " +
                            "`last_name` = @lastname, " +
@@ -116,37 +115,40 @@ namespace UNBROKE_GUI
                            "`profile_setup` = @profileSetup " +
                            "WHERE `user_id` = @userId";
 
-            // Create MySqlConnection
             using (MySqlConnection connection = GetConnection())
             {
                 try
                 {
                     connection.Open();
 
-                    // Create MySqlCommand
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        // Add parameters to the command
                         command.Parameters.AddWithValue("@userId", userId);
                         command.Parameters.AddWithValue("@firstname", firstname);
                         command.Parameters.AddWithValue("@lastname", lastname);
                         command.Parameters.Add("@profileImage", MySqlDbType.Blob).Value = profileImage;
                         command.Parameters.AddWithValue("@profileSetup", profileSetup);
 
-                        // Execute the command
                         int rowsAffected = command.ExecuteNonQuery();
                         Console.WriteLine($"Rows affected: {rowsAffected}");
 
-                        return rowsAffected > 0; // If rows affected > 0, update successful
+                        return rowsAffected > 0;
                     }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"Exception: {ex.Message}");
+
+                    return false;
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error updating profile: {ex.Message}");
-                    return false; // Update failed
+                    Console.WriteLine($"Exception: {ex.Message}");
+                    return false;
                 }
             }
         }
+
         public string GetFirstNameByUserID(int userID)
         {
             string firstname = null; // Default value or error indicator
@@ -183,6 +185,7 @@ namespace UNBROKE_GUI
 
             return firstname;
         }
+
         public string GetLastNameByUserID(int userID)
         {
             string firstname = null; // Default value or error indicator
@@ -817,7 +820,49 @@ namespace UNBROKE_GUI
         }
 
 
+        public bool UpdateProfile(int userId, string username, string passwordHash, string firstname, string lastname, byte[] profileImage)
+        {
+            string query = "UPDATE `user` " +
+                           "SET `username` = @username, " +
+                           "`password_hash` = @passwordHash, " +
+                           "`first_name` = @firstname, " +
+                           "`last_name` = @lastname, " +
+                           "`profile_image` = @profileImage " +
+                           "WHERE `user_id` = @userId";
 
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@userId", userId);
+                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@passwordHash", passwordHash);
+                        command.Parameters.AddWithValue("@firstname", firstname);
+                        command.Parameters.AddWithValue("@lastname", lastname);
+                        command.Parameters.Add("@profileImage", MySqlDbType.Blob).Value = profileImage;
+
+                        int rowsAffected = command.ExecuteNonQuery();
+                        Console.WriteLine($"Rows affected: {rowsAffected}");
+
+                        return rowsAffected > 0;
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"MySQL Exception: {ex.Message}");
+                    return false;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Exception: {ex.Message}");
+                    return false;
+                }
+            }
+        }
 
     }
 }

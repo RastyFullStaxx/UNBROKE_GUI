@@ -33,18 +33,18 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pnlUsername = new System.Windows.Forms.Panel();
+            this.usernameText = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEditUsername = new System.Windows.Forms.Button();
-            this.lblUsernameDisplay = new System.Windows.Forms.Label();
             this.pnlPassword = new System.Windows.Forms.Panel();
+            this.userpasswordText = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEditUserPassword = new System.Windows.Forms.Button();
-            this.lblUserpassDisplay = new System.Windows.Forms.Label();
-            this.lblFirstNameDisplay = new System.Windows.Forms.Label();
             this.pnlLastName = new System.Windows.Forms.Panel();
+            this.userlastnameText = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEditLastName = new System.Windows.Forms.Button();
-            this.lblLastNameDisplay = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.pnlFirstName = new System.Windows.Forms.Panel();
+            this.userfirstnameText = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnEditFirstName = new System.Windows.Forms.Button();
             this.lblFullNameDisplay = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -100,12 +100,38 @@
             // pnlUsername
             // 
             this.pnlUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlUsername.Controls.Add(this.usernameText);
             this.pnlUsername.Controls.Add(this.btnEditUsername);
-            this.pnlUsername.Controls.Add(this.lblUsernameDisplay);
             this.pnlUsername.Location = new System.Drawing.Point(22, 358);
             this.pnlUsername.Name = "pnlUsername";
             this.pnlUsername.Size = new System.Drawing.Size(331, 56);
             this.pnlUsername.TabIndex = 44;
+            // 
+            // usernameText
+            // 
+            this.usernameText.BackColor = System.Drawing.SystemColors.Window;
+            this.usernameText.BorderColor = System.Drawing.Color.DarkGray;
+            this.usernameText.BorderThickness = 0;
+            this.usernameText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.usernameText.DefaultText = "";
+            this.usernameText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.usernameText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.usernameText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.usernameText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.usernameText.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.usernameText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.usernameText.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameText.ForeColor = System.Drawing.Color.Black;
+            this.usernameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.usernameText.Location = new System.Drawing.Point(17, 30);
+            this.usernameText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.usernameText.Name = "usernameText";
+            this.usernameText.PasswordChar = '\0';
+            this.usernameText.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.usernameText.PlaceholderText = "username";
+            this.usernameText.SelectedText = "";
+            this.usernameText.Size = new System.Drawing.Size(200, 19);
+            this.usernameText.TabIndex = 49;
             // 
             // btnEditUsername
             // 
@@ -117,26 +143,43 @@
             this.btnEditUsername.Size = new System.Drawing.Size(24, 24);
             this.btnEditUsername.TabIndex = 48;
             this.btnEditUsername.UseVisualStyleBackColor = true;
-            // 
-            // lblUsernameDisplay
-            // 
-            this.lblUsernameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsernameDisplay.Location = new System.Drawing.Point(26, 27);
-            this.lblUsernameDisplay.Name = "lblUsernameDisplay";
-            this.lblUsernameDisplay.Size = new System.Drawing.Size(258, 22);
-            this.lblUsernameDisplay.TabIndex = 1;
-            this.lblUsernameDisplay.Text = "username";
-            this.lblUsernameDisplay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditUsername.Click += new System.EventHandler(this.btnEditUsername_Click);
             // 
             // pnlPassword
             // 
             this.pnlPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlPassword.Controls.Add(this.userpasswordText);
             this.pnlPassword.Controls.Add(this.btnEditUserPassword);
-            this.pnlPassword.Controls.Add(this.lblUserpassDisplay);
             this.pnlPassword.Location = new System.Drawing.Point(22, 428);
             this.pnlPassword.Name = "pnlPassword";
             this.pnlPassword.Size = new System.Drawing.Size(331, 56);
             this.pnlPassword.TabIndex = 45;
+            // 
+            // userpasswordText
+            // 
+            this.userpasswordText.BackColor = System.Drawing.SystemColors.Window;
+            this.userpasswordText.BorderColor = System.Drawing.Color.DarkGray;
+            this.userpasswordText.BorderThickness = 0;
+            this.userpasswordText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.userpasswordText.DefaultText = "";
+            this.userpasswordText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.userpasswordText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.userpasswordText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.userpasswordText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.userpasswordText.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userpasswordText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userpasswordText.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userpasswordText.ForeColor = System.Drawing.Color.Black;
+            this.userpasswordText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userpasswordText.Location = new System.Drawing.Point(17, 29);
+            this.userpasswordText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userpasswordText.Name = "userpasswordText";
+            this.userpasswordText.PasswordChar = '\0';
+            this.userpasswordText.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.userpasswordText.PlaceholderText = "password";
+            this.userpasswordText.SelectedText = "";
+            this.userpasswordText.Size = new System.Drawing.Size(200, 19);
+            this.userpasswordText.TabIndex = 50;
             // 
             // btnEditUserPassword
             // 
@@ -148,37 +191,43 @@
             this.btnEditUserPassword.Size = new System.Drawing.Size(24, 24);
             this.btnEditUserPassword.TabIndex = 49;
             this.btnEditUserPassword.UseVisualStyleBackColor = true;
-            // 
-            // lblUserpassDisplay
-            // 
-            this.lblUserpassDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserpassDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblUserpassDisplay.Location = new System.Drawing.Point(26, 26);
-            this.lblUserpassDisplay.Name = "lblUserpassDisplay";
-            this.lblUserpassDisplay.Size = new System.Drawing.Size(258, 22);
-            this.lblUserpassDisplay.TabIndex = 0;
-            this.lblUserpassDisplay.Text = "userpassword";
-            this.lblUserpassDisplay.Click += new System.EventHandler(this.lblUserpass_Click);
-            // 
-            // lblFirstNameDisplay
-            // 
-            this.lblFirstNameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstNameDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblFirstNameDisplay.Location = new System.Drawing.Point(26, 27);
-            this.lblFirstNameDisplay.Name = "lblFirstNameDisplay";
-            this.lblFirstNameDisplay.Size = new System.Drawing.Size(258, 22);
-            this.lblFirstNameDisplay.TabIndex = 1;
-            this.lblFirstNameDisplay.Text = "user first name";
+            this.btnEditUserPassword.Click += new System.EventHandler(this.btnEditUserPassword_Click);
             // 
             // pnlLastName
             // 
             this.pnlLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlLastName.Controls.Add(this.userlastnameText);
             this.pnlLastName.Controls.Add(this.btnEditLastName);
-            this.pnlLastName.Controls.Add(this.lblLastNameDisplay);
             this.pnlLastName.Location = new System.Drawing.Point(22, 569);
             this.pnlLastName.Name = "pnlLastName";
             this.pnlLastName.Size = new System.Drawing.Size(331, 56);
             this.pnlLastName.TabIndex = 53;
+            // 
+            // userlastnameText
+            // 
+            this.userlastnameText.BackColor = System.Drawing.SystemColors.Window;
+            this.userlastnameText.BorderColor = System.Drawing.Color.DarkGray;
+            this.userlastnameText.BorderThickness = 0;
+            this.userlastnameText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.userlastnameText.DefaultText = "";
+            this.userlastnameText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.userlastnameText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.userlastnameText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.userlastnameText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.userlastnameText.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userlastnameText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userlastnameText.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userlastnameText.ForeColor = System.Drawing.Color.Black;
+            this.userlastnameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userlastnameText.Location = new System.Drawing.Point(17, 29);
+            this.userlastnameText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userlastnameText.Name = "userlastnameText";
+            this.userlastnameText.PasswordChar = '\0';
+            this.userlastnameText.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.userlastnameText.PlaceholderText = "last name";
+            this.userlastnameText.SelectedText = "";
+            this.userlastnameText.Size = new System.Drawing.Size(200, 19);
+            this.userlastnameText.TabIndex = 52;
             // 
             // btnEditLastName
             // 
@@ -190,16 +239,7 @@
             this.btnEditLastName.Size = new System.Drawing.Size(24, 24);
             this.btnEditLastName.TabIndex = 49;
             this.btnEditLastName.UseVisualStyleBackColor = true;
-            // 
-            // lblLastNameDisplay
-            // 
-            this.lblLastNameDisplay.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastNameDisplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblLastNameDisplay.Location = new System.Drawing.Point(26, 26);
-            this.lblLastNameDisplay.Name = "lblLastNameDisplay";
-            this.lblLastNameDisplay.Size = new System.Drawing.Size(258, 22);
-            this.lblLastNameDisplay.TabIndex = 0;
-            this.lblLastNameDisplay.Text = "user last name";
+            this.btnEditLastName.Click += new System.EventHandler(this.btnEditLastName_Click);
             // 
             // lblLastName
             // 
@@ -228,12 +268,38 @@
             // pnlFirstName
             // 
             this.pnlFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pnlFirstName.Controls.Add(this.userfirstnameText);
             this.pnlFirstName.Controls.Add(this.btnEditFirstName);
-            this.pnlFirstName.Controls.Add(this.lblFirstNameDisplay);
             this.pnlFirstName.Location = new System.Drawing.Point(22, 499);
             this.pnlFirstName.Name = "pnlFirstName";
             this.pnlFirstName.Size = new System.Drawing.Size(331, 56);
             this.pnlFirstName.TabIndex = 52;
+            // 
+            // userfirstnameText
+            // 
+            this.userfirstnameText.BackColor = System.Drawing.SystemColors.Window;
+            this.userfirstnameText.BorderColor = System.Drawing.Color.DarkGray;
+            this.userfirstnameText.BorderThickness = 0;
+            this.userfirstnameText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.userfirstnameText.DefaultText = "";
+            this.userfirstnameText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.userfirstnameText.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.userfirstnameText.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.userfirstnameText.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.userfirstnameText.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.userfirstnameText.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userfirstnameText.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userfirstnameText.ForeColor = System.Drawing.Color.Black;
+            this.userfirstnameText.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.userfirstnameText.Location = new System.Drawing.Point(17, 30);
+            this.userfirstnameText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.userfirstnameText.Name = "userfirstnameText";
+            this.userfirstnameText.PasswordChar = '\0';
+            this.userfirstnameText.PlaceholderForeColor = System.Drawing.Color.Black;
+            this.userfirstnameText.PlaceholderText = "first name";
+            this.userfirstnameText.SelectedText = "";
+            this.userfirstnameText.Size = new System.Drawing.Size(200, 19);
+            this.userfirstnameText.TabIndex = 51;
             // 
             // btnEditFirstName
             // 
@@ -245,6 +311,7 @@
             this.btnEditFirstName.Size = new System.Drawing.Size(24, 24);
             this.btnEditFirstName.TabIndex = 48;
             this.btnEditFirstName.UseVisualStyleBackColor = true;
+            this.btnEditFirstName.Click += new System.EventHandler(this.btnEditFirstName_Click);
             // 
             // lblFullNameDisplay
             // 
@@ -282,6 +349,7 @@
             this.btnUploadPhoto.Size = new System.Drawing.Size(24, 24);
             this.btnUploadPhoto.TabIndex = 46;
             this.btnUploadPhoto.UseVisualStyleBackColor = true;
+            this.btnUploadPhoto.Click += new System.EventHandler(this.btnUploadPhoto_Click);
             // 
             // imgDefaultPhoto
             // 
@@ -292,7 +360,6 @@
             this.imgDefaultPhoto.Size = new System.Drawing.Size(170, 154);
             this.imgDefaultPhoto.TabIndex = 39;
             this.imgDefaultPhoto.TabStop = false;
-            this.imgDefaultPhoto.Click += new System.EventHandler(this.imgDefaultPhoto_Click);
             // 
             // btnBack
             // 
@@ -361,20 +428,20 @@
         private System.Windows.Forms.Panel pnlUsername;
         private System.Windows.Forms.Panel pnlPassword;
         private System.Windows.Forms.Button btnUploadPhoto;
-        private System.Windows.Forms.Label lblUserpassDisplay;
-        private System.Windows.Forms.Label lblUsernameDisplay;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEditUsername;
         private System.Windows.Forms.Button btnEditUserPassword;
         private System.Windows.Forms.Button btnEditLastName;
         private System.Windows.Forms.Button btnEditFirstName;
-        private System.Windows.Forms.Label lblFirstNameDisplay;
         private System.Windows.Forms.Panel pnlLastName;
-        private System.Windows.Forms.Label lblLastNameDisplay;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Panel pnlFirstName;
         private System.Windows.Forms.Label lblFullNameDisplay;
         private System.Windows.Forms.Panel pnlFullNameDisplay;
+        private Guna.UI2.WinForms.Guna2TextBox usernameText;
+        private Guna.UI2.WinForms.Guna2TextBox userpasswordText;
+        private Guna.UI2.WinForms.Guna2TextBox userlastnameText;
+        private Guna.UI2.WinForms.Guna2TextBox userfirstnameText;
     }
 }

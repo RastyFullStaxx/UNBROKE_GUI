@@ -79,6 +79,10 @@ namespace UNBROKE_GUI
                 {
                     MessageBox.Show("User not found. Please log in again.");
                     // Example: Redirect to login form or handle this case accordingly
+
+                    Form2 loginForm = new Form2();
+                    loginForm.Show();
+                    this.Dispose();
                 }
             }
             catch (Exception ex)
