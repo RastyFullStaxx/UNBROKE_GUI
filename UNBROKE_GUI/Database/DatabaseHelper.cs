@@ -864,5 +864,42 @@ namespace UNBROKE_GUI
             }
         }
 
+        public int CountTotalBudgetsByUserID(int userID)
+        {
+            int totalBudgets = 0;
+
+            // SQL query to count total budgets for a specific user
+            string query = "SELECT COUNT(*) FROM `budget` WHERE `user_id` = @userID";
+
+            // Create MySqlConnection
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Create MySqlCommand
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Add parameter to the command
+                        command.Parameters.AddWithValue("@userID", userID);
+
+                        // Execute the command and fetch the count of budgets
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            totalBudgets = Convert.ToInt32(result); // Convert result to int
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error counting total budgets for user: {ex.Message}");
+                }
+            }
+
+            return totalBudgets;
+        }
+
     }
 }
