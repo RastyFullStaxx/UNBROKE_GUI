@@ -901,5 +901,70 @@ namespace UNBROKE_GUI
             return totalBudgets;
         }
 
+
+        public List<int> GetTopBudgetIdsByUserId(int userId, int skip, int take)
+        {
+            List<int> budgetIds = new List<int>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = @"
+            SELECT budget_id
+            FROM budget
+            WHERE user_id = @UserId
+            ORDER BY budget_id DESC
+            LIMIT @Skip, @Take";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                cmd.Parameters.AddWithValue("@Skip", skip);
+                cmd.Parameters.AddWithValue("@Take", take);
+
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    budgetIds.Add(reader.GetInt32("budget_id"));
+                }
+            }
+
+            return budgetIds;
+        }
+
+
+
+
+
+        public (decimal TotalBudget, DateTime StartDate, DateTime EndDate, decimal Savings) GetBudgetDetails(int budgetId)
+        {
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                string query = @"
+          SELECT total_budget, start_date, end_date, savings
+        FROM budget
+       WHERE budget_id = @BudgetId";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@BudgetId", budgetId);
+
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    decimal totalBudget = reader.GetDecimal(0);
+                    DateTime startDate = reader.GetDateTime(1);
+                    DateTime endDate = reader.GetDateTime(2);
+                    decimal savings = reader.GetDecimal(3); // Retrieve Savings from the query result
+                    return (totalBudget, startDate, endDate, savings);
+                }
+            }
+
+            return (0, DateTime.MinValue, DateTime.MinValue, 0); // Default return values if budget is not found
+        }
+
+
+
     }
 }
