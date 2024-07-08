@@ -142,7 +142,6 @@
             this.btnNext.Size = new System.Drawing.Size(319, 55);
             this.btnNext.TabIndex = 6;
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += btnNext_Click;
             // 
             // imgGiantLogo
             // 
@@ -166,6 +165,7 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.imgGiantLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Budget_Wizard_Input";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Wizard_Input";

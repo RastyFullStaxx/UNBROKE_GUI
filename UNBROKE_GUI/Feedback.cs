@@ -13,6 +13,7 @@ namespace UNBROKE_GUI
     public partial class Feedback : Form
     {
         private string currentuser;
+        private string userFeedback;
 
         public Feedback(String currentUser)
         {
@@ -40,6 +41,11 @@ namespace UNBROKE_GUI
 
             Dashboard dashboardForm = new Dashboard(currentuser);
             dashboardForm.Show();
+
+
+            userFeedback = txtComments.Text;
+
+            Console.WriteLine(userFeedback);
         }
 
         private void btnOneStar_Click(object sender, EventArgs e)
@@ -105,6 +111,11 @@ namespace UNBROKE_GUI
 
             // Store Rating 
             int rating = 5;
+        }
+
+        private void txtComments_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

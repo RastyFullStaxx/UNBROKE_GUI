@@ -43,11 +43,12 @@ namespace UNBROKE_GUI
             openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Get the selected image file path
                 string imagePath = openFileDialog.FileName;
+                imgDefaultPhoto.SizeMode = PictureBoxSizeMode.Zoom; // Set size mode to normal for manual resizing
 
                 // Load the selected image into the imgDefaultPhoto control
-                imgDefaultPhoto.Image = Image.FromFile(imagePath);
+                Image originalImage = Image.FromFile(imagePath);
+                imgDefaultPhoto.Image = ResizeAndCropImage(originalImage, imgDefaultPhoto.Width, imgDefaultPhoto.Height);
             }
         }
 
@@ -81,6 +82,43 @@ namespace UNBROKE_GUI
                 image.Save(ms, ImageFormat.Png); // Adjust ImageFormat based on your requirements
                 return ms.ToArray();
             }
+        }
+        private Image ResizeAndCropImage(Image image, int targetWidth, int targetHeight)
+        {
+            float aspectRatio = (float)image.Width / image.Height;
+            float targetRatio = (float)targetWidth / targetHeight;
+
+            int newWidth, newHeight;
+            int cropX = 0, cropY = 0;
+
+            if (aspectRatio > targetRatio)
+            {
+                newHeight = targetHeight;
+                newWidth = (int)(newHeight * aspectRatio);
+                cropX = (newWidth - targetWidth) / 2;
+            }
+            else
+            {
+                newWidth = targetWidth;
+                newHeight = (int)(newWidth / aspectRatio);
+                cropY = (newHeight - targetHeight) / 2;
+            }
+
+            Bitmap resizedImage = new Bitmap(newWidth, newHeight);
+            using (Graphics graphics = Graphics.FromImage(resizedImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+
+            Bitmap croppedImage = new Bitmap(targetWidth, targetHeight);
+            using (Graphics graphics = Graphics.FromImage(croppedImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(resizedImage, -cropX, -cropY, newWidth, newHeight);
+            }
+
+            return croppedImage;
         }
     }
 }

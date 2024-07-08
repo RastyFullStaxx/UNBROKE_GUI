@@ -65,6 +65,7 @@
             this.Controls.Add(this.imgLogo);
             this.Controls.Add(this.lblLoadingDialogs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Budget_Loading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Loading";

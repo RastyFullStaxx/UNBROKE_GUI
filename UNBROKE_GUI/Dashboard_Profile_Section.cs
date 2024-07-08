@@ -63,7 +63,8 @@ namespace UNBROKE_GUI
                         // Display profile image
                         using (MemoryStream ms = new MemoryStream(profileImage))
                         {
-                            imgDefaultPhoto.Image = Image.FromStream(ms);
+                            Image originalImage = Image.FromStream(ms);
+                            imgDefaultPhoto.Image = ResizeImage(originalImage, imgDefaultPhoto.Width, imgDefaultPhoto.Height);
                         }
                     }
                     else
@@ -172,6 +173,42 @@ namespace UNBROKE_GUI
 
         private void pnlEditProfile_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private Image ResizeImage(Image image, int targetWidth, int targetHeight)
+        {
+            // Calculate the new dimensions
+            float aspectRatio = (float)image.Width / image.Height;
+            int newWidth, newHeight;
+
+            if (targetWidth / (float)targetHeight > aspectRatio)
+            {
+                newHeight = targetHeight;
+                newWidth = (int)(newHeight * aspectRatio);
+            }
+            else
+            {
+                newWidth = targetWidth;
+                newHeight = (int)(newWidth / aspectRatio);
+            }
+
+            // Create a new bitmap with the new dimensions
+            Bitmap newImage = new Bitmap(newWidth, newHeight);
+            using (Graphics graphics = Graphics.FromImage(newImage))
+            {
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.DrawImage(image, 0, 0, newWidth, newHeight);
+            }
+
+            // Create a bitmap with the target dimensions and draw the resized image centered
+            Bitmap finalImage = new Bitmap(targetWidth, targetHeight);
+            using (Graphics graphics = Graphics.FromImage(finalImage))
+            {
+                graphics.Clear(Color.Transparent);
+                graphics.DrawImage(newImage, (targetWidth - newWidth) / 2, (targetHeight - newHeight) / 2, newWidth, newHeight);
+            }
+
+            return finalImage;
         }
     }
 }

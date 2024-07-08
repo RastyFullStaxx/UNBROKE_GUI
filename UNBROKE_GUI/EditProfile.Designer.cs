@@ -404,6 +404,7 @@
             this.Controls.Add(this.pnlLastName);
             this.Controls.Add(this.pnlFullNameDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditProfile";

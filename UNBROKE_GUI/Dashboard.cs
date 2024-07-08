@@ -385,6 +385,7 @@ namespace UNBROKE_GUI
 
         }
 
+        
         private void LoadPanelData()
         {
             try
@@ -469,7 +470,7 @@ namespace UNBROKE_GUI
             }
         }
 
-
+        // HISTORY MECH
         private void DisplayBudgetDetails(Panel panel, int budgetId)
         {
             try
