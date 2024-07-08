@@ -38,10 +38,10 @@
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblInvalid = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblInvalid = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -150,28 +150,6 @@
             this.panel1.Size = new System.Drawing.Size(331, 56);
             this.panel1.TabIndex = 21;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.panel2.Controls.Add(this.guna2TextBox2);
-            this.panel2.Location = new System.Drawing.Point(28, 267);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 56);
-            this.panel2.TabIndex = 22;
-            // 
-            // lblInvalid
-            // 
-            this.lblInvalid.AutoSize = true;
-            this.lblInvalid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblInvalid.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvalid.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblInvalid.Location = new System.Drawing.Point(80, 326);
-            this.lblInvalid.Name = "lblInvalid";
-            this.lblInvalid.Size = new System.Drawing.Size(205, 19);
-            this.lblInvalid.TabIndex = 23;
-            this.lblInvalid.Text = "Invalid credentials! Please try again.";
-            this.lblInvalid.Visible = false;
-            // 
             // guna2TextBox1
             // 
             this.guna2TextBox1.BorderColor = System.Drawing.Color.Red;
@@ -192,6 +170,15 @@
             this.guna2TextBox1.Size = new System.Drawing.Size(331, 56);
             this.guna2TextBox1.TabIndex = 24;
             this.guna2TextBox1.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel2.Controls.Add(this.guna2TextBox2);
+            this.panel2.Location = new System.Drawing.Point(28, 267);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(331, 56);
+            this.panel2.TabIndex = 22;
             // 
             // guna2TextBox2
             // 
@@ -214,6 +201,19 @@
             this.guna2TextBox2.TabIndex = 25;
             this.guna2TextBox2.Visible = false;
             // 
+            // lblInvalid
+            // 
+            this.lblInvalid.AutoSize = true;
+            this.lblInvalid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblInvalid.Font = new System.Drawing.Font("Poppins", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvalid.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblInvalid.Location = new System.Drawing.Point(80, 326);
+            this.lblInvalid.Name = "lblInvalid";
+            this.lblInvalid.Size = new System.Drawing.Size(205, 19);
+            this.lblInvalid.TabIndex = 23;
+            this.lblInvalid.Text = "Invalid credentials! Please try again.";
+            this.lblInvalid.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +231,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";

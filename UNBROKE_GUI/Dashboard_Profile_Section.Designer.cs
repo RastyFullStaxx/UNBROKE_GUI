@@ -250,10 +250,10 @@
             // imgDefaultPhoto
             // 
             this.imgDefaultPhoto.ImageRotate = 0F;
-            this.imgDefaultPhoto.Location = new System.Drawing.Point(105, 59);
+            this.imgDefaultPhoto.Location = new System.Drawing.Point(101, 35);
             this.imgDefaultPhoto.Name = "imgDefaultPhoto";
             this.imgDefaultPhoto.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.imgDefaultPhoto.Size = new System.Drawing.Size(170, 154);
+            this.imgDefaultPhoto.Size = new System.Drawing.Size(170, 165);
             this.imgDefaultPhoto.TabIndex = 38;
             this.imgDefaultPhoto.TabStop = false;
             // 
@@ -298,6 +298,7 @@
             this.Controls.Add(this.pnlFeedback);
             this.Controls.Add(this.pnlFullNameDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard_Profile_Section";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard_Setup_Profile";

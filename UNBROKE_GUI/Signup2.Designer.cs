@@ -38,13 +38,13 @@ namespace UNBROKE_GUI
             // 
             // imgAlmostThere
             // 
+            this.imgAlmostThere.BackColor = System.Drawing.Color.Transparent;
             this.imgAlmostThere.Image = ((System.Drawing.Image)(resources.GetObject("imgAlmostThere.Image")));
             this.imgAlmostThere.Location = new System.Drawing.Point(66, 168);
             this.imgAlmostThere.Name = "imgAlmostThere";
             this.imgAlmostThere.Size = new System.Drawing.Size(243, 246);
             this.imgAlmostThere.TabIndex = 0;
             this.imgAlmostThere.TabStop = false;
-            this.imgAlmostThere.BackColor = Color.Transparent;
             // 
             // btnSetupProfile
             // 
@@ -68,6 +68,7 @@ namespace UNBROKE_GUI
             this.Controls.Add(this.btnSetupProfile);
             this.Controls.Add(this.imgAlmostThere);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Signup2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";

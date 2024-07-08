@@ -279,6 +279,7 @@
             this.Controls.Add(this.btnExpenseTab);
             this.Controls.Add(this.imgBudgetWizardTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Budget_Wizard_Result_Savings_Tab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Wizard_Result_Savings_Tab";

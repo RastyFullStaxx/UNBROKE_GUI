@@ -147,6 +147,7 @@
             this.Controls.Add(this.lblPrompt1);
             this.Controls.Add(this.imgGiantLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Budget_Wizard_Date";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget_Wizard_Date";

@@ -21,6 +21,8 @@ namespace UNBROKE_GUI
         private int userId;
         private int budgetId;
         private decimal totalB;
+
+        // DATABASE CONNECTION: PASSED TO THE CURRENT USER [JAE]
         public Budget_Wizard_Fixed_Inputs(string currentuser, decimal totalBudget)
         {
             InitializeComponent();
@@ -82,7 +84,9 @@ namespace UNBROKE_GUI
                 budget = new BaseClass(totalB, rent, food);
 
 
-        /*      Console.WriteLine("Total Budget: " + totalB.ToString("N2"));
+        /*      
+         *      // KNAPSACK ALGO PERFORMED BY BASECLASS FORMS [RASTY]
+                Console.WriteLine("Total Budget: " + totalB.ToString("N2"));
                 Console.WriteLine("Fixed Expenses: " + budget.FixedExpenses.ToString("N2"));
                 Console.WriteLine("Rent: " + budget.Rent.ToString("N2"));
                 Console.WriteLine("Food: " + budget.Food.ToString("N2"));
@@ -100,7 +104,7 @@ namespace UNBROKE_GUI
          */
 
 
-
+                // DATABASE CONNECTION FOR EXPENSES USED IN KNAPSACK [JAE]
                 bool Bills = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Bills, budget.Bills);
                 bool Transportation = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Transportation, budget.Transportation);
                 bool Supplies = db.InsertExpense(budgetId, ExpenseCategory.Needs, ExpenseSubCategory.Supplies, budget.Supplies);

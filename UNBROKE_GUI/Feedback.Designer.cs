@@ -42,8 +42,8 @@
             this.btnOneStar = new System.Windows.Forms.Button();
             this.lblRatingPrompt = new System.Windows.Forms.Label();
             this.pnlComments = new System.Windows.Forms.Panel();
-            this.lblCommentPrompt = new System.Windows.Forms.Label();
             this.txtComments = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCommentPrompt = new System.Windows.Forms.Label();
             this.pnlRating.SuspendLayout();
             this.pnlComments.SuspendLayout();
             this.SuspendLayout();
@@ -209,19 +209,6 @@
             this.pnlComments.Size = new System.Drawing.Size(292, 314);
             this.pnlComments.TabIndex = 53;
             // 
-            // lblCommentPrompt
-            // 
-            this.lblCommentPrompt.AutoSize = true;
-            this.lblCommentPrompt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCommentPrompt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblCommentPrompt.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCommentPrompt.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblCommentPrompt.Location = new System.Drawing.Point(3, 2);
-            this.lblCommentPrompt.Name = "lblCommentPrompt";
-            this.lblCommentPrompt.Size = new System.Drawing.Size(155, 23);
-            this.lblCommentPrompt.TabIndex = 55;
-            this.lblCommentPrompt.Text = "Tell us your thoughts!";
-            // 
             // txtComments
             // 
             this.txtComments.BorderColor = System.Drawing.Color.Transparent;
@@ -244,6 +231,20 @@
             this.txtComments.SelectedText = "";
             this.txtComments.Size = new System.Drawing.Size(245, 247);
             this.txtComments.TabIndex = 56;
+            this.txtComments.TextChanged += new System.EventHandler(this.txtComments_TextChanged);
+            // 
+            // lblCommentPrompt
+            // 
+            this.lblCommentPrompt.AutoSize = true;
+            this.lblCommentPrompt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCommentPrompt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCommentPrompt.Font = new System.Drawing.Font("Poppins SemiBold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCommentPrompt.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblCommentPrompt.Location = new System.Drawing.Point(3, 2);
+            this.lblCommentPrompt.Name = "lblCommentPrompt";
+            this.lblCommentPrompt.Size = new System.Drawing.Size(155, 23);
+            this.lblCommentPrompt.TabIndex = 55;
+            this.lblCommentPrompt.Text = "Tell us your thoughts!";
             // 
             // Feedback
             // 
@@ -258,6 +259,7 @@
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnBack);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Feedback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Feedback";
