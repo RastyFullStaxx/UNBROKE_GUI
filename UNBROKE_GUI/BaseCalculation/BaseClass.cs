@@ -23,9 +23,16 @@ namespace UNBROKE_GUI.BaseCalculation
         // Constructor to initialize with TotalBudget, Rent, and Food
         public BaseClass(decimal totalBudget, decimal rent, decimal food)
         {
-            this.totalBudget = totalBudget;
+            this.totalBudget = totalBudget; 
             this.rent = rent;
             this.food = food;
+
+            /*
+             * totalBudget is the KNAPSACK
+             * Expenses are the items
+             *      their amount is the value
+             *      their percentages is the weight
+             */
 
             // Calculate fixed expenses
             fixedExpenses = rent + food;

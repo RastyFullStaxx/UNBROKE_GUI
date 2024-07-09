@@ -44,14 +44,15 @@
             // 
             // btnUploadPhoto
             // 
+            this.btnUploadPhoto.BackColor = System.Drawing.Color.Transparent;
             this.btnUploadPhoto.FlatAppearance.BorderSize = 0;
             this.btnUploadPhoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUploadPhoto.Image = ((System.Drawing.Image)(resources.GetObject("btnUploadPhoto.Image")));
-            this.btnUploadPhoto.Location = new System.Drawing.Point(250, 252);
+            this.btnUploadPhoto.Location = new System.Drawing.Point(251, 263);
             this.btnUploadPhoto.Name = "btnUploadPhoto";
             this.btnUploadPhoto.Size = new System.Drawing.Size(24, 24);
             this.btnUploadPhoto.TabIndex = 3;
-            this.btnUploadPhoto.UseVisualStyleBackColor = true;
+            this.btnUploadPhoto.UseVisualStyleBackColor = false;
             this.btnUploadPhoto.Click += new System.EventHandler(this.btnUploadPhoto_Click);
             // 
             // btnContinue

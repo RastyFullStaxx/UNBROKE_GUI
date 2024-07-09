@@ -69,12 +69,15 @@ namespace UNBROKE_GUI
             try
             {
                 string username = usernameText.Text;
-                string password = userpasswordText.Text;
                 string firstname = userfirstnameText.Text;
                 string lastname = userlastnameText.Text;
 
-                // Hash password
-                string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
+                // Fetch current password hash
+                string currentPasswordHash = db.GetPasswordHashByUserID(userID);
+
+                // If user has edited the password, hash the new password
+                string newPassword = userpasswordText.Text.Trim();
+                string passwordHash = string.IsNullOrEmpty(newPassword) ? currentPasswordHash : BCrypt.Net.BCrypt.HashPassword(newPassword);
 
                 // Convert profile image to byte array
                 profileImageBytes = ImageToByteArray(imgDefaultPhoto.Image);
@@ -96,6 +99,7 @@ namespace UNBROKE_GUI
                 MessageBox.Show($"Error updating profile: {ex.Message}");
             }
         }
+
 
         private byte[] ImageToByteArray(Image image)
         {

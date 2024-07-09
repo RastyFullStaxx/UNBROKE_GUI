@@ -87,6 +87,7 @@ namespace UNBROKE_GUI
             // 
             // btnShowpass
             // 
+            this.btnShowpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnShowpass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShowpass.FlatAppearance.BorderSize = 0;
             this.btnShowpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -95,7 +96,7 @@ namespace UNBROKE_GUI
             this.btnShowpass.Name = "btnShowpass";
             this.btnShowpass.Size = new System.Drawing.Size(24, 24);
             this.btnShowpass.TabIndex = 12;
-            this.btnShowpass.UseVisualStyleBackColor = true;
+            this.btnShowpass.UseVisualStyleBackColor = false;
             // 
             // lblPassword
             // 

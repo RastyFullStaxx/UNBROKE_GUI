@@ -964,6 +964,43 @@ namespace UNBROKE_GUI
             return (0, DateTime.MinValue, DateTime.MinValue, 0); // Default return values if budget is not found
         }
 
+        public string GetPasswordHashByUserID(int userId)
+        {
+            string query = "SELECT `password_hash` FROM `user` WHERE `user_id` = @userId";
+
+            using (MySqlConnection connection = GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@userId", userId);
+
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                        else
+                        {
+                            throw new Exception("Password hash not found for the user.");
+                        }
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine($"MySQL Exception: {ex.Message}");
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Exception: {ex.Message}");
+                    throw;
+                }
+            }
+        }
 
 
     }

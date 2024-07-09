@@ -142,6 +142,7 @@
             this.btnNext.Size = new System.Drawing.Size(319, 55);
             this.btnNext.TabIndex = 6;
             this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // imgGiantLogo
             // 

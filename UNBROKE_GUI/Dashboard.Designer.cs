@@ -2212,7 +2212,7 @@ namespace UNBROKE_GUI
             // imgNotificationIcon
             // 
             this.imgNotificationIcon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgNotificationIcon.BackgroundImage")));
-            this.imgNotificationIcon.Location = new System.Drawing.Point(82, 368);
+            this.imgNotificationIcon.Location = new System.Drawing.Point(86, 365);
             this.imgNotificationIcon.Name = "imgNotificationIcon";
             this.imgNotificationIcon.Size = new System.Drawing.Size(16, 16);
             this.imgNotificationIcon.TabIndex = 67;
